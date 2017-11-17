@@ -1,0 +1,17 @@
+Front-End Routes:
+
+Home: /browse
+Sign Up: /signup
+Log In: /login
+
+Search: /search/recent
+Browse - featured: /browse/featured
+Browse - genres: /browse/genres
+Browse - new releases: /browse/newreleases
+Browse - discover: /browse/discover
+
+Your Music - playlists: /collection/playlists
+Your Music - your daily mix: /collection/daily-mix-hub
+Your Music - songs: /collection/songs
+Your Music - albums: /collection/albums
+Your Music - artists: /collection/artists

@@ -1,0 +1,34 @@
+Database Schema:
+
+Users:
+  id: integer (primary)
+  username: string
+  password_digest: string
+  session_token: string
+  image_url: string
+
+Artists:
+  id: integer (primary)
+  name: string
+  image_url: string
+  follower_id: integer #foreign_key #user
+
+Albums:
+  id: integer (primary)
+  title: string
+  year: integer
+  genre: string #model validation of certain type
+  image_url: string
+  artist_id: integer #foreign_key
+
+Songs:
+  id: integer (primary)
+  song_name: string
+  length: integer #Not sure this is needed...
+  album_id: integer #foreign_key
+
+Playlists:
+  id: integer (primary)
+  song_ids: integer #foreign_key
+  owner_id: integer #foreign_key #user
+  follower_id: integer #foreign_key #user
