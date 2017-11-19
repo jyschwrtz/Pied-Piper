@@ -11,7 +11,6 @@ Artists:
   id: integer (primary)
   name: string
   image_url: string
-  follower_id: integer #foreign_key #user
 
 Albums:
   id: integer (primary)
@@ -25,10 +24,31 @@ Songs:
   id: integer (primary)
   song_name: string
   length: integer #Not sure this is needed...
-  album_id: integer #foreign_key
+  album_id: integer #foreign_key - allow_nil: true (singles?)
+  artist_id: integer #foreign_key
+  filename: string
 
 Playlists:
   id: integer (primary)
-  song_ids: integer #foreign_key
+  playlist_name: string
   owner_id: integer #foreign_key #user
-  follower_id: integer #foreign_key #user
+
+Playlist_Songs:
+  id: integer (primary)
+  song_id: integer #foreign_key
+  playlist_id: integer #foreing_key
+
+User_Follows: #Joins Table
+  id: integer (primary)
+  follower_id: user_id #foreign_key
+  followed_user_id: user_id #foreign_key
+
+Playlist_Follows: #Joins Table
+  id: integer (primary)
+  follower_id: user_id #foreign_key
+  followed_playlist_id: playlist_id #foreign_key
+
+Artist_Follows: #Joins Table
+  id: integer (primary)
+  follower_id: user_id #foreign_key
+  followed_artist_id: playlist_id #foreign_key
