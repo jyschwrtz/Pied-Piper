@@ -1,5 +1,4 @@
-class Api::SessionController < ApplicationController
-
+class Api::SessionsController < ApplicationController
   def create
     # add capability for email login here if time
     # add capability for facebook login if time
@@ -16,12 +15,12 @@ class Api::SessionController < ApplicationController
   end
 
   def destroy
-    if current_user
-      logout!
-      render json: {}
+    @user = current_user
+    if @user
+      logout
+      render "api/users/show"
     else
-      render json: { message: "Must be logged in to log out" }, status: 404
+      render json: ["Must be logged in to log out"], status: 404
     end
   end
-
 end
