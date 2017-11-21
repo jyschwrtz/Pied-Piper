@@ -5,13 +5,13 @@
               id: 1,
               title: "song-title",
               artist_id: 1, //artist_id
-              album_id: 1 //album_id
+              playlist_id: 1
             },
             2: {
               id: 2,
               title: "song-title2",
               artist_id: 1, //artist_id
-              album_id: 1 //album_id
+              playlist_id: 1
             }
           }
           playlists: {
@@ -38,6 +38,7 @@
               title: "playlist 1",
               year: null,
               genre: null,
+              img_url: "album-picture-url2",
               owner_id: 1,
               followers: [2, 3, 4],
             }
@@ -46,6 +47,7 @@
               title: "playlist 2",
               year: null,
               genre: null,
+              img_url: "album-picture-url2",
               owner_id: 2,
               followers: [3, 4],
             }

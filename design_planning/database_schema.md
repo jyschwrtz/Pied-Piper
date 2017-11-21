@@ -5,12 +5,13 @@ Database Schema:
 |-------------|:---------:|:----------|
 |id           |integer    |primary key|
 |username     |string     |           |
+|email        |string     |           |
 |password_digest|string   |           |
 |session_token  |string   |           |
 |image_url    |string     |           |
 * `has_many :playlists`
-* `has_many :albums` (playlists, if an artist)
-* `has_many :songs` (if an artist)
+<!-- * `has_many :albums` (playlists, if an artist) -->
+<!-- * `has_many :songs` (if an artist) -->
 * `has_many :user_follows`
 * `has_many :followed_users` (through user_follows)
 * `has_many :user_followers`
@@ -41,8 +42,8 @@ Database Schema:
 |genre        |string     |model validation of certain types|
 |image_url    |string     |           |
 |owner_id     |integer    |foreign key|
-* `belongs_to :owner` (user) aka artist for albums
-* `has_many :album_songs` ?????
+* `belongs_to :owner` (user)
+<!-- * `has_many :album_songs` ????? -->
 * `has_many :playlist_songs`
 * `has_many :songs` (through playlist_songs)
 * `has_many :playlists_followers`
