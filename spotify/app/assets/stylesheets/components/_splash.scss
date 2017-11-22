@@ -51,6 +51,16 @@
   letter-spacing: 1px;
 }
 
+.splash a {
+  height: 100%;
+  display: block;
+  line-height: 45px;
+}
+
+.splash a:hover {
+  text-decoration: none;
+}
+
 .splash-left button {
   text-align: center;
   letter-spacing: 1.5px;
