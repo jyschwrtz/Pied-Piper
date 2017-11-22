@@ -78,9 +78,17 @@
   color: white;
 }
 
+.splash-signup:hover {
+  background: $light-green;
+}
+
 .splash-login {
   background: white;
   color: black;
+}
+
+.splash-login:hover {
+  background: $light-gray;
 }
 
 .splash-right {

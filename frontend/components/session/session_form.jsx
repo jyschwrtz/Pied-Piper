@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import DemoLogin from './demo_login';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class SessionForm extends React.Component {
       password: "",
     };
 
+    this.demoInputText = this.demoInputText.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -28,6 +31,31 @@ class SessionForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  demoInputText(field, text, cb) {
+      let letters = text.split("");
+      let inputText = "";
+      const typeLetter = () => {
+        inputText += letters.shift();
+        this.setState({[field]: inputText});
+        if (letters.length > 0) {
+          let speed = Math.random() * (250 - 20) + 20;
+          setTimeout((() => typeLetter()), speed);
+        } else {
+          setTimeout(() => cb(), 1000);
+        }
+      };
+      typeLetter();
+  }
+
+  demoLogin() {
+    this.demoInputText("username", "demo_user", (
+      () => this.demoInputText("password", "password", (
+        () => this.props.login({username: "demo_user", password: "password"})
+      ))
+    ));
+
   }
 
   render() {
@@ -64,6 +92,10 @@ class SessionForm extends React.Component {
         <header>
           <Link to="/">Spotify</Link>
         </header>
+        <DemoLogin
+          demoLogin={this.demoLogin}
+          formType={formType}
+          />
         <ul className="session-errors">
           {
             errors.map((error, idx) => (
