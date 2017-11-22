@@ -5,9 +5,9 @@ class DemoLogin extends React.Component {
   render() {
     const { formType, demoLogin } = this.props;
     let content = formType === "Log In" ? (
-      <button onClick={demoLogin}>Demo Login</button>
+      <button onClick={demoLogin}>Demo Log In</button>
     ) : (
-      <button onClick={demoLogin}>Demo Signup (without email)</button>
+      <button onClick={demoLogin}>Demo Sign Up</button>
     );
 
     return(
