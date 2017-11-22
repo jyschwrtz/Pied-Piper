@@ -13,7 +13,7 @@ const SessionErrorsReducer = (state=[], action) => {
       newState = [];
       return newState;
     case RECEIVE_ERRORS:
-      newState = action.errors.responseJSON;
+      newState = action.errors;
       return newState;
     default:
       return state;

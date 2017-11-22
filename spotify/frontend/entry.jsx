@@ -10,8 +10,14 @@ import {
 } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
-  const rootEl = document.getElementById('root');
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   // BEGIN TESTING
   window.getState = store.getState;
@@ -21,5 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = logout;
   // END TESTING
 
+  const rootEl = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, rootEl);
 });
