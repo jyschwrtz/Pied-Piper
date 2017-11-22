@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
   render() {
     const { loggedIn, formType } = this.props;
     const { username, email, password } = this.state;
-    const otherForm = formType === "Log In" ? "Sign Up" : "Log In";
+    const otherFormType = formType === "Log In" ? "Sign Up" : "Log In";
     let errors;
     if (this.props.errors.session !== []) {
       errors = this.props.errors.session;
@@ -49,14 +49,22 @@ class SessionForm extends React.Component {
         />);
     }
 
-
+    const otherForm = formType === "Log In" ? (
+      <div className="session-other-form">
+        <p>Don't have an account? <Link to="/signup" >Sign Up</Link></p>
+      </div>
+    ) : (
+      <div className="session-other-form">
+        <p>Already have an account? <Link to="/login">Log In</Link></p>
+      </div>
+    );
 
     return (
       <div className="session">
         <header>
-          <h1>Spotify</h1>
+          <Link to="/">Spotify</Link>
         </header>
-        <ul className="session-errrors">
+        <ul className="session-errors">
           {
             errors.map((error, idx) => (
               <li key={idx}>{error}</li>
@@ -88,6 +96,7 @@ class SessionForm extends React.Component {
               />
           </button>
         </form>
+        {otherForm}
       </div>
     );
   }

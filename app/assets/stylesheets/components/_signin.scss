@@ -53,6 +53,16 @@
   background: #00E155;
 }
 
-.session-errors {
+.session-errors li {
+  text-align: center;
+  color: red;
+}
 
+.session-other-form {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.session-other-form a {
+  color: $green;
 }
