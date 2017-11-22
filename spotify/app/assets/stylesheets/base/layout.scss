@@ -28,12 +28,7 @@ button {
 
 input {
 	background: white;
-	border: 1px solid #DFE0E7;
-}
-
-button:hover {
-	background-color: $dark-blue;
-	border-color: $darkest-blue
+	border: 1px solid $light-gray;
 }
 
 a {

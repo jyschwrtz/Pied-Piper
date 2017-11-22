@@ -8,7 +8,7 @@
   text-align: center;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $light-gray;
 }
 
 .session-form {
@@ -19,11 +19,15 @@
 }
 
 .session-form input {
-  height: 21px;
+  height: 48px;
   width: 450px;
   border-radius: 2px;
   margin-bottom: 16px;
   padding: 15px 11.25px 10.313px 11.25px;
+  box-sizing: border-box;
+}
+.session-form input:focus {
+  border: 2px solid #76BAFF;
 }
 
 .session-form>button input {
@@ -43,7 +47,6 @@
   text-align: center;
   border-radius: 25px;
   font-weight: 700;
-
 }
 
 .session-form button:hover {
