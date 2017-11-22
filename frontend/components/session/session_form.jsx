@@ -90,15 +90,6 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session">
-        <header>
-          <Link to="/">
-          <Logo color="black"/>
-          </Link>
-        </header>
-        <DemoLogin
-          demoLogin={this.demoLogin}
-          formType={formType}
-          />
         <ul className="session-errors">
           {
             errors.map((error, idx) => (
@@ -131,6 +122,10 @@ class SessionForm extends React.Component {
               />
           </button>
         </form>
+        <DemoLogin
+          demoLogin={this.demoLogin}
+          formType={formType}
+          />
         {otherForm}
       </div>
     );

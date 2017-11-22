@@ -3,15 +3,8 @@
   text-align: center;
 }
 
-.session header {
-  justify-content: center;
-  border-bottom: 1px solid $light-gray;
-  display: flex;
-  margin-bottom: 20px;
-}
-
 .session .logo {
-  height: 80px;
+  height: 70px;
   width: auto;
   margin: 0px 0px 10px 0px;
 }
@@ -21,14 +14,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 450px;
-  border-top: 1px solid $light-gray;
+  width: 320px;
+  border-top: 1px solid $gray;
   padding-top: 20px;
 }
 
 .session-form input {
   height: 48px;
-  width: 450px;
+  width: 320px;
   text-align: left;
   border-radius: 2px;
   margin-bottom: 16px;
@@ -42,6 +35,7 @@
 .session-form>button input {
   background: none;
   border: none;
+  height: 48px;
   margin-bottom: 0;
   color: white;
   padding: 0px 0px 0px 0px;
@@ -70,6 +64,7 @@
 .session-other-form {
   text-align: center;
   margin-top: 10px;
+  color: white;
 }
 
 .session-other-form a {

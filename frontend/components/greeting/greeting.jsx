@@ -1,20 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../logo/logo';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import SessionFormContainer from '../session/session_form_container';
 
-export default () => {
+export default (props) => {
+  let content;
+  if (props.match.isExact) {
+    content = (
+      <div>
+        <Link to='/signup'><button className="splash-signup">SIGN UP</button></Link>
 
+        <h2>ALREADY HAVE AN ACCOUNT?</h2>
+
+        <Link to='/login'><button className="splash-login">LOG IN</button></Link>
+      </div>
+    );
+  }
   return (
     <div className="splash">
       <div className="splash-content">
         <div className="splash-left">
           <Logo color="white"/>
+          <AuthRoute path="/login" component={SessionFormContainer} />
+          <AuthRoute path="/signup" component={SessionFormContainer} />
 
-          <Link to='/signup'><button className="splash-signup">SIGN UP</button></Link>
-
-          <h2>ALREADY HAVE AN ACCOUNT?</h2>
-
-          <Link to='/login'><button className="splash-login">LOG IN</button></Link>
+          {content}
 
         </div>
         <div className="splash-right">

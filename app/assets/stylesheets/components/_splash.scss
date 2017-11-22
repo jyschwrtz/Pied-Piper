@@ -34,12 +34,14 @@
   padding: 45px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border-right: 1px solid $gray;
+  text-align: center;
 }
 
 .splash .logo {
-  height: 80px;
+  height: 70px;
   width: auto;
   margin-bottom: 20px;
 }
@@ -48,6 +50,7 @@
   color: $gray;
   font-size: 16px;
   letter-spacing: 1px;
+  margin: 20px 0;
 }
 
 .splash-left button {
@@ -58,7 +61,7 @@
   height: 54px;
   font-size: 18px;
   font-weight: 500;
-  margin: 20px 0px;
+  margin: 10px 0px;
   padding: 0;
 }
 
