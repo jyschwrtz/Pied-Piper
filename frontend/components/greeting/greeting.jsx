@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../logo/logo';
 
 export default () => {
 
@@ -7,14 +8,14 @@ export default () => {
     <div className="splash">
       <div className="splash-content">
         <div className="splash-left">
-          <h1>Spotify</h1>
-          <button className="splash-signup">
-            <Link to='/signup'>SIGN UP</Link>
-          </button>
+          <Logo color="white"/>
+
+          <Link to='/signup'><button className="splash-signup">SIGN UP</button></Link>
+
           <h2>ALREADY HAVE AN ACCOUNT?</h2>
-          <button className="splash-login">
-            <Link to='/login'>LOG IN</Link>
-          </button>
+
+          <Link to='/login'><button className="splash-login">LOG IN</button></Link>
+
         </div>
         <div className="splash-right">
           <h1>Get the right music,</h1>

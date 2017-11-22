@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import DemoLogin from './demo_login';
+import Logo from '../logo/logo';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -90,7 +91,9 @@ class SessionForm extends React.Component {
     return (
       <div className="session">
         <header>
-          <Link to="/">Spotify</Link>
+          <Link to="/">
+          <Logo color="black"/>
+          </Link>
         </header>
         <DemoLogin
           demoLogin={this.demoLogin}

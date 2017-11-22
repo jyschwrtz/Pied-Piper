@@ -1,15 +1,19 @@
 .session {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .session header {
-  width: 100%;
-  font-size: 26px;
-  text-align: center;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  justify-content: center;
   border-bottom: 1px solid $light-gray;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.session .logo {
+  height: 80px;
+  width: auto;
+  margin: 0px 0px 10px 0px;
 }
 
 .session-form {

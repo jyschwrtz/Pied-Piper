@@ -38,11 +38,10 @@
   border-right: 1px solid $gray;
 }
 
-.splash-left h1 {
-  color: white;
-  font-size: 45px;
-  font-weight: 500;
-  margin-bottom: 25px;
+.splash .logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 20px;
 }
 
 .splash-left h2 {
@@ -51,21 +50,11 @@
   letter-spacing: 1px;
 }
 
-.splash a {
-  height: 100%;
-  display: block;
-  line-height: 45px;
-}
-
-.splash a:hover {
-  text-decoration: none;
-}
-
 .splash-left button {
   text-align: center;
   letter-spacing: 1.5px;
   border-radius: 100px;
-  width: 100%;
+  width: 320px;
   height: 54px;
   font-size: 18px;
   font-weight: 500;
