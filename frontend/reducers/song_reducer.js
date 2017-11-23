@@ -16,7 +16,7 @@ const SongReducer = (state = {}, action) => {
       newState = action.songs;
       return newState;
     default:
-    return state;
+      return state;
   }
 };
 
