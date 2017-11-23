@@ -43,6 +43,12 @@ ApplicationRecord.transaction do
     password: "password"
   )
 
+  melanie_ungar = User.create!(
+    username: "Melanie Ungar",
+    email: "melanie.ungar@mail.com",
+    password: "password"
+  )
+
   # SONGS
   song1 = Song.create!(
     song_name: "Meant To Live",
@@ -58,8 +64,15 @@ ApplicationRecord.transaction do
     artist_id: switchfoot.id
   )
 
-  #PLAYLISTS
-  Playlist.create!(
+  song3 = Song.create!(
+    song_name: "Crazy Glue",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Melanie_Ungar_-_Crazy_Glue.mp3",
+    length: 220,
+    artist_id: melanie_ungar.id
+  )
+
+  # PLAYLISTS
+  playlist1 = Playlist.create!(
     title: "Saturday Afternoon",
     owner_id: jay.id,
     image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/album_cover.jpeg",
@@ -67,12 +80,19 @@ ApplicationRecord.transaction do
     genre: nil
   )
 
-  Playlist.create!(
+  playlist2 = Playlist.create!(
     title: "Running!",
     owner_id: emily.id,
     image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/album_cover.jpeg",
     date: 2017,
     genre: nil
   )
+
+  # PLAYLIST_SONGS (JOINS)
+  PlaylistSong.create!(song_id: song1.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song2.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song3.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song2.id, playlist_id: playlist2.id)
+  PlaylistSong.create!(song_id: song3.id, playlist_id: playlist2.id)
 
 end
