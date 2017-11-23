@@ -27,7 +27,7 @@ class User < ApplicationRecord
     foreign_key: :artist_id,
     dependent: :destroy
 
-  belongs_to :playlists,
+  has_many :playlists,
     class_name: :Playlist,
     primary_key: :id,
     foreign_key: :owner_id

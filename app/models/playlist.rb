@@ -15,12 +15,24 @@
 class Playlist < ApplicationRecord
   validates :title, :owner_id, presence: true
   validates :title, uniqueness: true
-  validates :genre, inclusion: %w(pop rock country christian rap hip_hop
-                                  jazz folk reggae classical soundtrack)
+  validates :genre, inclusion: GENRES
+
+  GENRES = %w(pop rock country christian rap hip_hop
+              jazz folk reggae classical soundtrack)
 
   belongs_to :owner,
     class_name: :User,
     primary_key: :id,
     foreign_key: :owner_id
+
+  has_many :playlist_songs,
+    class_name: :PlaylistSong,
+    primary_key: :id,
+    foreign_key: :playlist_id,
+    dependent: :destroy
+
+  has_many :songs,
+    through: :playlist_songs,
+    source: :song
 
 end
