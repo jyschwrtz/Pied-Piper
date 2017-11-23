@@ -27,6 +27,7 @@
   margin-bottom: 16px;
   padding: 15px 10px;
   box-sizing: border-box;
+  background-color: $white_90;
 }
 .session-form input:focus {
   border: 2px solid #76BAFF;
@@ -37,7 +38,7 @@
   border: none;
   height: 48px;
   margin-bottom: 0;
-  color: white;
+  color: $white;
   padding: 0px 0px 0px 0px;
   text-align: center;
   border-radius: 15px;
@@ -46,7 +47,7 @@
 
 .session-form button {
   background: $green;
-  color: white;
+  color: $white;
   text-align: center;
   border-radius: 25px;
   font-weight: 700;
@@ -58,7 +59,7 @@
 
 .session-errors li {
   text-align: center;
-  color: white;
+  color: $red;
   font-weight: 200;
   font-style: italic;
 }
@@ -66,7 +67,7 @@
 .session-other-form {
   text-align: center;
   margin-top: 10px;
-  color: white;
+  color: $white;
 }
 
 .session-other-form a {

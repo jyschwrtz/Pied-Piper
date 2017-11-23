@@ -23,6 +23,12 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.location.state && this.props.location.state.demoLogin) {
+      this.demoLogin();
+    }
+  }
+
   componentWillMount() {
     this.props.clearErrors();
   }
@@ -45,21 +51,24 @@ class SessionForm extends React.Component {
       inputText += letters.shift();
       this.setState({[field]: inputText});
       if (letters.length > 0) {
-        let speed = Math.random() * (250 - 20) + 20;
+        let speed = Math.random() * (200 - 20) + 20;
         setTimeout((() => typeLetter()), speed);
       } else {
-        setTimeout(() => cb(), 1000);
+        setTimeout(() => cb(), 750);
       }
     };
     typeLetter();
   }
 
   demoLogin() {
-    this.demoInputText("username", "demo_user", (
-      () => this.demoInputText("password", "password", (
-        () => this.props.login({username: "demo_user", password: "password"})
-      ))
-    ));
+    // if (this.refs.myRef) {
+    if (true) {
+      this.demoInputText("username", "demo_user", (
+        () => this.demoInputText("password", "password", (
+          () => this.props.login({username: "demo_user", password: "password"})
+        ))
+      ));
+    }
   }
 
   render() {
@@ -82,12 +91,11 @@ class SessionForm extends React.Component {
     }
 
     const otherForm = formType === "Log In" ? (
-      <div className="session-other-form">
+      <div className="session-other-form" ref="myRef">
         <p>Don't have an account? <Link to="/signup" onClick={clearErrors}>Sign Up</Link></p>
       </div>
     ) : (
       <div className="session-other-form">
-        <p>Try it out without signing up?</p>
         <p>Already have an account? <Link to="/login" onClick={clearErrors}>Log In</Link></p>
       </div>
     );

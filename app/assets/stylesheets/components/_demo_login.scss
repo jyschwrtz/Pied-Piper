@@ -1,17 +1,18 @@
 .demo-login button {
-  background: $darkest-blue;
-  color: white;
+  background: $white_90;
+  // background: $darkest-blue;
+  color: $black;
+  // color: $white;
   text-align: center;
   border-radius: 25px;
   font-weight: 700;
   width: 450px;
-  // padding-bottom: 20px;
-  // padding: 5px 0;
   margin-bottom: 20px;
 }
 
 .demo-login button:hover {
-  background: $dark-blue;
+  background: $light-gray;
+  // background: $dark-blue;
 }
 
 .demo-login p {

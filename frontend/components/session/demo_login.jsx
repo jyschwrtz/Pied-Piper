@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class DemoLogin extends React.Component {
+  loginFromSignup() {
+    this.props.history.push({
+      pathname: '/login',
+      state: { demoLogin: true }
+    });
+  }
 
   render() {
+    console.log(this.props);
     const { formType, demoLogin } = this.props;
     let content = formType === "Log In" ? (
       <button onClick={demoLogin}>Demo Log In</button>
     ) : (
-      <div></div>
+        <button onClick={this.loginFromSignup.bind(this)}>Demo Log In</button>
     );
 
     return(
@@ -19,4 +26,4 @@ class DemoLogin extends React.Component {
   }
 }
 
-export default DemoLogin;
+export default withRouter(DemoLogin);

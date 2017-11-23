@@ -67,7 +67,7 @@
 
 .splash-signup {
   background: $green;
-  color: white;
+  color: $white;
 }
 
 .splash-signup:hover {
@@ -75,8 +75,8 @@
 }
 
 .splash-login {
-  background: white;
-  color: black;
+  background: $white_90;;
+  color: $black;
 }
 
 .splash-login:hover {
