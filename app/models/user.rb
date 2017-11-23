@@ -27,6 +27,11 @@ class User < ApplicationRecord
     foreign_key: :artist_id,
     dependent: :destroy
 
+  belongs_to :playlists,
+    class_name: :Playlist,
+    primary_key: :id,
+    foreign_key: :owner_id
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
