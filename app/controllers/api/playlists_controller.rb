@@ -46,7 +46,6 @@ class Api::PlaylistsController < ApplicationController
     else
       render json: @playlist.errors.full_messages, status: 401
     end
-
   end
 
   private
