@@ -23,6 +23,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
@@ -35,19 +39,19 @@ class SessionForm extends React.Component {
   }
 
   demoInputText(field, text, cb) {
-      let letters = text.split("");
-      let inputText = "";
-      const typeLetter = () => {
-        inputText += letters.shift();
-        this.setState({[field]: inputText});
-        if (letters.length > 0) {
-          let speed = Math.random() * (250 - 20) + 20;
-          setTimeout((() => typeLetter()), speed);
-        } else {
-          setTimeout(() => cb(), 1000);
-        }
-      };
-      typeLetter();
+    let letters = text.split("");
+    let inputText = "";
+    const typeLetter = () => {
+      inputText += letters.shift();
+      this.setState({[field]: inputText});
+      if (letters.length > 0) {
+        let speed = Math.random() * (250 - 20) + 20;
+        setTimeout((() => typeLetter()), speed);
+      } else {
+        setTimeout(() => cb(), 1000);
+      }
+    };
+    typeLetter();
   }
 
   demoLogin() {
@@ -56,13 +60,12 @@ class SessionForm extends React.Component {
         () => this.props.login({username: "demo_user", password: "password"})
       ))
     ));
-
   }
 
   render() {
-    const { loggedIn, formType } = this.props;
+    const { loggedIn, formType, clearErrors } = this.props;
     const { username, email, password } = this.state;
-    const otherFormType = formType === "Log In" ? "Sign Up" : "Log In";
+
     let errors;
     if (this.props.errors.session !== []) {
       errors = this.props.errors.session;
@@ -80,11 +83,12 @@ class SessionForm extends React.Component {
 
     const otherForm = formType === "Log In" ? (
       <div className="session-other-form">
-        <p>Don't have an account? <Link to="/signup" >Sign Up</Link></p>
+        <p>Don't have an account? <Link to="/signup" onClick={clearErrors}>Sign Up</Link></p>
       </div>
     ) : (
       <div className="session-other-form">
-        <p>Already have an account? <Link to="/login">Log In</Link></p>
+        <p>Try it out without signing up?</p>
+        <p>Already have an account? <Link to="/login" onClick={clearErrors}>Log In</Link></p>
       </div>
     );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DemoLogin extends React.Component {
 
@@ -7,7 +8,7 @@ class DemoLogin extends React.Component {
     let content = formType === "Log In" ? (
       <button onClick={demoLogin}>Demo Log In</button>
     ) : (
-      <button onClick={demoLogin}>Demo Sign Up</button>
+      <div></div>
     );
 
     return(

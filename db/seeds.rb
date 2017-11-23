@@ -6,4 +6,39 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-demoUser = User.create!(username: "demo_user", email: "demo@mail.com", password: "password")
+User.destroy_all
+Song.destroy_all
+
+# USERS
+User.create!( # Demo User
+  username: "demo_user",
+  email: "demo@mail.com",
+  password: "password"
+)
+
+User.create!( # Admin User
+  username: "Admin",
+  email: "admin@mail.com",
+  password: "password"
+)
+
+switchfoot = User.create!(
+  username: "Switchfoot",
+  email: "switchfoot@mail.com",
+  password: "password"
+)
+
+# SONGS
+song1 = Song.create!(
+  song_name: "Meant To Live",
+  filename: "abcd",
+  length: 204,
+  artist_id: switchfoot.id
+)
+
+song2 = Song.create!(
+  song_name: "24",
+  filename: "abcde",
+  length: 223,
+  artist_id: switchfoot.id
+)
