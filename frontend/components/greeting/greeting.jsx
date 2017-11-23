@@ -1,32 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+  Switch,
+  Redirect
+ } from 'react-router-dom';
 import Logo from '../logo/logo';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import {
+  AuthRoute,
+  AuthExactRoute,
+  ProtectedRoute
+} from '../../util/route_util';
 import SessionFormContainer from '../session/session_form_container';
+import GreetingButtons from './greeting_buttons';
 
 export default (props) => {
-  let content;
+  let routes;
   if (props.match.isExact) {
-    content = (
-      <div>
-        <Link to='/signup'><button className="splash-signup">SIGN UP</button></Link>
-
-        <h2>ALREADY HAVE AN ACCOUNT?</h2>
-
-        <Link to='/login'><button className="splash-login">LOG IN</button></Link>
-      </div>
-    );
+    routes = <AuthRoute path='/' component={GreetingButtons}/>;
+  } else {
+    routes = <Redirect to='/' />;
   }
+
   return (
     <div className="splash">
       <div className="splash-content">
         <div className="splash-left">
           <Logo color="white"/>
-          <AuthRoute path="/login" component={SessionFormContainer} />
-          <AuthRoute path="/signup" component={SessionFormContainer} />
-
-          {content}
-
+          <Switch>
+            <AuthRoute path="/login" component={SessionFormContainer} />
+            <AuthRoute path="/signup" component={SessionFormContainer} />
+            {routes}
+          </Switch>
         </div>
         <div className="splash-right">
           <h1>Get the right music,</h1>

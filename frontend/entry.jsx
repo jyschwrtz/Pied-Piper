@@ -4,10 +4,12 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import {
-  signup,
-  login,
-  logout
-} from './actions/session_actions';
+  fetchPlaylist,
+  fetchPlaylists,
+  createPlaylist,
+  updatePlaylist,
+  deletePlaylist
+} from './util/playlist_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -22,9 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  window.fetchPlaylist = fetchPlaylist;
+  window.fetchPlaylists = fetchPlaylists;
+  window.createPlaylist = createPlaylist;
+  window.updatePlaylist = updatePlaylist;
+  window.deletePlaylist = deletePlaylist;
   // END TESTING
 
   const rootEl = document.getElementById('root');
