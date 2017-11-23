@@ -6,7 +6,6 @@ import {
   Switch
 } from 'react-router-dom';
 
-// import SessionFormContainer from './session/session_form_container';
 import BrowseContainer from './browse/browse_container';
 import { AuthRoute, ProtectedRoute, AuthExactRoute } from '../util/route_util';
 

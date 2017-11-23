@@ -10,7 +10,6 @@ class DemoLogin extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { formType, demoLogin } = this.props;
     let content = formType === "Log In" ? (
       <button onClick={demoLogin}>Demo Log In</button>

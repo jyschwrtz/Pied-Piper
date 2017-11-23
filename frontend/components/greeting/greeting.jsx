@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../logo/logo';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import SessionFormContainer from '../session/session_form_container';
+import ReactHowler from 'react-howler';
 
 export default (props) => {
   let content;
@@ -10,6 +11,7 @@ export default (props) => {
     content = (
       <div>
         <Link to='/signup'><button className="splash-signup">SIGN UP</button></Link>
+  
 
         <h2>ALREADY HAVE AN ACCOUNT?</h2>
 

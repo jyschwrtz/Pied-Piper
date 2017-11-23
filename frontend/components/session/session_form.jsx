@@ -61,14 +61,11 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    // if (this.refs.myRef) {
-    if (true) {
-      this.demoInputText("username", "demo_user", (
-        () => this.demoInputText("password", "password", (
-          () => this.props.login({username: "demo_user", password: "password"})
-        ))
-      ));
-    }
+    this.demoInputText("username", "demo_user", (
+      () => this.demoInputText("password", "password", (
+        () => this.props.login({username: "demo_user", password: "password"})
+      ))
+    ));
   }
 
   render() {
@@ -91,7 +88,7 @@ class SessionForm extends React.Component {
     }
 
     const otherForm = formType === "Log In" ? (
-      <div className="session-other-form" ref="myRef">
+      <div className="session-other-form">
         <p>Don't have an account? <Link to="/signup" onClick={clearErrors}>Sign Up</Link></p>
       </div>
     ) : (
