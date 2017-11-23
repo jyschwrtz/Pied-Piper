@@ -4,12 +4,9 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import {
-  fetchPlaylist,
-  fetchPlaylists,
-  createPlaylist,
-  updatePlaylist,
-  deletePlaylist
-} from './util/playlist_api_util';
+  createPlaylistSong,
+  deletePlaylistSong
+} from './util/playlist_song_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -24,11 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchPlaylist = fetchPlaylist;
-  window.fetchPlaylists = fetchPlaylists;
-  window.createPlaylist = createPlaylist;
-  window.updatePlaylist = updatePlaylist;
-  window.deletePlaylist = deletePlaylist;
+  window.createPlaylistSong = createPlaylistSong;
+  window.deletePlaylistSong = deletePlaylistSong;
   // END TESTING
 
   const rootEl = document.getElementById('root');
