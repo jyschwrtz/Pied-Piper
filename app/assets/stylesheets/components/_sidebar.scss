@@ -1,0 +1,16 @@
+.sidebar {
+  border: 1px solid black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: $sidebar;
+  color: $sidebar-text;
+  padding: 24px 24px 95px 24px;
+  box-sizing: border-box;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+}
