@@ -1,0 +1,12 @@
+.sidebar-nav {
+  padding: 10px 0 5px 0;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: $white;
+}
+
+.sidebar .active {
+  color: $green;
+}
