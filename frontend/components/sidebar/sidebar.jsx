@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
 
-class Browse extends React.Component {
+class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,8 +17,8 @@ class Browse extends React.Component {
   render() {
     const { playing } = this.state;
     return(
-      <div className="browse">
-        <h1>Browse</h1>
+      <div className="sidebar">
+        <h1>Sidebar</h1>
         <h2>Welcome, {this.props.currentUser.username}</h2>
         <button
           className="logout-btn"
@@ -40,4 +40,4 @@ class Browse extends React.Component {
   }
 }
 
-export default Browse;
+export default Sidebar;

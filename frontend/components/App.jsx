@@ -1,18 +1,19 @@
 import React from 'react';
-import Greeting from './greeting/greeting';
 import {
   Link,
   Route,
   Switch
 } from 'react-router-dom';
-
-import BrowseContainer from './browse/browse_container';
 import { AuthRoute, ProtectedRoute, AuthExactRoute } from '../util/route_util';
+
+import Greeting from './greeting/greeting';
+import MusicPlayer from './music_player/music_player';
+
 
 const App = () => (
   <div>
     <Switch>
-      <ProtectedRoute path="/browse" component={BrowseContainer} />
+      <ProtectedRoute path="/browse" component={MusicPlayer} />
       <AuthRoute path="/" component={Greeting} />
     </Switch>
   </div>

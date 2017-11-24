@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import {
-  fetchPlaylist,
-  fetchPlaylists,
-  createPlaylist,
-  updatePlaylist,
-  deletePlaylist
-} from './actions/playlist_actions';
+// import {
+//   fetchPlaylist,
+//   fetchPlaylists,
+//   createPlaylist,
+//   updatePlaylist,
+//   deletePlaylist
+// } from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchPlaylist = fetchPlaylist;
-  window.fetchPlaylists = fetchPlaylists;
-  window.createPlaylist = createPlaylist;
-  window.updatePlaylist = updatePlaylist;
-  window.deletePlaylist = deletePlaylist;
+  // window.fetchPlaylist = fetchPlaylist;
+  // window.fetchPlaylists = fetchPlaylists;
+  // window.createPlaylist = createPlaylist;
+  // window.updatePlaylist = updatePlaylist;
+  // window.deletePlaylist = deletePlaylist;
   // END TESTING
 
   const rootEl = document.getElementById('root');
