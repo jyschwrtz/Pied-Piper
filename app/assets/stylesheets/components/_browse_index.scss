@@ -1,0 +1,18 @@
+.browse-index {
+  display: flex;
+  justify-content: center;
+  // flex-wrap: wrap;
+}
+
+.browse-index-item {
+  padding: 0 8px;
+  margin-bottom: 35px;
+  min-width: 125px;
+  max-width: 205px;
+  height: auto;
+  flex: 1 0 125px;
+}
+
+.browse-index-item a {
+  display: block;
+}

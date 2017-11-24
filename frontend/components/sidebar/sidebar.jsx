@@ -1,4 +1,6 @@
 import React from 'react';
+import Logo from '../logo/logo';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -10,7 +12,13 @@ class Sidebar extends React.Component {
 
     return(
       <div className="sidebar">
-        <h1>Sidebar</h1>
+        <Logo text="none" />
+        <Link to="/search" className="sidebar-search">
+          <div>
+              <h2>Search</h2>
+              <h2>(S)</h2>
+          </div>
+        </Link>
         <h2>Welcome, {this.props.currentUser.username}</h2>
         <button
           className="logout-btn"

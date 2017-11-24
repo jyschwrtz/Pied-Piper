@@ -5,9 +5,13 @@ import {
   Switch
 } from 'react-router-dom';
 
+import NavBar from '../nav_bar/nav_bar';
+import BrowseContainer from '../browse/browse_container';
+
 const MainPage = () => (
   <div className="main-page">
-    <h1>Main Page</h1>
+    <NavBar />
+    <BrowseContainer />
   </div>
 );
 

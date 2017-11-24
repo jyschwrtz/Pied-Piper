@@ -1,0 +1,31 @@
+.browse {
+  padding: 0 28px;
+}
+
+.browse a {
+  padding: 0 0 0 0;
+}
+
+.browse-item {
+  text-align: center;
+}
+
+.browse-item>h1 {
+  margin: 24px 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  font-family: sans-serif;
+}
+
+.view-more {
+  color: $green;
+  font-size: 12px;
+  padding-bottom: 25px;
+}
+
+.view-more>a {
+  padding: 13px;
+  margin-top: 16px;
+  display: block;
+}

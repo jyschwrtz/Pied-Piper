@@ -1,0 +1,29 @@
+.navbar {
+  // border: 1px solid green;
+  padding: 20px 0 12px 0;
+  color: $gray;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  padding: 0px 10px;
+}
+
+.navbar li:hover {
+  color: $white;
+}
+
+.navbar a {
+  margin: 10px;
+  padding: 10px;
+  display: block;
+}

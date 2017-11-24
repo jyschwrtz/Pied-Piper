@@ -1,3 +1,5 @@
 .music-player {
   background: linear-gradient($blue-gradient-start, $blue-gradient-end);
+  height: 100vh;
+  overflow: scroll;
 }

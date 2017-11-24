@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
       inputText += letters.shift();
       this.setState({[field]: inputText});
       if (letters.length > 0) {
-        let speed = Math.random() * (250, 20) + 20;
+        let speed = Math.random() * (400, 50) + 50;
         setTimeout((() => typeLetter()), speed);
       } else {
         setTimeout(() => cb(), 500);

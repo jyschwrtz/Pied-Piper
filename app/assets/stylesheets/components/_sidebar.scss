@@ -9,8 +9,27 @@
   color: $sidebar-text;
   padding: 24px 24px 95px 24px;
   box-sizing: border-box;
+  font-size: 16px;
+}
+
+.sidebar-search {
+  display: block;
+  border: 1px solid $darkest-gray;
+  border-left: none;
+  border-right: none;
+}
+
+.sidebar-search div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
 }
 
 .logout-btn {
   padding: 10px 20px;
+}
+
+.sidebar .logo {
+  width: 40px;
+  padding: 3px 0;
 }
