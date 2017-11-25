@@ -1,17 +1,32 @@
 import React from 'react';
 
 class Playlist extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      songs: []
+    };
+  }
 
   componentWillMount() {
-    console.log(this.props);
-    this.props.fetchPlaylist(this.props.match.params.playlistId);
-    this.props.fetchSongs();
+    this.props.requestPlaylists();
+    this.props.requestSongs();
+    this.props.requestPlaylist(this.props.match.params.playlistId);
+  }
+
+  componentDidMount() {
+    // console.log(this.props);
   }
 
   render() {
-    console.log(this.props.playlist);
     return(
-      <h1>Playlist</h1>
+      <div>
+        {
+          this.props.songs.map((song, idx) => (
+            <h1 key={song.id}>{idx + 1}: {song.song_name}</h1>
+          ))
+        }
+      </div>
     );
   }
 }

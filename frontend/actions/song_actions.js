@@ -12,14 +12,14 @@ const receiveSong = song => ({
   song
 });
 
-export const fetchSongs = (data) => dispatch => (
+export const requestSongs = (data) => dispatch => (
   SongAPIUtil.fetchSongs(data)
     .then(
       songs => dispatch(receiveSongs(songs))
     )
 );
 
-export const fetchSong = (songId) => dispatch => (
+export const requestSong = (songId) => dispatch => (
   SongAPIUtil.fetchSong(songId)
     .then(
       song => dispatch(receiveSong(song))

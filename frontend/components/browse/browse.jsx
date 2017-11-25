@@ -4,10 +4,11 @@ import NavBar from '../nav_bar/nav_bar';
 
 class Browse extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchSongs();
-    this.props.fetchPlaylists();
-  }
+  // componentDidMount() {
+  //   this.props.requestSongs();
+  //   this.props.requestPlaylists();
+  //   console.log("Here");
+  // }
 
   render() {
     return(

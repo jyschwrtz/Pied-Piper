@@ -1,7 +1,16 @@
 export const selectPlaylistSongs = (state, playlistId) => {
   const playlistSongIds =
     state.entities.playlists[playlistId].song_ids;
-  const allSongs = Object.values(state.entities.songs).filter(song => {
-    playlistSongIds.includes(song.id);
+  let songIdsInPlaylist = [];
+  const songIds = Object.keys(state.entities.songs);
+  songIds.forEach(songId => {
+      if (playlistSongIds.includes(parseInt(songId))) {
+        songIdsInPlaylist.push(songId);
+      }
+    });
+  let songsInPlaylist = [];
+  songIdsInPlaylist.forEach(songId => {
+    songsInPlaylist.push(state.entities.songs[songId]);
   });
+  return songsInPlaylist;
 };

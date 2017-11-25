@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import {
-//   fetchPlaylist,
-//   fetchPlaylists,
-//   createPlaylist,
-//   updatePlaylist,
-//   deletePlaylist
-// } from './actions/playlist_actions';
+import {
+  requestPlaylist,
+  requestPlaylists,
+  createPlaylist,
+  updatePlaylist,
+  deletePlaylist
+} from './actions/playlist_actions';
+import {
+  requestSong,
+  requestSongs,
+} from './actions/song_actions';
+import { selectPlaylistSongs } from './reducers/selectors';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -24,11 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.fetchPlaylist = fetchPlaylist;
-  // window.fetchPlaylists = fetchPlaylists;
-  // window.createPlaylist = createPlaylist;
-  // window.updatePlaylist = updatePlaylist;
-  // window.deletePlaylist = deletePlaylist;
+  window.requestPlaylist = requestPlaylist;
+  window.requestPlaylists = requestPlaylists;
+  window.requestSong = requestSong;
+  window.requestSongs = requestSongs;
+  window.selectPlaylistSongs = selectPlaylistSongs;
+  window.createPlaylist = createPlaylist;
+  window.updatePlaylist = updatePlaylist;
+  window.deletePlaylist = deletePlaylist;
   // END TESTING
 
   const rootEl = document.getElementById('root');

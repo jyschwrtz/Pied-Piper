@@ -19,14 +19,14 @@ const removePlaylist = playlist => ({
   playlist
 });
 
-export const fetchPlaylists = () => dispatch => (
+export const requestPlaylists = () => dispatch => (
   PlaylistAPIUtil.fetchPlaylists()
     .then(
       playlists => dispatch(receivePlaylists(playlists))
     )
 );
 
-export const fetchPlaylist = playlistId => dispatch => (
+export const requestPlaylist = playlistId => dispatch => (
   PlaylistAPIUtil.fetchPlaylist(playlistId)
     .then(
       playlist => dispatch(receivePlaylist(playlist))
