@@ -1,0 +1,36 @@
+.playlist {
+  padding: 28px;
+  padding-bottom: 0;
+}
+
+.playlist-display {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $darkest-gray;
+  margin-bottom: 20px;
+}
+
+.playlist-display .album-cover {
+  min-width: 157px;
+  width: 30%;
+  height: 100%;
+  margin-right: 40px;
+  padding-bottom: 15px;
+}
+
+.playlist-info h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 36px;
+}
+
+.playlist-info h2 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.playlist-info h2 span {
+  color: $gray;
+}

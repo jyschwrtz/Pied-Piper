@@ -1,14 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PlaylistDisplay extends React.Component {
 
   render() {
     const { playlist } = this.props;
-    console.log(playlist);
     return (
-      <div className="PlaylistDisplay">
-        <img src={playlist.image_url} />
-        <h1>{playlist.title}</h1>
+      <div className="playlist-display">
+        <img
+          src={playlist.image_url}
+          className="album-cover"
+        />
+        <div className="playlist-info">
+          <h1>{playlist.title}</h1>
+          <h2><span>By </span><Link to="/browse">artist_name</Link></h2>
+        </div>
       </div>
     );
   }

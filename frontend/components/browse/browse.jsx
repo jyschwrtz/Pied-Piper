@@ -14,9 +14,11 @@ class Browse extends React.Component {
     return(
       <div className="browse">
         <NavBar />
-        <BrowseItem />
-        <BrowseItem />
-        <BrowseItem />
+        <div className="browse-items">
+          <BrowseItem />
+          <BrowseItem />
+          <BrowseItem />
+        </div>
       </div>
     );
   }

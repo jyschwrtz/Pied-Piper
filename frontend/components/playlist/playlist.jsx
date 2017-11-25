@@ -1,5 +1,6 @@
 import React from 'react';
 import PlaylistDisplay from './playlist_display';
+import SongIndex from '../song/song_index';
 
 class Playlist extends React.Component {
   constructor(props) {
@@ -16,18 +17,14 @@ class Playlist extends React.Component {
   }
 
   render() {
-    const { playlist } = this.props;
+    const { playlist, songs } = this.props;
     let content;
     if (this.props.songs) {
       content =
-          <div className="playlist">
-            <PlaylistDisplay playlist={playlist} />
-            {
-              this.props.songs.map((song, idx) => (
-              <h1 key={song.id}>{idx + 1}: {song.song_name}</h1>
-              ))
-            }
-          </div>;
+        <div className="playlist">
+          <PlaylistDisplay playlist={playlist} />
+          <SongIndex songs={songs} />
+        </div>;
     }
     return(
       <div>
