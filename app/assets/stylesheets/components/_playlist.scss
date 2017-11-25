@@ -6,14 +6,14 @@
 .playlist-display {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 20px;
+  padding: 0 8px 20px 8px;
   border-bottom: 1px solid $darkest-gray;
   margin-bottom: 20px;
 }
 
 .playlist-display .album-cover {
   min-width: 157px;
-  width: 30%;
+  width: 28%;
   height: 100%;
   margin-right: 40px;
   padding-bottom: 15px;

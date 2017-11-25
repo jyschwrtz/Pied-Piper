@@ -16,16 +16,26 @@ class SongIndexItem extends React.Component {
   render() {
     const { song, idx } = this.props;
     return(
-      <div className="song-index-item">
-        <h2
-          onClick={this.handleClick}
-          >
-          <span>
-            {idx + 1}:
-          </span>
-          {song.song_name}
-        </h2>
-      </div>
+      <li
+        className="song-index-item"
+        onClick={this.handleClick}
+        >
+        <div className="song-number">
+          <span
+
+            >{idx + 1}.</span>
+        </div>
+        <div className="song-title">
+          <span
+
+            >{song.song_name}</span>
+        </div>
+        <div className="song-length">
+          <span
+
+            >4:38</span>
+        </div>
+      </li>
     );
   }
 }

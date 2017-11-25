@@ -1,0 +1,44 @@
+
+.song-index-item {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.song-index-item:hover {
+  background-color: $black_30;
+}
+
+.song-index-item div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.song-index-item .song-number {
+  color: $gray;
+  padding-right: 14px;
+  justify-content: flex-end;
+  font-family: $numerals;
+  width: 20px;
+}
+
+.song-index-item .song-title {
+  color: $white;
+  justify-content: flex-start;
+  flex: 1;
+  font-weight: 350;
+}
+
+.song-index-item .song-title span {
+  line-height: 20px;
+  transform: translateY(-7%);
+}
+
+.song-index-item .song-length {
+  color: $gray;
+  padding-right: 14px;
+  justify-content: flex-end;
+  font-family: $numerals;
+}
