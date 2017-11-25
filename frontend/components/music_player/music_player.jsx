@@ -6,7 +6,7 @@ import ControlBar from '../control_bar/control_bar';
 
 class MusicPlayer extends React.Component {
 
-  componentWillMount() {
+  componentDidMount(newProps) {
     this.props.requestSongs();
     this.props.requestPlaylists();
   }
