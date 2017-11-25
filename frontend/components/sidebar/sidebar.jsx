@@ -8,7 +8,7 @@ class Sidebar extends React.Component {
     super(props);
 
   }
-  
+
   render() {
     return(
       <div className="sidebar">
@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
           <Link to="/search" className="sidebar-search">
             <div>
               <h2>Search</h2>
-              <h2><i class="fa fa-search" aria-hidden="true"></i></h2>
+              <h2><i className="fa fa-search" aria-hidden="true"></i></h2>
             </div>
           </Link>
           <SidebarNav />

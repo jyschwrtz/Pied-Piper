@@ -5,13 +5,13 @@ import {
   Switch
 } from 'react-router-dom';
 
-import NavBar from '../nav_bar/nav_bar';
 import BrowseContainer from '../browse/browse_container';
+import PlaylistContainer from '../playlist/playlist_container';
 
 const MainPage = () => (
   <div className="main-page">
-    <NavBar />
-    <BrowseContainer />
+    <Route path="/browse" component={BrowseContainer}/>
+    <Route path="/user/:userId/playlist/:playlistId" component={PlaylistContainer}/>
   </div>
 );
 

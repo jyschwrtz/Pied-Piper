@@ -14,6 +14,7 @@ const App = () => (
   <div>
     <Switch>
       <ProtectedRoute path="/browse" component={MusicPlayer} />
+      <ProtectedRoute path="/user" component={MusicPlayer} />
       <AuthRoute path="/" component={Greeting} />
     </Switch>
   </div>
