@@ -1,25 +1,33 @@
 import React from 'react';
 import BrowseIndexItem from './browse_index_item';
 
-export default (props) => {
-  const { playlists, requestPlaylist, currentUser } = props;
-  return(
-    <ul className="browse-index">
-      <BrowseIndexItem
-        playlistId={4}
-        playlist={playlists[4]}
-        requestPlaylist={requestPlaylist}
-        currentUser={currentUser}/>
-      <BrowseIndexItem
-        playlistId={5}
-        playlist={playlists[5]}
-        requestPlaylist={requestPlaylist}
-        currentUser={currentUser}/>
-      <BrowseIndexItem
-        playlistId={6}
-        playlist={playlists[6]}
-        requestPlaylist={requestPlaylist}
-        currentUser={currentUser}/>
-    </ul>
-  );
-};
+class BrowseIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // componentWillReceiveProps(newProps) {
+  //   this.playlistIds = newProps.playlistIds;
+  // }
+
+  render() {
+    const { playlists, requestPlaylist, currentUser, playlistIds} = this.props;
+    // console.log(playlistIds);
+    return(
+      <ul className="browse-index">
+        {
+          playlistIds.map(playlistId => (
+            <BrowseIndexItem
+              key={playlistId}
+              playlistId={playlistId}
+              playlist={playlists[playlistId]}
+              requestPlaylist={requestPlaylist}
+              currentUser={currentUser}/>
+          ))
+        }
+      </ul>
+    );
+  }
+}
+
+export default BrowseIndex;

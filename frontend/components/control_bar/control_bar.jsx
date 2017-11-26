@@ -5,7 +5,7 @@ class ControlBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: false,
+      playing: true,
       currentSong: this.props.currentSong,
       currentSongFilename: "",
     };
