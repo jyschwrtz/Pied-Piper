@@ -41,3 +41,33 @@
   width: 40px;
   padding: 3px 0;
 }
+
+.sidebar-bottom {
+  padding: 15px 0px 8px 0px;
+  border-top: 1px solid $darker-gray;
+  display: flex;
+  align-items: center;
+}
+
+.user-account-link {
+
+}
+
+.sidebar-bottom img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50px;
+}
+
+.sidebar-bottom h2 {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.logout-btn {
+  display: none;
+}
+
+.sidebar .active {
+  color: green;
+}

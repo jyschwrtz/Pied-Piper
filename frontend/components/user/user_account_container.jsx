@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import Sidebar from './sidebar';
+import UserAccount from './user_account';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
@@ -11,7 +10,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Sidebar));
+)(UserAccount);

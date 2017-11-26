@@ -15,6 +15,8 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/browse" component={MusicPlayerContainer} />
       <ProtectedRoute path="/user" component={MusicPlayerContainer} />
+      <ProtectedRoute path="/collection" component={MusicPlayerContainer} />
+      <ProtectedRoute path="/setting" component={MusicPlayerContainer} />
       <AuthRoute path="/" component={Greeting} />
     </Switch>
   </div>

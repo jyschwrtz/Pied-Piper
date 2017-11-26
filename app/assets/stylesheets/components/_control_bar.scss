@@ -7,4 +7,20 @@
   height: 90px;
   background: $control_bar;
   color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-bar-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.play-button {
+  background: none;
+  font-size: 30px;
 }
