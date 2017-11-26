@@ -131,11 +131,12 @@ ApplicationRecord.transaction do
 
 
   # PLAYLISTS
-  # default album cover:  https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.jpeg
+  default_album_cover = "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.png"
+
   playlist1 = Playlist.create!(
     title: "Saturday Afternoon",
     owner_id: jay.id,
-    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.jpeg",
+    image_url: default_album_cover,
     date: 2017,
     genre: nil
   )
@@ -143,7 +144,7 @@ ApplicationRecord.transaction do
   playlist2 = Playlist.create!(
     title: "Running!",
     owner_id: emily.id,
-    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.jpeg",
+    image_url: default_album_cover,
     date: 2017,
     genre: nil
   )
@@ -159,7 +160,7 @@ ApplicationRecord.transaction do
   playlist4 = Playlist.create!(
     title: "Good Morning - Single",
     owner_id: melanie_ungar.id,
-    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/melanie_ungar.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/Ralph_Castello.jpg",
     date: 2017,
     genre: "pop"
   )

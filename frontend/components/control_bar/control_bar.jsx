@@ -5,8 +5,21 @@ class ControlBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: false
+      playing: false,
+      currentSong: this.props.currentSong,
+      currentSongFilename: "",
     };
+  }
+
+  componentDidMount() {
+    if (this.state.currentSong) {
+      this.setState({ currentSongFilename: this.state.currentSong.filename });
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ currentSong: newProps.currentSong });
+    this.props.requestSong(newProps.currentSong.id);
   }
 
   togglePlay() {
@@ -14,18 +27,28 @@ class ControlBar extends React.Component {
     this.setState({playing});
   }
 
-  render() {
-    const { playing } = this.state;
-    return (
-      <div className="control-bar">
-        <h1>Control Bar</h1>
 
+  render() {
+    const { playing, currentSong, currentSongFilename } = this.state;
+    console.log(this.state);
+    let howler;
+    if (currentSong) {
+      howler = (
         <ReactHowler
-          src={['https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Melanie_Ungar_-_Crazy_Glue.mp3', 'https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Craze_24_-_Rolling__Original_Clean_.mp3']}
+          src={[currentSong.filename]}
           playing={playing}
           volume={1}
           html5={true}
         />
+      );
+    }
+
+    return (
+      <div className="control-bar">
+        <h1>Control Bar</h1>
+
+        { howler }
+
         <button
           onClick={this.togglePlay.bind(this)}
           >Play/Pause</button>

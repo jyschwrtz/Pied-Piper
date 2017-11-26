@@ -8,7 +8,8 @@ import {
 import BrowseIndex from './browse_index';
 
 const mapStateToProps = state => ({
-  playlists: state.entities.playlists
+  playlists: state.entities.playlists,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
