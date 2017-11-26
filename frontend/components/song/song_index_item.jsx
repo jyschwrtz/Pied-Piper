@@ -15,25 +15,25 @@ class SongIndexItem extends React.Component {
 
   render() {
     const { song, idx } = this.props;
+    let time = song.length;
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
     return(
       <li
         className="song-index-item"
         onClick={this.handleClick}
         >
         <div className="song-number">
-          <span
-
-            >{idx + 1}.</span>
+          <span>{idx + 1}.</span>
         </div>
         <div className="song-title">
-          <span
-
-            >{song.song_name}</span>
+          <span>{song.song_name}</span>
         </div>
         <div className="song-length">
-          <span
-
-            >4:38</span>
+          <span>{min}:{sec}</span>
         </div>
       </li>
     );

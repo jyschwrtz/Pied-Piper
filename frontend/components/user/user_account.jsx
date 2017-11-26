@@ -15,17 +15,17 @@ class UserAccount extends React.Component {
           <h1>{currentUser.username}</h1>
         </div>
         <div className="user-account-bottom">
-          <Link to="/" >
+          <Link to="/setting/account" >
             <button>
               VIEW ACCOUNT
             </button>
           </Link>
-          <Link to="/" >
+          <Link to="/setting/account" >
             <button>
               FULL WEBSITE
             </button>
           </Link>
-          <Link to="/" >
+          <Link to="/setting/account" >
             <button>
               HELP
             </button>

@@ -21,6 +21,10 @@
 .navbar li:hover {
   color: $white;
 }
+.navbar li .active {
+  color: $green;
+  border-bottom: 2px solid $green;
+}
 
 .navbar a {
   margin: 10px;

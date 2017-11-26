@@ -13,7 +13,7 @@ class PlaylistDisplay extends React.Component {
         />
         <div className="playlist-info">
           <h1>{playlist.title}</h1>
-          <h2><span>By </span><Link to="/browse">artist_name</Link></h2>
+          <h2><span>By </span><Link to="/browse/featured">artist_name</Link></h2>
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ class PlayerControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: true,
+      playing: false,
       currentSong: this.props.currentSong,
       currentSongFilename: "",
     };
@@ -42,14 +42,32 @@ class PlayerControls extends React.Component {
       );
     }
 
+    const playButton = playing ? (
+      <i className="fa fa-pause-circle" aria-hidden="true"></i>
+    ) : (
+      <i className="fa fa-play-circle" aria-hidden="true"></i>
+    );
+
     return (
       <div className="player-controls">
         { howler }
 
+        <button className="shuffle-button">
+          <i className="fa fa-random" aria-hidden="true"></i>
+        </button>
+        <button className="back-button">
+          <i className="fa fa-step-backward" aria-hidden="true"></i>
+        </button>
         <button
           onClick={this.togglePlay.bind(this)}
           className="play-button"
-          ><i class="fa fa-play-circle" aria-hidden="true"></i></button>
+          >{playButton}</button>
+        <button className="forward-button">
+          <i className="fa fa-step-forward" aria-hidden="true"></i>
+        </button>
+        <button className="repeat-button">
+          <i className="fa fa-repeat" aria-hidden="true"></i>
+        </button>
       </div>
     );
   }

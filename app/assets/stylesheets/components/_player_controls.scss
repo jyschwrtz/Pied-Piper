@@ -1,0 +1,21 @@
+.player-controls {
+  width: 224px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-controls button {
+  background: none;
+  font-weight: 200;
+  color: $gray;
+}
+
+.play-button {
+  font-size: 32px;
+  font-weight: 200;
+}
+
+.back-button, .forward-button {
+  font-size: 24px;
+}

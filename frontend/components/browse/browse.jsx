@@ -16,7 +16,7 @@ class Browse extends React.Component {
         <NavBar />
         <div className="browse-items">
           <BrowseItem title="Thanksgiving Weekend" playlistIds={[3, 4, 5]}/>
-          <BrowseItem title="Jamendo" playlistIds={[1, 2, 3]}/>
+          <BrowseItem title="Afternoon Study" playlistIds={[1, 2, 3]}/>
           <BrowseItem title="Weekend Jammin'" playlistIds={[5, 6, 7]}/>
         </div>
       </div>
