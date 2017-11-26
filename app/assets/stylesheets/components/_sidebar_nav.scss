@@ -5,8 +5,14 @@
 .sidebar a:hover {
   text-decoration: none;
   color: $white;
+  transition-duration: 600ms;
+  
 }
 
 .sidebar .active {
+  color: $green;
+}
+
+.sidebar .active:hover {
   color: $green;
 }

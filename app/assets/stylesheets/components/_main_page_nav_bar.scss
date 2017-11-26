@@ -18,11 +18,14 @@
   // padding: 0px 10px;
 }
 
-.navbar li:hover {
+.navbar a:hover {
   color: $white;
+  text-decoration: none;
+  transition-duration: 800ms;
 }
+
 .navbar li .active {
-  color: $green;
+  color: $white;
   border-bottom: 2px solid $green;
 }
 
