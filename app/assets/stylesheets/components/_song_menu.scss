@@ -1,0 +1,29 @@
+.song-menu {
+  // position: absolute;
+}
+
+.song-menu .hidden {
+  display: none;
+}
+
+.song-menu-list {
+  position: absolute;
+  transform: translateY(52%) translateX(-135%);
+  background: $darkest-gray;
+  font-size: 14px;
+  width: auto;
+  z-index: 11;
+}
+
+.song-menu-list li {
+  padding: 3px 20px;
+  width: 100%;
+  white-space: nowrap;
+  color: $gray;
+  line-height: 32px;
+    background: $darkest-gray;
+}
+
+.song-menu-list li:hover {
+  background: $darker-gray;
+}

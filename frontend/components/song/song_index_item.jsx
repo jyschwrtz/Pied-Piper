@@ -1,11 +1,15 @@
 import React from 'react';
+import SongMenu from './song_menu';
 
 class SongIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      songMenuDisplay: false
+    };
     // this.song = this.props.song;
     this.playSong = this.playSong.bind(this);
-    this.showSongMenu = this.showSongMenu.bind(this);
+    this.toggleSongMenu = this.toggleSongMenu.bind(this);
   }
 
   playSong(e) {
@@ -22,14 +26,17 @@ class SongIndexItem extends React.Component {
     return `${min}:${sec}`;
   }
 
-  showSongMenu(e) {
+  toggleSongMenu(e) {
     e.preventDefault();
-
+    let songMenuDisplay = this.state.songMenuDisplay ? false : true;
+    this.setState({ songMenuDisplay });
   }
 
   render() {
     const { song, idx } = this.props;
     const time = this.formatTime(song.length);
+    const songMenuClass =
+      this.state.songMenuDisplay ? "song-menu" : "song-menu hidden";
     return(
       <li
         className="song-index-item"
@@ -50,15 +57,17 @@ class SongIndexItem extends React.Component {
         <div className="song-menu">
           <button
             className="show-song-menu"
-            onClick={this.showSongMenu}>
+            onClick={this.toggleSongMenu}>
             ...
           </button>
+
+          <SongMenu
+            toggleSongMenu={this.toggleSongMenu}
+            songMenuClass={songMenuClass}/>
+
         </div>
         <div className="song-length">
           <span>{time}</span>
-        </div>
-        <div className="song-hover">
-
         </div>
       </li>
     );
