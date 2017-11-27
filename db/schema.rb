@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123174426) do
+ActiveRecord::Schema.define(version: 20171127020529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171123174426) do
 
   create_table "playlists", force: :cascade do |t|
     t.string "title", null: false
-    t.string "image_url"
+    t.string "image_url", default: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.png"
     t.integer "owner_id", null: false
     t.integer "date"
     t.string "genre"
