@@ -4,36 +4,61 @@ class SongIndexItem extends React.Component {
   constructor(props) {
     super(props);
     // this.song = this.props.song;
-    this.handleClick = this.handleClick.bind(this);
-    console.log(props);
+    this.playSong = this.playSong.bind(this);
+    this.showSongMenu = this.showSongMenu.bind(this);
   }
 
-  handleClick(e) {
+  playSong(e) {
     e.preventDefault();
     this.props.receiveCurrentSong(this.props.song);
   }
 
-  render() {
-    const { song, idx } = this.props;
-    let time = song.length;
-    let min = Math.floor(time / 60);
-    let sec = time % 60;
+  formatTime(length) {
+    let min = Math.floor(length / 60);
+    let sec = length % 60;
     if (sec < 10) {
       sec = "0" + sec;
     }
+    return `${min}:${sec}`;
+  }
+
+  showSongMenu(e) {
+    e.preventDefault();
+
+  }
+
+  render() {
+    const { song, idx } = this.props;
+    const time = this.formatTime(song.length);
     return(
       <li
         className="song-index-item"
-        onClick={this.handleClick}
+        onClick={this.playSong}
         >
         <div className="song-number">
           <span>{idx + 1}.</span>
         </div>
+        <div className="song-play">
+          <button
+            className="song-play-btn">
+            <i className="fa fa-play" aria-hidden="true"></i>
+          </button>
+        </div>
         <div className="song-title">
           <span>{song.song_name}</span>
         </div>
+        <div className="song-menu">
+          <button
+            className="show-song-menu"
+            onClick={this.showSongMenu}>
+            ...
+          </button>
+        </div>
         <div className="song-length">
-          <span>{min}:{sec}</span>
+          <span>{time}</span>
+        </div>
+        <div className="song-hover">
+
         </div>
       </li>
     );

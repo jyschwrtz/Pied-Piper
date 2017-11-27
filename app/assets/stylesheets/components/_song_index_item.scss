@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   font-size: 16px;
+  position: relative;
 }
 
 .song-index-item:hover {
@@ -41,4 +42,33 @@
   padding-right: 14px;
   justify-content: flex-end;
   font-family: $numerals;
+}
+
+// APPEARS WHEN HOVERING
+
+.show-song-menu, .song-play-btn {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.song-index-item:hover .show-song-menu {
+  display: block;
+  color: $gray;
+  padding-right: 14px;
+  letter-spacing: 1.5px;
+  font-size: 24px;
+  transform: translateY(-5px);
+}
+
+.song-index-item:hover .song-play-btn {
+  display: block;
+  color: $light-gray;
+  position: absolute;
+  left: 8px;
+  font-size: 20px;
+}
+
+.song-index-item:hover .song-number span {
+  display: none;
 }

@@ -16,6 +16,14 @@
   font-weight: 400;
 }
 
+.collection>button:hover {
+  transition: 100ms;
+  transition-property: all;
+  transform: scale(1.05);
+  background: $light-green;
+
+}
+
 .collection .browse-index {
   margin-top: 15px;
 }
