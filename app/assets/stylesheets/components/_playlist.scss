@@ -19,6 +19,12 @@
   padding-bottom: 15px;
 }
 
+// .playlist-info {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
 .playlist-info h1 {
   font-size: 26px;
   font-weight: 700;
@@ -34,3 +40,16 @@
 .playlist-info h2 span {
   color: $gray;
 }
+
+.playlist-info .buttons {
+  margin-top: 16px;
+}
+
+// FOR ADDING PLAYLIST MENU OPTIONS
+// .playlist-display .delete-btn {
+//   padding: 13px;
+//   margin-top: 16px;
+//   background: none;
+//   border: none;
+//   color: $white;
+// }

@@ -12,7 +12,8 @@ class PlaylistForm extends React.Component {
     e.preventDefault();
     let playlist = this.state;
     this.props.createPlaylist(playlist);
-    this.props.togglePlaylistForm();
+    this.setState({ title: "" });
+    this.props.togglePlaylistForm(e);
   }
 
   handleInput(field) {
@@ -24,11 +25,11 @@ class PlaylistForm extends React.Component {
   render() {
     const { togglePlaylistForm } = this.props;
     const { title } = this.state;
-    console.log(title);
     return(
       <div className="playlist-form">
         <button
           className="playlist-form-x"
+          type="button"
           onClick={togglePlaylistForm}>
           X
         </button>
@@ -46,16 +47,15 @@ class PlaylistForm extends React.Component {
           </div>
           <div className="buttons">
             <button
-              className="playlist-form-cancel"
+              className="typ-btn black-btn"
+              type="button"
               onClick={togglePlaylistForm}>
               CANCEL
             </button>
             <button
-              className="playlist-form-submit">
-              <input
-                type="submit"
-                className="submit-btn"
-                value="CREATE"/>
+              type="submit"
+              className="typ-btn green-btn">
+              CREATE
             </button>
           </div>
         </form>

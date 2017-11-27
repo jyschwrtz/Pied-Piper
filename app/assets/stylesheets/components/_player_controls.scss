@@ -10,6 +10,7 @@
 .player-controls button {
   background: none;
   color: $gray;
+  -webkit-text-stroke: 1px $control_bar;
 }
 
 .play-button {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Collection from './collection';
-import { createPlaylist } from '../../actions/playlist_actions';
+import { createPlaylist, requestPlaylists } from '../../actions/playlist_actions';
 import { selectUserPlaylists } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
@@ -12,8 +12,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createPlaylist: playlist =>
-    dispatch(createPlaylist(playlist))
+  createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+  requestPlaylists: () => dispatch(requestPlaylists())
 });
 
 export default connect(

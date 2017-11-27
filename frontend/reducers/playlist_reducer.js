@@ -18,7 +18,7 @@ const PlaylistReducer = (state = {}, action) => {
       return merge({}, state, newState);
     case REMOVE_PLAYLIST:
       newState = merge({}, state);
-      delete newState[action.playlist.id];
+      delete newState[action.playlistId];
       return newState;
     default:
       return state;

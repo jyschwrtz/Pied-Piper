@@ -2,7 +2,7 @@ import * as PlaylistAPIUtil from '../util/playlist_api_util';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
-export const REMOVE_PLAYLIST = 'RECEIVE_PLAYLIST';
+export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 
 const receivePlaylists = playlists => ({
   type: RECEIVE_PLAYLISTS,
@@ -14,9 +14,9 @@ const receivePlaylist = playlist => ({
   playlist
 });
 
-const removePlaylist = playlist => ({
+const removePlaylist = playlistId => ({
   type: REMOVE_PLAYLIST,
-  playlist
+  playlistId
 });
 
 export const requestPlaylists = () => dispatch => (
@@ -50,6 +50,6 @@ export const updatePlaylist = playlist => dispatch => (
 export const deletePlaylist = playlistId => dispatch => (
   PlaylistAPIUtil.deletePlaylist(playlistId)
     .then(
-      playlist => dispatch(removePlaylist(playlist))
+      () => dispatch(removePlaylist(playlistId))
     )
 );

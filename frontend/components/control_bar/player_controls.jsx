@@ -29,7 +29,6 @@ class PlayerControls extends React.Component {
 
   render() {
     const { playing, currentSong, currentSongFilename } = this.state;
-    console.log(this.state);
     let howler;
     if (currentSong) {
       howler = (
@@ -43,9 +42,9 @@ class PlayerControls extends React.Component {
     }
 
     const playButton = playing ? (
-      <i className="fa fa-pause-circle" aria-hidden="true"></i>
+      <i className="fa fa-pause-circle-o" aria-hidden="true"></i>
     ) : (
-      <i className="fa fa-play-circle" aria-hidden="true"></i>
+      <i className="fa fa-play-circle-o" aria-hidden="true"></i>
     );
 
     return (

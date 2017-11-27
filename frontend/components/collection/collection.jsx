@@ -7,26 +7,39 @@ class Collection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playlistForm: "playlist-modal hidden"
+      playlistForm: "playlist-modal hidden",
+      playlistIds: this.props.playlists.map(playlist => playlist.id)
     };
     this.togglePlaylistForm = this.togglePlaylistForm.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.playlists !== this.props.playlists) {
+      this.setState({
+        playlistIds: newProps.playlists.map(playlist => playlist.id)
+      });
+    }
+  }
+
   togglePlaylistForm(e) {
     e.preventDefault();
-    let playlistForm = (
-      this.state.playlistForm === "playlist-modal" ?
+    if (e.keyCode == 13) {
+      return;
+    } else {
+      let playlistForm = (
+        this.state.playlistForm === "playlist-modal" ?
         "playlist-modal hidden" : "playlist-modal"
-    );
-    this.setState({ playlistForm });
+      );
+      this.setState({ playlistForm });
+    }
   }
 
   render() {
     const navTitles =
       ["Playlists", "Your Daily Mix", "Songs", "Albums", "Artists"];
     const { createPlaylist, playlists } = this.props;
-    const { playlistForm } = this.state;
-    const playlistIds = playlists.map(playlist => playlist.id);
+    const { playlistForm, playlistIds } = this.state;
+    // playlistIds = playlists.map(playlist => playlist.id);
     return (
       <div className="collection">
         <NavBar navTitles={navTitles} page="collection"/>
