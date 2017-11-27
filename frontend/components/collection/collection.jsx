@@ -22,11 +22,11 @@ class Collection extends React.Component {
   }
 
   render() {
-    const playlistIds = [1, 4, 5, 2];
     const navTitles =
       ["Playlists", "Your Daily Mix", "Songs", "Albums", "Artists"];
-    const { createPlaylist } = this.props;
+    const { createPlaylist, playlists } = this.props;
     const { playlistForm } = this.state;
+    const playlistIds = playlists.map(playlist => playlist.id);
     return (
       <div className="collection">
         <NavBar navTitles={navTitles} page="collection"/>

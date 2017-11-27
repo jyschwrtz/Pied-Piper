@@ -19,3 +19,9 @@ export const selectPlaylistSongs = (state, playlistId) => {
     return songsInPlaylist;
   }
 };
+
+export const selectUserPlaylists = (state) => (
+ Object.values(state.entities.playlists).filter(playlist => {
+    return playlist.owner_id === state.session.currentUser.id;
+  })
+);
