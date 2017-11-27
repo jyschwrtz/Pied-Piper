@@ -1,0 +1,21 @@
+.collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection>button {
+  background: $green;
+  padding: 7px 22px;
+  margin: 20px 0;
+  position: static;
+  color: $white;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+.collection .browse-index {
+  margin-top: 15px;
+}

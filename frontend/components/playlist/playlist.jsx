@@ -17,12 +17,12 @@ class Playlist extends React.Component {
   }
 
   render() {
-    const { playlist, songs } = this.props;
+    const { playlist, songs, owner } = this.props;
     let content;
     if (this.props.songs) {
       content =
         <div className="playlist">
-          <PlaylistDisplay playlist={playlist} />
+          <PlaylistDisplay playlist={playlist} owner={owner} />
           <SongIndex songs={songs} />
         </div>;
     }

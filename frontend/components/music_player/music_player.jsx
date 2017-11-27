@@ -8,6 +8,7 @@ class MusicPlayer extends React.Component {
 
   componentDidMount(newProps) {
     this.props.requestSongs();
+    this.props.requestUsers();
     this.props.requestPlaylists();
   }
 

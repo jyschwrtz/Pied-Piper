@@ -6,9 +6,16 @@ import { selectPlaylistSongs } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const playlistId = ownProps.match.params.playlistId;
+  const playlist = state.entities.playlists[playlistId];
+  let owner;
+  if (playlist) {
+    owner = state.entities.users[playlist.owner_id];
+  }
+  console.log(owner);
   return({
-    playlist: state.entities.playlists[playlistId],
-    songs: selectPlaylistSongs(state, playlistId)
+    playlist,
+    songs: selectPlaylistSongs(state, playlistId),
+    owner
   });
 };
 

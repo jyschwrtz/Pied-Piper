@@ -7,7 +7,7 @@ class SidebarNav extends React.Component {
     return(
       <div className="sidebar-nav">
         <NavLink to="/browse/featured" >Home</NavLink>
-        <NavLink to="/collection" >Your Music</NavLink>
+        <NavLink to="/collection/playlists" >Your Music</NavLink>
       </div>
     );
   }

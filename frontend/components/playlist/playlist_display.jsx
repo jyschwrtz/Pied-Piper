@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 class PlaylistDisplay extends React.Component {
 
   render() {
-    const { playlist } = this.props;
+    const { playlist, owner } = this.props;
+    let playlistOwnerName;
+    if (owner) {
+      playlistOwnerName = owner.username;
+    }
     return (
       <div className="playlist-display">
         <img
@@ -13,7 +17,13 @@ class PlaylistDisplay extends React.Component {
         />
         <div className="playlist-info">
           <h1>{playlist.title}</h1>
-          <h2><span>By </span><Link to="/browse/featured">artist_name</Link></h2>
+          <h2>
+            <span>By </span>
+            <Link
+            to="/browse/featured">
+              {playlistOwnerName}
+            </Link>
+          </h2>
         </div>
       </div>
     );

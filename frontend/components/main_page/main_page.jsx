@@ -7,6 +7,7 @@ import {
 
 import BrowseContainer from '../browse/browse_container';
 import PlaylistContainer from '../playlist/playlist_container';
+import CollectionContainer from '../collection/collection_container';
 import UserAccountContainer from '../user/user_account_container';
 
 const MainPage = () => (
@@ -17,6 +18,9 @@ const MainPage = () => (
     <Route
       path="/user/:userId/playlist/:playlistId"
       component={PlaylistContainer}/>
+    <Route
+      path="/collection"
+      component={CollectionContainer}/>
     <Route
       path="/setting/account"
       component={UserAccountContainer}/>

@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .player-controls button {
   background: none;
-  font-weight: 200;
   color: $gray;
 }
 
@@ -17,5 +18,5 @@
 }
 
 .back-button, .forward-button {
-  font-size: 24px;
+  font-size: 16px;
 }
