@@ -1,8 +1,8 @@
-export const createPlaylistSong = (playlistSong) => (
+export const createPlaylistSong = (songId, playlistId) => (
   $.ajax({
     method: 'POST',
-    url: `api/playlists/${playlistSong.playlistId}/playlist_songs`,
-    data: { playlist_song: {song_id: playlistSong.songId} }
+    url: `api/playlists/${playlistId}/playlist_songs`,
+    data: { playlist_song: {song_id: songId} }
   })
 );
 

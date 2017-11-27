@@ -1,5 +1,5 @@
 import React from 'react';
-import SongMenu from './song_menu';
+import SongMenuContainer from './song_menu_container';
 
 class SongIndexItem extends React.Component {
   constructor(props) {
@@ -61,7 +61,8 @@ class SongIndexItem extends React.Component {
             ...
           </button>
 
-          <SongMenu
+          <SongMenuContainer
+            song={song}
             toggleSongMenu={this.toggleSongMenu}
             songMenuClass={songMenuClass}/>
 

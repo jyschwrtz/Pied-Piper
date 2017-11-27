@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: %i[new create destroy]
     resources :songs, only: %i[index show]
     resources :playlists, only: %i[index show create update destroy] do
-      resources :playlist_songs, only: %i[create destroy]
+      resources :playlist_songs, only: %i[create destroy show]
     end
 
   end

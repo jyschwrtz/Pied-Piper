@@ -1,4 +1,8 @@
 class Api::PlaylistSongsController < ApplicationController
+  def show
+    @playlist_song ||= PlaylistSong.find_by(id: params[:id])
+  end
+
   def create
     @playlist = current_user.playlists.find_by(id: params[:playlist_id])
 
@@ -8,9 +12,9 @@ class Api::PlaylistSongsController < ApplicationController
 
     @playlist_song = PlaylistSong.new(playlist_song_params)
     @playlist_song.playlist_id = params[:playlist_id]
-    
+
     if @playlist_song.save
-      render 'api/playlists/show'
+      render :show
     else
       render json: @playlist_song.errors.full_messages, status: 401
     end

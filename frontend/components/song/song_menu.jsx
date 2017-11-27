@@ -26,18 +26,24 @@ class SongMenu extends React.Component {
   handleOutsideClick(e) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       if (this.wrapperRef.className === "song-menu") {
-        this.props.toggleSongMenu();
+        this.props.toggleSongMenu(e);
       }
     }
   }
 
+  addToPlaylist(song) {
+    
+  }
+
   render() {
+    const { song } = this.props;
     return(
       <div
         ref={this.setWrapperRef}
         className={this.props.songMenuClass}>
           <ul className="song-menu-list">
-            <li>{"Add to playlist"}</li>
+            <li
+              onClick={this.addToPlaylist(song)}>{"Add to playlist"}</li>
             <li>{"Remove from this Playlist"}</li>
           </ul>
       </div>
