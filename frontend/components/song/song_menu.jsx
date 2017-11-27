@@ -9,6 +9,8 @@ class SongMenu extends React.Component {
 
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.addToPlaylist = this.addToPlaylist.bind(this);
+    this.removeFromPlaylist = this.removeFromPlaylist.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +34,13 @@ class SongMenu extends React.Component {
   }
 
   addToPlaylist(song) {
-    
+
+  }
+
+  removeFromPlaylist(song) {
+    // console.log(this.props);
+    const playlistId = this.props.match.params.playlistId;
+    this.props.deletePlaylistSong(song.id, playlistId);
   }
 
   render() {
@@ -44,7 +52,8 @@ class SongMenu extends React.Component {
           <ul className="song-menu-list">
             <li
               onClick={this.addToPlaylist(song)}>{"Add to playlist"}</li>
-            <li>{"Remove from this Playlist"}</li>
+            <li
+              onClick={this.removeFromPlaylist(song)}>{"Remove from this Playlist"}</li>
           </ul>
       </div>
     );

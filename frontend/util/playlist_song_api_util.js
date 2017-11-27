@@ -6,9 +6,9 @@ export const createPlaylistSong = (songId, playlistId) => (
   })
 );
 
-export const deletePlaylistSong = (playlistSong) => (
+export const deletePlaylistSong = (songId, playlistId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/playlists/${playlistSong.playlistId}/playlist_songs/${playlistSong.id}`,
+    url: `api/playlists/${playlistId}/playlist_songs/${songId}`,
   })
 );
