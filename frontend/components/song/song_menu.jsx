@@ -1,15 +1,16 @@
 import React from 'react';
+import AddToPlaylistContainer from './add_to_playlist_container';
 
 class SongMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      songMenuDisplay: true
+      addToPlaylistDisplay: false
     };
 
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.addToPlaylist = this.addToPlaylist.bind(this);
+    this.toggleAddToPlaylist = this.toggleAddToPlaylist.bind(this);
     this.removeFromPlaylist = this.removeFromPlaylist.bind(this);
   }
 
@@ -33,28 +34,41 @@ class SongMenu extends React.Component {
     }
   }
 
-  addToPlaylist(song) {
-
+  toggleAddToPlaylist(e) {
+    e.stopPropagation();
+    // e.preventDefault();
+    let addToPlaylistDisplay = this.state.addToPlaylistDisplay ? false : true;
+    this.setState({ addToPlaylistDisplay });
+    // if (this.props.songMenuClass === "song-menu") {
+    //   this.props.toggleSongMenu(e);
+    // }
   }
 
   removeFromPlaylist(song) {
-    // console.log(this.props);
-    const playlistId = this.props.match.params.playlistId;
-    this.props.deletePlaylistSong(song.id, playlistId);
+    return () => {
+      const playlistId = this.props.match.params.playlistId;
+      this.props.deletePlaylistSong(song.id, playlistId);
+    };
   }
 
   render() {
     const { song } = this.props;
+    const addToPlaylistClass = this.state.addToPlaylistDisplay ?
+      "modal" : "modal hidden";
     return(
       <div
         ref={this.setWrapperRef}
         className={this.props.songMenuClass}>
           <ul className="song-menu-list">
             <li
-              onClick={this.addToPlaylist(song)}>{"Add to playlist"}</li>
+              onClick={this.toggleAddToPlaylist}>{"Add to playlist"}</li>
             <li
               onClick={this.removeFromPlaylist(song)}>{"Remove from this Playlist"}</li>
           </ul>
+          <AddToPlaylistContainer
+            name={addToPlaylistClass}
+            toggleAddToPlaylist={this.toggleAddToPlaylist}
+            song={song}/>
       </div>
     );
   }

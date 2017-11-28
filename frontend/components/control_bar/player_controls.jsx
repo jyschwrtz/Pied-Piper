@@ -20,6 +20,7 @@ class PlayerControls extends React.Component {
   componentWillReceiveProps(newProps) {
     this.setState({ currentSong: newProps.currentSong });
     this.props.requestSong(newProps.currentSong.id);
+    console.log('HERE-------PLAYER-CONTROLS');
   }
 
   togglePlay() {

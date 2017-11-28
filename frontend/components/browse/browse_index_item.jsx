@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class BrowseIndex extends React.Component {
+class BrowseIndexItem extends React.Component {
 
   render() {
     const { playlist, currentUser } = this.props;
@@ -25,4 +25,4 @@ class BrowseIndex extends React.Component {
   }
 }
 
-export default BrowseIndex;
+export default BrowseIndexItem;

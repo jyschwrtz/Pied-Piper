@@ -15,6 +15,7 @@ class SongIndexItem extends React.Component {
   playSong(e) {
     e.preventDefault();
     this.props.receiveCurrentSong(this.props.song);
+    console.log('HERE-------SONG-INDEX-ITEM');
   }
 
   formatTime(length) {
@@ -27,6 +28,7 @@ class SongIndexItem extends React.Component {
   }
 
   toggleSongMenu(e) {
+    e.stopPropagation();
     e.preventDefault();
     let songMenuDisplay = this.state.songMenuDisplay ? false : true;
     this.setState({ songMenuDisplay });

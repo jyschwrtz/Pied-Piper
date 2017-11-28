@@ -28,12 +28,12 @@ class PlaylistForm extends React.Component {
     return(
       <div className="playlist-form">
         <button
-          className="playlist-form-x"
+          className="x-btn"
           type="button"
           onClick={togglePlaylistForm}>
           X
         </button>
-        <h1>Create new playlist</h1>
+        <h1>{"Create new playlist"}</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="input">
             <label>Playlist Name

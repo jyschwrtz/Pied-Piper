@@ -8,6 +8,7 @@ import {
   REMOVE_PLAYLIST_SONG
 } from '../actions/playlist_song_actions';
 import merge from 'lodash/merge';
+import pull from 'lodash/pull';
 
 const PlaylistReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -35,7 +36,7 @@ const PlaylistReducer = (state = {}, action) => {
     case REMOVE_PLAYLIST_SONG:
       newState = merge({}, state);
       songIds = newState[action.playlistSong.playlistId].song_ids;
-      delete songIds[action.playlistSong.songId];
+      pull(songIds, action.playlistSong.songId);
       newState[action.playlistSong.playlistId].song_ids = songIds;
       return newState;
     default:

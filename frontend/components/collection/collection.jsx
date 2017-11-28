@@ -27,8 +27,8 @@ class Collection extends React.Component {
       return;
     } else {
       let playlistForm = (
-        this.state.playlistForm === "playlist-modal" ?
-        "playlist-modal hidden" : "playlist-modal"
+        this.state.playlistForm === "modal" ?
+        "modal hidden" : "modal"
       );
       this.setState({ playlistForm });
     }
