@@ -8,7 +8,7 @@ import ReactHowler from 'react-howler';
 class ControlBar extends React.Component {
 
   render() {
-    const { playing, currentSong, nextSong, loop, shuffle, shuffling, looping } = this.props;
+    const { playing, currentSong, nextSong, loop, shuffle, shuffling, looping, artist } = this.props;
     let howler;
     if (currentSong) {
       howler = (
@@ -25,7 +25,9 @@ class ControlBar extends React.Component {
     return(
       <div>
       <div className="control-bar">
-        <CurrentSong />
+        <CurrentSong
+          song={currentSong}
+          artist={artist}/>
         <div className="control-bar-center">
           <PlayerControlsContainer />
           <SongProgress />
