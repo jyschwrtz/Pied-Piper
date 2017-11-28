@@ -10,7 +10,12 @@ class BrowseIndexItem extends React.Component {
       content = (
        <div className='browse-index-item'>
          <Link to={`/user/${currentUser.id}/playlist/${playlist.id}`} >
-           <img src={playlist.image_url}/>
+           <div className="album-cover">
+             <img src={playlist.image_url}/>
+             <div className="playlist-cover-select">
+               <i className="fa fa-play-circle-o" aria-hidden="true"></i>
+           </div>
+           </div>
            <p>{playlist.title}</p>
          </Link>
        </div>

@@ -27,10 +27,14 @@ class PlaylistDisplay extends React.Component {
     }
     return (
       <div className="playlist-display">
-        <img
-          src={playlist.image_url}
-          className="album-cover"
-        />
+        <div className="album-cover">
+          <img
+            src={playlist.image_url}
+            />
+          <div className="playlist-cover-select">
+            <i className="fa fa-play-circle-o" aria-hidden="true"></i>
+          </div>
+        </div>
         <div className="playlist-info">
           <div>
             <h1>{playlist.title}</h1>

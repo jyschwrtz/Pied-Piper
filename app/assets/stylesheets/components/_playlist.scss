@@ -9,21 +9,17 @@
   padding: 0 8px 20px 8px;
   border-bottom: 1px solid $darkest-gray;
   margin-bottom: 20px;
+
 }
 
 .playlist-display .album-cover {
+  position: relative;
   min-width: 157px;
-  width: 28%;
+  width: 25%;
   height: 100%;
   margin-right: 40px;
   padding-bottom: 15px;
 }
-
-// .playlist-info {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
 
 .playlist-info h1 {
   font-size: 26px;
@@ -53,3 +49,35 @@
 //   border: none;
 //   color: $white;
 // }
+
+
+@media screen and (min-width: 1200px) {
+  .playlist {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .playlist-display {
+    flex-direction: column;
+    width: 32%
+  }
+
+  .playlist-display .album-cover {
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+  }
+
+  .playlist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .song-index {
+    width: 100%;
+  }
+
+}

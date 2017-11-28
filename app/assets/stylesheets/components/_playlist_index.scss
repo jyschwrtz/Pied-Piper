@@ -23,7 +23,7 @@
   position: relative;
 }
 
-.playlist-index-item .playlist-cover-select {
+.playlist-cover-select {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -37,7 +37,12 @@
   color: transparent;
 }
 
-.playlist-index-item .playlist-cover-select:hover {
-  background: $black_90;
+.playlist-cover-select:hover {
+  background: $black_80;
   color: $gray;
+  transition-duration: 400ms;
+}
+
+.playlist-cover-select i:hover {
+  transform: scale(1.1);
 }
