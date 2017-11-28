@@ -6,7 +6,7 @@ import PlayerControls from './player_controls';
 const mapStateToProps = state => {
 
   return({
-    currentSong: state.session.currentSong,
+    currentSong: state.ui.currentSong,
     playing: state.ui.playing
   });
 };

@@ -1,9 +1,21 @@
 import merge from 'lodash/merge';
 
-import { PLAY, play } from '../actions/player_actions';
+import {
+  PLAY,
+  PREVIOUS_SONG,
+  NEXT_SONG,
+  UP_NEXT
+} from '../actions/player_actions';
+
+import {
+  RECEIVE_CURRENT_SONG
+} from '../actions/song_actions';
 
 const initialState = {
-  playing: false
+  playing: false,
+  songHistory: [],
+  songQueue: [],
+  currentSong: null,
 };
 
 const UiReducer = (state = initialState, action) => {
@@ -15,6 +27,27 @@ const UiReducer = (state = initialState, action) => {
       newState = {};
       newState.playing = state.playing ? false : true;
       return  merge({}, state, newState);
+    case PREVIOUS_SONG:
+      newState = merge({}, state);
+      newState.songQueue.unshift(newState.currentSong);
+      newState.currentSong = newState.songHistory.pop();
+      return newState;
+    case NEXT_SONG:
+      newState = merge({}, state);
+      newState.songHistory.push(newState.currentSong);
+      newState.currentSong = newState.songQueue.shift();
+      return newState;
+    case UP_NEXT:
+      newState = merge({}, state);
+      newState.songQueue = action.songs;
+      if (newState.currentSong === null) {
+        newState.currentSong = newState.songQueue.shift();
+      }
+      return newState;
+    case RECEIVE_CURRENT_SONG:
+      newState = merge({}, state);
+      newState.currentSong = action.currentSong;
+      return newState;
     default:
       return state;
   }

@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import {
-//   play
-// } from './actions/player_actions';
+import {
+  play,
+  nextSong,
+  previousSong,
+  upNext
+} from './actions/player_actions';
 // import { selectPlaylistSongs } from './reducers/selectors';
 
 
@@ -22,7 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.play = play;
+  window.play = play;
+  window.nextSong = nextSong;
+  window.previousSong = previousSong;
+  window.upNext = upNext;
   // window.deletePlaylistSong = deletePlaylistSong;
   // END TESTING
 

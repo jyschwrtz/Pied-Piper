@@ -8,7 +8,6 @@ import merge from 'lodash/merge';
 
 const initialState = {
   currentUser: null,
-  currentSong: null,
 };
 
 const SessionReducer = (state=initialState, action) => {
@@ -19,10 +18,6 @@ const SessionReducer = (state=initialState, action) => {
     case RECEIVE_CURRENT_USER:
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
-      return newState;
-    case RECEIVE_CURRENT_SONG:
-      newState = merge({}, state);
-      newState.currentSong = action.currentSong;
       return newState;
     default:
       return state;
