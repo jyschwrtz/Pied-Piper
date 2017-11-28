@@ -14,7 +14,11 @@ class SongIndexItem extends React.Component {
 
   playSong(e) {
     e.preventDefault();
-    this.props.receiveCurrentSong(this.props.song);
+    this.props.upNext([this.props.song]);
+    // this.props.receiveCurrentSong(this.props.song);
+    if (!this.props.playing) {
+      this.props.play();
+    }
     console.log('HERE-------SONG-INDEX-ITEM');
   }
 

@@ -29,20 +29,25 @@ const UiReducer = (state = initialState, action) => {
       return  merge({}, state, newState);
     case PREVIOUS_SONG:
       newState = merge({}, state);
-      newState.songQueue.unshift(newState.currentSong);
+      if (newState.currentSong) {
+        newState.songQueue.unshift(newState.currentSong);
+      }
       newState.currentSong = newState.songHistory.pop();
       return newState;
     case NEXT_SONG:
       newState = merge({}, state);
-      newState.songHistory.push(newState.currentSong);
+      if (newState.currentSong) {
+        newState.songHistory.push(newState.currentSong);
+      }
       newState.currentSong = newState.songQueue.shift();
       return newState;
     case UP_NEXT:
       newState = merge({}, state);
       newState.songQueue = action.songs;
-      if (newState.currentSong === null) {
-        newState.currentSong = newState.songQueue.shift();
+      if (newState.currentSong) {
+        newState.songHistory.push(newState.currentSong);
       }
+      newState.currentSong = newState.songQueue.shift();
       return newState;
     case RECEIVE_CURRENT_SONG:
       newState = merge({}, state);

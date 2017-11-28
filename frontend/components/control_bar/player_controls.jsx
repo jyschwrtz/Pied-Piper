@@ -5,24 +5,9 @@ class PlayerControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // playing: this.props.playing,
-      // currentSong: this.props.currentSong,
-      // currentSongFilename: "",
       loop: false,
       shuffle: false,
     };
-  }
-
-  // componentDidMount() {
-  //   if (this.state.currentSong) {
-  //     this.setState({ currentSongFilename: this.props.currentSong.filename });
-  //   }
-  // }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({ currentSong: newProps.currentSong });
-    this.props.requestSong(newProps.currentSong.id);
-    console.log('HERE-------PLAYER-CONTROLS');
   }
 
   toggleLoop() {
@@ -37,7 +22,7 @@ class PlayerControls extends React.Component {
 
   render() {
     const { loop, shuffle } = this.state;
-    const { playing, play, currentSong } = this.props;
+    const { playing, play, currentSong, nextSong, previousSong } = this.props;
     let howler;
     if (currentSong) {
       howler = (
@@ -78,14 +63,18 @@ class PlayerControls extends React.Component {
             className={shuffleButtonClass}>
             <i className="fa fa-random" aria-hidden="true"></i>
           </button>
-          <button className="back btn">
+          <button
+            onClick={previousSong}
+            className="back btn">
             <i className="fa fa-step-backward" aria-hidden="true"></i>
           </button>
           <button
             onClick={play}
             className="play btn"
             >{playButton}</button>
-          <button className="forward btn">
+          <button
+            onClick={nextSong}
+            className="forward btn">
             <i className="fa fa-step-forward" aria-hidden="true"></i>
           </button>
           <button
