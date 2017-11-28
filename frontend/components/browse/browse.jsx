@@ -4,12 +4,6 @@ import NavBar from '../nav_bar/nav_bar';
 
 class Browse extends React.Component {
 
-  componentDidMount() {
-    // this.props.requestSongs();
-    // this.props.requestPlaylists();
-    // console.log("BROWSE");
-  }
-
   render() {
     const navTitles =
       ["Featured", "Genres & Moods", "New Releases", "Discover"];

@@ -10,6 +10,11 @@ class MusicPlayer extends React.Component {
     this.props.requestSongs();
     this.props.requestUsers();
     this.props.requestPlaylists();
+
+  }
+
+  componentWillReceiveProps() {
+    document.getElementsByClassName('music-player')[0].scrollTo(0, 0);
   }
 
   render() {

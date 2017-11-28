@@ -13,7 +13,6 @@ class PlaylistDisplay extends React.Component {
     const { playlist, owner } = this.props;
     let playlistOwnerName;
     let deleteButton;
-    console.log(this.props);
     if (owner) {
       playlistOwnerName = owner.username;
       if (playlist.owner_id == this.props.match.params.userId) {
