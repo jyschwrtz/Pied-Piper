@@ -5,17 +5,18 @@ class PlayerControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: false,
-      currentSong: this.props.currentSong,
-      currentSongFilename: "",
+      // playing: this.props.playing,
+      // currentSong: this.props.currentSong,
+      // currentSongFilename: "",
+      loop: false,
     };
   }
 
-  componentDidMount() {
-    if (this.state.currentSong) {
-      this.setState({ currentSongFilename: this.state.currentSong.filename });
-    }
-  }
+  // componentDidMount() {
+  //   if (this.state.currentSong) {
+  //     this.setState({ currentSongFilename: this.props.currentSong.filename });
+  //   }
+  // }
 
   componentWillReceiveProps(newProps) {
     this.setState({ currentSong: newProps.currentSong });
@@ -23,13 +24,14 @@ class PlayerControls extends React.Component {
     console.log('HERE-------PLAYER-CONTROLS');
   }
 
-  togglePlay() {
-    const playing = this.state.playing === true ? false : true;
-    this.setState({playing});
-  }
+  // togglePlay() {
+  //   const playing = this.state.playing === true ? false : true;
+  //   this.setState({playing});
+  // }
 
   render() {
-    const { playing, currentSong, currentSongFilename } = this.state;
+    const { loop } = this.state;
+    const { playing, play, currentSong } = this.props;
     let howler;
     if (currentSong) {
       howler = (
@@ -59,7 +61,7 @@ class PlayerControls extends React.Component {
           <i className="fa fa-step-backward" aria-hidden="true"></i>
         </button>
         <button
-          onClick={this.togglePlay.bind(this)}
+          onClick={play}
           className="play-button"
           >{playButton}</button>
         <button className="forward-button">

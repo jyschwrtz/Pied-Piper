@@ -4,9 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // import {
-//   createPlaylistSong,
-//   deletePlaylistSong
-// } from './actions/playlist_song_actions';
+//   play
+// } from './actions/player_actions';
 // import { selectPlaylistSongs } from './reducers/selectors';
 
 
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // BEGIN TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.createPlaylistSong = createPlaylistSong;
+  // window.play = play;
   // window.deletePlaylistSong = deletePlaylistSong;
   // END TESTING
 
