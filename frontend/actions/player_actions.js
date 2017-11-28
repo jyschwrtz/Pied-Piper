@@ -2,6 +2,8 @@ export const PLAY = 'PLAY';
 export const PREVIOUS_SONG = 'PREVIOUS_SONG';
 export const NEXT_SONG = 'NEXT_SONG';
 export const UP_NEXT = 'UP_NEXT';
+export const SHUFFLE = 'SHUFFLE';
+export const LOOP = 'LOOP';
 
 export const play = () => ({
   type: PLAY
@@ -18,4 +20,12 @@ export const nextSong = () => ({
 export const upNext = (songs) => ({
   type: UP_NEXT,
   songs,
+});
+
+export const shuffle = () => ({
+  type: SHUFFLE
+});
+
+export const loop = () => ({
+  type: LOOP
 });

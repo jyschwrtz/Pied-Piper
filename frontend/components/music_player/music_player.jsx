@@ -2,7 +2,7 @@ import React from 'react';
 
 import SidebarContainer from '../sidebar/sidebar_container';
 import MainPage from '../main_page/main_page';
-import ControlBar from '../control_bar/control_bar';
+import ControlBarContainer from '../control_bar/control_bar_container';
 
 class MusicPlayer extends React.Component {
 
@@ -22,7 +22,7 @@ class MusicPlayer extends React.Component {
       <div className="music-player">
         <SidebarContainer />
         <MainPage />
-        <ControlBar />
+        <ControlBarContainer />
       </div>
     );
   }

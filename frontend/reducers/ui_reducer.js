@@ -4,7 +4,9 @@ import {
   PLAY,
   PREVIOUS_SONG,
   NEXT_SONG,
-  UP_NEXT
+  UP_NEXT,
+  SHUFFLE,
+  LOOP,
 } from '../actions/player_actions';
 
 import {
@@ -16,6 +18,8 @@ const initialState = {
   songHistory: [],
   songQueue: [],
   currentSong: null,
+  looping: false,
+  shuffling: false,
 };
 
 const UiReducer = (state = initialState, action) => {
@@ -26,6 +30,14 @@ const UiReducer = (state = initialState, action) => {
     case PLAY:
       newState = {};
       newState.playing = state.playing ? false : true;
+      return  merge({}, state, newState);
+    case SHUFFLE:
+      newState = {};
+      newState.shuffling = state.shuffling ? false : true;
+      return  merge({}, state, newState);
+    case LOOP:
+      newState = {};
+      newState.looping = state.looping ? false : true;
       return  merge({}, state, newState);
     case PREVIOUS_SONG:
       newState = merge({}, state);
