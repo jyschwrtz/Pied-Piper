@@ -1,0 +1,43 @@
+.playlist-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlist-index-item {
+  padding: 0 8px;
+  margin-bottom: 35px;
+  min-width: 125px;
+  max-width: 205px;
+  height: auto;
+  flex: 1 0 125px;
+}
+
+.playlist-index-item button {
+  background: none;
+  color: $white;
+}
+
+.playlist-index-item .playlist-image {
+  position: relative;
+}
+
+.playlist-index-item .playlist-cover-select {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  color: transparent;
+}
+
+.playlist-index-item .playlist-cover-select:hover {
+  background: $black_90;
+  color: $gray;
+}

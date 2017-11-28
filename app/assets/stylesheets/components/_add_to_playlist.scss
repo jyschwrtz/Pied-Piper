@@ -1,6 +1,7 @@
 .song-menu .modal {
   justify-content: flex-start;
   z-index: 20;
+  overflow: scroll;
 }
 
 .song-menu .modal h1 {
@@ -13,6 +14,12 @@
   margin: 20px 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-playlist-top button {
+  width: 100;
 }
 
 .add-to-playlist-playlists {

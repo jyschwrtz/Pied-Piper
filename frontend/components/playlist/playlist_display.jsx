@@ -12,8 +12,19 @@ class PlaylistDisplay extends React.Component {
   render() {
     const { playlist, owner } = this.props;
     let playlistOwnerName;
+    let deleteButton;
+    console.log(this.props);
     if (owner) {
       playlistOwnerName = owner.username;
+      if (playlist.owner_id == this.props.match.params.userId) {
+        deleteButton = (
+          <button
+            className="typ-btn black-btn"
+            onClick={this.handleClick.bind(this)}>
+            DELETE
+          </button>
+        );
+      }
     }
     return (
       <div className="playlist-display">
@@ -36,11 +47,7 @@ class PlaylistDisplay extends React.Component {
             <button className="typ-btn green-btn">
               PLAY
             </button>
-            <button
-              className="typ-btn black-btn"
-              onClick={this.handleClick.bind(this)}>
-              DELETE
-            </button>
+            {deleteButton}
           </div>
         </div>
       </div>

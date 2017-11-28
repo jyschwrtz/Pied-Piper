@@ -27,6 +27,7 @@ class AddToPlaylist extends React.Component {
           <PlaylistIndex
             playlists={playlists}
             createPlaylistSong={createPlaylistSong}
+            toggleAddToPlaylist={toggleAddToPlaylist}
             song={song}/>
         </div>
 
