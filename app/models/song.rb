@@ -28,4 +28,9 @@ class Song < ApplicationRecord
     through: :playlist_songs,
     source: :playlist
 
+  def self.top_five_results(query_param)
+    param = "%#{query_param.downcase}%"
+    Song.where('lower(song_name) LIKE ?', param).limit(5)
+  end
+
 end

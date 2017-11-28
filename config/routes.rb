@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     resources :playlists, only: %i[index show create update destroy] do
       resources :playlist_songs, only: %i[create destroy show]
     end
-
+    resources :music_searches, only: [:index] do
+      get "songs_by_playlist", on: :collection
+      get "random_playlist", on: :collection
+    end
   end
 
 end

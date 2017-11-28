@@ -10,7 +10,7 @@ import Root from './components/root';
 //   upNext
 // } from './actions/player_actions';
 // import { selectPlaylistSongs } from './reducers/selectors';
-
+import { searchDatabase } from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // window.play = play;
-  // window.nextSong = nextSong;
+  window.searchDatabase = searchDatabase;
   // window.previousSong = previousSong;
   // window.upNext = upNext;
   // window.deletePlaylistSong = deletePlaylistSong;

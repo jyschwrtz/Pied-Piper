@@ -36,6 +36,11 @@ class User < ApplicationRecord
     through: :playlists,
     source: :songs
 
+  def self.top_five_results(query_param)
+    param = "%#{query_param.downcase}%"
+    User.where('lower(username) LIKE ?', param).limit(5)
+  end
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)

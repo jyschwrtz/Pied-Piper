@@ -15,9 +15,9 @@ class VolumeControls extends React.Component {
           type="range"
           min="0"
           max="1"
-          step="0.01"
+          step="0.02"
           onChange={this.handleChange.bind(this)}
-          value={this.props.volume}
+          value={this.props.volumeLevel}
           />
       </div>
     );
