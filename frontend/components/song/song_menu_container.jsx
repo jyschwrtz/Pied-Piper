@@ -11,9 +11,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createPlaylistSong: (songId, playlistId) => (
-    dispatch(createPlaylistSong(songId, playlistId))
-  ),
   deletePlaylistSong: (songId, playlistId) => (
     dispatch(deletePlaylistSong(songId, playlistId))
   ),

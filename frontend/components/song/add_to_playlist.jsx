@@ -6,9 +6,7 @@ import PlaylistIndex from '../playlist/playlist_index';
 class AddToPlaylist extends React.Component {
   render() {
     const {
-      name,
-      playlists,
-      toggleAddToPlaylist
+      name, song, playlists, toggleAddToPlaylist, createPlaylistSong
     } = this.props;
     return(
       <div className={name}>
@@ -26,7 +24,10 @@ class AddToPlaylist extends React.Component {
           </button>
         </div>
         <div className="add-to-playlist-playlists">
-          <PlaylistIndex playlists={playlists}/>
+          <PlaylistIndex
+            playlists={playlists}
+            createPlaylistSong={createPlaylistSong}
+            song={song}/>
         </div>
 
       </div>
