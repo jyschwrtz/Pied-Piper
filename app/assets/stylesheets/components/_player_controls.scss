@@ -7,17 +7,31 @@
   font-weight: 200;
 }
 
-.player-controls button {
+.player-controls .btn {
   background: none;
   color: $gray;
   -webkit-text-stroke: 1px $control_bar;
+  padding: 5px;
 }
 
-.play-button {
+.player-controls .btn:hover {
+  color: $light-gray;
+}
+
+.play {
   font-size: 32px;
   font-weight: 200;
 }
 
-.back-button, .forward-button {
+.play:hover {
+  transform: scale(1.1);
+  transition-duration: 250ms;
+}
+
+.back, .forward {
   font-size: 16px;
+}
+
+.repeat-active i, .shuffle-active i {
+  color: $green;
 }

@@ -9,6 +9,7 @@ class PlayerControls extends React.Component {
       // currentSong: this.props.currentSong,
       // currentSongFilename: "",
       loop: false,
+      shuffle: false,
     };
   }
 
@@ -24,13 +25,18 @@ class PlayerControls extends React.Component {
     console.log('HERE-------PLAYER-CONTROLS');
   }
 
-  // togglePlay() {
-  //   const playing = this.state.playing === true ? false : true;
-  //   this.setState({playing});
-  // }
+  toggleLoop() {
+    const loop = this.state.loop ? false : true;
+    this.setState({loop});
+  }
+
+  toggleShuffle() {
+    const shuffle = this.state.shuffle ? false : true;
+    this.setState({shuffle});
+  }
 
   render() {
-    const { loop } = this.state;
+    const { loop, shuffle } = this.state;
     const { playing, play, currentSong } = this.props;
     let howler;
     if (currentSong) {
@@ -40,6 +46,7 @@ class PlayerControls extends React.Component {
           playing={playing}
           volume={1}
           html5={true}
+          loop={loop}
         />
       );
     }
@@ -50,26 +57,43 @@ class PlayerControls extends React.Component {
       <i className="fa fa-play-circle-o" aria-hidden="true"></i>
     );
 
-    return (
-      <div className="player-controls">
-        { howler }
+    const loopButtonClass = loop ? (
+      "repeat-active btn"
+    ) : (
+      "repeat btn"
+    );
 
-        <button className="shuffle-button">
-          <i className="fa fa-random" aria-hidden="true"></i>
-        </button>
-        <button className="back-button">
-          <i className="fa fa-step-backward" aria-hidden="true"></i>
-        </button>
-        <button
-          onClick={play}
-          className="play-button"
-          >{playButton}</button>
-        <button className="forward-button">
-          <i className="fa fa-step-forward" aria-hidden="true"></i>
-        </button>
-        <button className="repeat-button">
-          <i className="fa fa-repeat" aria-hidden="true"></i>
-        </button>
+    const shuffleButtonClass = shuffle ? (
+      "shuffle-active btn"
+    ) : (
+      "shuffle btn"
+    );
+
+    return (
+      <div >
+        { howler }
+        <div className="player-controls">
+          <button
+            onClick={this.toggleShuffle.bind(this)}
+            className={shuffleButtonClass}>
+            <i className="fa fa-random" aria-hidden="true"></i>
+          </button>
+          <button className="back btn">
+            <i className="fa fa-step-backward" aria-hidden="true"></i>
+          </button>
+          <button
+            onClick={play}
+            className="play btn"
+            >{playButton}</button>
+          <button className="forward btn">
+            <i className="fa fa-step-forward" aria-hidden="true"></i>
+          </button>
+          <button
+            onClick={this.toggleLoop.bind(this)}
+            className={loopButtonClass}>
+            <i className="fa fa-repeat" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     );
   }
