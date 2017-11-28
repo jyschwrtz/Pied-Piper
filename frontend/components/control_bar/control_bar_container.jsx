@@ -13,6 +13,7 @@ const mapStateToProps = state => {
     playing: state.ui.playing,
     shuffling: state.ui.shuffling,
     looping: state.ui.looping,
+    volumeLevel: state.ui.volumeLevel,
   });
 };
 

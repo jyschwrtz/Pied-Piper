@@ -4,6 +4,7 @@ export const NEXT_SONG = 'NEXT_SONG';
 export const UP_NEXT = 'UP_NEXT';
 export const SHUFFLE = 'SHUFFLE';
 export const LOOP = 'LOOP';
+export const VOLUME = 'VOLUME';
 
 export const play = () => ({
   type: PLAY
@@ -28,4 +29,9 @@ export const shuffle = () => ({
 
 export const loop = () => ({
   type: LOOP
+});
+
+export const volume = (level) => ({
+  type: VOLUME,
+  level
 });
