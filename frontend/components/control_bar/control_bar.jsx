@@ -6,6 +6,25 @@ import VolumeControlsContainer from './volume_controls_container';
 import ReactHowler from 'react-howler';
 
 class ControlBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      progress: 0
+    };
+    this.player = null;
+  }
+
+  componentDidMount() {
+    // if (this.player) {
+      // this.progressTracker = setInterval(() => {
+      //   this.setState({progress: this.player.seek()});
+      // }, 1000);
+    // }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.progressTracker);
+  }
 
   render() {
     const {
@@ -19,10 +38,14 @@ class ControlBar extends React.Component {
       artist,
       volumeLevel
     } = this.props;
+    const { progress } = this.state;
     let howler;
+    let length = null;
     if (currentSong) {
+      length = currentSong.length;
       howler = (
         <ReactHowler
+          ref={(ref) => (this.player = ref)}
           src={[currentSong.filename]}
           playing={playing}
           volume={volumeLevel}
@@ -31,7 +54,15 @@ class ControlBar extends React.Component {
           onEnd={nextSong}
         />
       );
+      if (!this.progressTracker) {
+        this.progressTracker = setInterval(() => {
+          this.setState({
+            progress: this.player.seek()
+          });
+        }, 1000);
+      }
     }
+
     return(
       <div>
         <div className="control-bar">
@@ -40,10 +71,13 @@ class ControlBar extends React.Component {
             artist={artist}/>
           <div className="control-bar-center">
             <PlayerControlsContainer />
-            <SongProgress />
+            <SongProgress
+              length={length}
+              progress={progress}/>
           </div>
           <VolumeControlsContainer
-            volumeLevel={volumeLevel}/>
+            volumeLevel={volumeLevel}
+            />
         </div>
         { howler }
       </div>

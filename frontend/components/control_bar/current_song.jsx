@@ -2,7 +2,6 @@ import React from 'react';
 
 export default (props) => {
   const { song, artist } = props;
-  console.log(props);
   let songName;
   let artistName;
   if (song) {

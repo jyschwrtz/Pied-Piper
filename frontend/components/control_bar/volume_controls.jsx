@@ -8,9 +8,19 @@ class VolumeControls extends React.Component {
 
   render() {
     const { volume, volumeLevel } = this.props;
+    let volumeIcon;
+    if (volumeLevel > .5) {
+      volumeIcon = <i className="fa fa-volume-up" aria-hidden="true"></i>;
+    } else if (volumeLevel < 0.02) {
+      volumeIcon = <i className="fa fa-volume-off" aria-hidden="true"></i>;
+    } else {
+      volumeIcon = <i className="fa fa-volume-down" aria-hidden="true"></i>;
+    }
     return(
       <div className="volume-controls">
-        <h1>Volume Controls</h1>
+        <div className="volume-icon">
+          { volumeIcon }
+        </div>
         <input
           type="range"
           min="0"
