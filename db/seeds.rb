@@ -15,7 +15,7 @@ ApplicationRecord.transaction do
   # USERS
   default_user_image = "default-user-image.png"
 
-  User.create!( # Demo User
+  demo = User.create!( # Demo User
     username: "demo_user",
     email: "demo@mail.com",
     password: "password",
@@ -32,14 +32,14 @@ ApplicationRecord.transaction do
   jay = User.create!( # Jay
     username: "Jay",
     email: "jay@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   emily = User.create!(
     username: "Emily",
     email: "emily@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
@@ -47,56 +47,56 @@ ApplicationRecord.transaction do
   melanie_ungar = User.create!(
     username: "Melanie Ungar",
     email: "melanie.ungar@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: "melanie_ungar.jpg"
   )
 
   ralph_castelli = User.create!(
     username: "Ralph Castelli",
     email: "ralph.castelli@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: "Ralph_Castello.jpg"
   )
 
   craze_24 = User.create!(
     username: "Craze 24",
     email: "craze.24@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   duo_teslar = User.create!(
     username: "Duo Teslar",
     email: "duo.teslar@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   the_dlx = User.create!(
     username: "The DLX",
     email: "dlx@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   wordsmith = User.create!(
     username: "Wordsmith",
     email: "wordsmith@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   kellee_maize = User.create!(
     username: "Kellee Maize",
     email: "kellee_maize@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
   alexey_baranov = User.create!(
     username: "Alexey Baranov",
     email: "alexey_baranov@mail.com",
-    password: "password",
+    password: "password1988PP",
     image_url: default_user_image
   )
 
@@ -366,6 +366,22 @@ ApplicationRecord.transaction do
     genre: "pop"
   )
 
+  playlist11 = Playlist.create!(
+    title: "Beautiful Soul",
+    owner_id: demo.id,
+    image_url: "woman_headphones.jpg",
+    date: 2017,
+    genre: "pop"
+  )
+
+  playlist12 = Playlist.create!(
+    title: "You've Got Something Special",
+    owner_id: demo.id,
+    image_url: "musician.jpg",
+    date: 2017,
+    genre: "pop"
+  )
+
   # PLAYLIST_SONGS (JOINS)
   PlaylistSong.create!(song_id: song1.id, playlist_id: playlist1.id)
   PlaylistSong.create!(song_id: song2.id, playlist_id: playlist1.id)
@@ -401,4 +417,7 @@ ApplicationRecord.transaction do
   PlaylistSong.create!(song_id: ab_song9.id, playlist_id: playlist10.id)
   PlaylistSong.create!(song_id: ab_song10.id, playlist_id: playlist10.id)
   PlaylistSong.create!(song_id: ab_song11.id, playlist_id: playlist10.id)
+  # Demo user playlists
+  PlaylistSong.create!(song_id: km_song9.id, playlist_id: playlist11.id)
+  PlaylistSong.create!(song_id: km_song4.id, playlist_id: playlist12.id)
 end

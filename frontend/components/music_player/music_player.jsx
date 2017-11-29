@@ -30,6 +30,21 @@ class MusicPlayer extends React.Component {
       case "/user":
         backgroundClass += "-user";
         break;
+      case "/browse":
+        switch (this.props.location.pathname) {
+          case "/browse/featured":
+            backgroundClass += "-browse-featured";
+            break;
+          case "/browse/genres_&_moods":
+            backgroundClass += "-browse-genres-moods";
+            break;
+          case "/browse/new_releases":
+            backgroundClass += "-browse-new-releases";
+            break;
+          case "/browse/discover":
+            backgroundClass += "-browse-discover";
+            break;
+        }
     }
     return (
       <div className={backgroundClass}>
