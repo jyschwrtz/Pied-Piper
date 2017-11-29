@@ -7,9 +7,11 @@ export default (props) => {
     <div className="browse-item">
       <h1>{title}</h1>
       <BrowseIndexContainer playlistIds={playlistIds}/>
-      <div className="view-more">
-        <a>VIEW MORE</a>
-      </div>
+
     </div>
   );
 };
+
+// <div className="view-more">
+//   <a>VIEW MORE</a>
+// </div>
