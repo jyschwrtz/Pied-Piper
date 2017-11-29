@@ -1,4 +1,6 @@
 import React from 'react';
+import SongIndexItemContainer from '../song/song_index_item_container';
+import BrowseIndexItem from '../browse/browse_index_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Search extends React.Component {
   }
 
   render() {
-    const { songSearch, userSearch, playlistSearch } = this.props;
+    const { songSearch, userSearch, playlistSearch, currentUser } = this.props;
     const { searchInput } = this.state;
     console.log(songSearch);
     let songResults, userResults, playlistResults;
@@ -26,8 +28,12 @@ class Search extends React.Component {
       <div>
         <h1>Songs:</h1>
         {
-          songSearch.map(result => (
-            <li key={result.id}>{result.song_name}</li>
+          songSearch.map((song, idx) => (
+            <SongIndexItemContainer
+              key={song.id}
+              song={song}
+              idx={idx}
+              />
           ))
         }
       </div>;
@@ -48,8 +54,13 @@ class Search extends React.Component {
       <div>
         <h1>Playlists:</h1>
         {
-          playlistSearch.map(result => (
-            <li key={result.id}>{result.title}</li>
+          playlistSearch.map(playlist => (
+            <BrowseIndexItem
+              key={playlist.id}
+              playlistId={playlist.id}
+              playlist={playlist}
+
+              currentUser={currentUser}/>
           ))
         }
       </div>;

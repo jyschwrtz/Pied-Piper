@@ -17,6 +17,7 @@ const mapStateToProps = state => {
     songSearch,
     playlistSearch,
     userSearch,
+    currentUser: state.session.currentUser
   });
 };
 
