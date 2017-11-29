@@ -51,17 +51,6 @@
     // background: $green;
   }
 
-  input[type=range]:hover::-ms-fill-lower {
-    background: $green;
-  }
-
-  input[type=range]::-ms-fill-lower {
-    background: $gray;
-  }
-
-  input[type=range]::-ms-fill-upper {
-    background: $darkest-gray;
-  }
 }
 
 .volume-icon {

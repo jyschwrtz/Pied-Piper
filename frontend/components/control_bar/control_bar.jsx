@@ -12,18 +12,18 @@ class ControlBar extends React.Component {
       progress: 0
     };
     this.player = null;
+    this.setSeek = this.setSeek.bind(this);
   }
 
   componentDidMount() {
-    // if (this.player) {
-      // this.progressTracker = setInterval(() => {
-      //   this.setState({progress: this.player.seek()});
-      // }, 1000);
-    // }
   }
 
   componentWillUnmount() {
     clearInterval(this.progressTracker);
+  }
+
+  setSeek(e) {
+    this.player.seek(e.target.value);
   }
 
   render() {
@@ -73,6 +73,7 @@ class ControlBar extends React.Component {
             <PlayerControlsContainer />
             <SongProgress
               length={length}
+              setSeek={this.setSeek}
               progress={progress}/>
           </div>
           <VolumeControlsContainer
