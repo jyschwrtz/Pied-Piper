@@ -14,7 +14,7 @@ class BrowseIndexItem extends React.Component {
              <img src={playlist.image_url}/>
              <div className="playlist-cover-select">
                <i className="fa fa-play-circle-o" aria-hidden="true"></i>
-           </div>
+             </div>
            </div>
            <p>{playlist.title}</p>
          </Link>

@@ -1,5 +1,20 @@
 .music-player {
-  background: linear-gradient($blue-gradient-start, $blue-gradient-end);
   height: 100vh;
   overflow: scroll;
+}
+
+.background {
+  background: linear-gradient($blue-gs, $blue-ge);
+}
+
+.background-collection {
+  background: linear-gradient($yellow-gs, $yellow-ge);
+}
+
+.background-search {
+  background: $black;
+}
+
+.background-user {
+  background: linear-gradient($red-gs, $red-ge);
 }

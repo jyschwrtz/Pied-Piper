@@ -16,10 +16,13 @@
     border-radius: 5px;
     height: 3px;
     width: 60%;
+    padding: 2px 0;
+    background: $gray;
   }
 
   input[type=range]:hover {
     // border: 1px solid $green;
+    cursor: pointer;
   }
 
   input[type=range]::-webkit-slider-runnable-track {
@@ -33,9 +36,10 @@
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     background: $green;
-    transform: translateY(-35%);
+    transform: translateY(-40%) translateX(-10%);
+
     // display: none;
   }
 

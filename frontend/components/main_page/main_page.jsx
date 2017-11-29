@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Link,
   Route,
-  Switch
+  Switch,
+  withRouter
 } from 'react-router-dom';
 
 import BrowseContainer from '../browse/browse_container';
@@ -15,7 +16,7 @@ class MainPage extends React.Component {
 
   render() {
     return(
-      <div className="main-page">
+      <div className={"main-page"}>
         <Route
           path="/browse"
           component={BrowseContainer}/>

@@ -1,6 +1,7 @@
 import React from 'react';
-import SongIndexItemContainer from '../song/song_index_item_container';
-import BrowseIndexItem from '../browse/browse_index_item';
+import SongSearchResults from './song_search_results';
+import PlaylistSearchResults from './playlist_search_results';
+import UserSearchResults from './user_search_results';
 
 class Search extends React.Component {
   constructor(props) {
@@ -21,62 +22,24 @@ class Search extends React.Component {
   render() {
     const { songSearch, userSearch, playlistSearch, currentUser } = this.props;
     const { searchInput } = this.state;
-    console.log(songSearch);
-    let songResults, userResults, playlistResults;
-    if (songSearch) {
-      songResults =
-      <div>
-        <h1>Songs:</h1>
-        {
-          songSearch.map((song, idx) => (
-            <SongIndexItemContainer
-              key={song.id}
-              song={song}
-              idx={idx}
-              />
-          ))
-        }
-      </div>;
-    }
-    if (userSearch) {
-      userResults =
-      <div>
-        <h1>Users:</h1>
-        {
-          userSearch.map(result => (
-            <li key={result.id}>{result.username}</li>
-          ))
-        }
-      </div>;
-    }
-    if (playlistSearch) {
-      playlistResults =
-      <div>
-        <h1>Playlists:</h1>
-        {
-          playlistSearch.map(playlist => (
-            <BrowseIndexItem
-              key={playlist.id}
-              playlistId={playlist.id}
-              playlist={playlist}
-
-              currentUser={currentUser}/>
-          ))
-        }
-      </div>;
-    }
 
     return(
       <div className="search">
-        <input
-          type="text"
-          onChange={this.handleChange()}
-          value={searchInput}
-          paceholder="Search..."
-          />
-        { songResults }
-        { playlistResults }
-        { userResults }
+        <div className="search-bar">
+          <h2>{"Search for an Artist, Song, or Playlist"}</h2>
+          <input
+            type="text"
+            onChange={this.handleChange()}
+            value={searchInput}
+            placeholder="Start typing..."
+            />
+        </div>
+        
+        <SongSearchResults songs={songSearch} />
+        <PlaylistSearchResults
+          playlists={playlistSearch}
+          currentUser={currentUser} />
+        <UserSearchResults users={userSearch} />
       </div>
     );
   }

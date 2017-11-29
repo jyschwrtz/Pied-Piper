@@ -64,7 +64,7 @@ class ControlBar extends React.Component {
           this.setState({
             progress: this.player.seek()
           });
-        }, 1000);
+        }, 500);
       }
     }
 

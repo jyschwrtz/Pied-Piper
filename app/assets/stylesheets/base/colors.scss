@@ -10,10 +10,9 @@ $light-blue: #6288a5;
 $blue: #326891;
 $dark-blue: #3958B9;  //facebook login button:hover
 $darkest-blue: #3b5998;  //facebook login button
-$blue-gradient-start: #101E57;
-$blue-gradient-end: #02050D;
 
 $white: #ffffff;
+$white_10: rgba(255, 255, 255, 0.1);
 $white_90: rgba(255, 255, 255, 0.9);
 $black: #000000;
 $black_30: rgba(0, 0, 0, 0.3);
@@ -30,3 +29,21 @@ $yellow: #ffef62;
 $control-bar: #282828;
 $sidebar: rgba(0, 0, 0, .5);
 $sidebar-text: #9D9DA6;
+$search-bar: #282828;
+
+
+// GRADIENTS
+$blue-gs: #101E57;
+$blue-ge: #02050D;
+
+$turquoise-gs: #008D72;
+$turquoise-ge: #000E0B;
+
+$light-red-gs: #882802;
+$light-red-ge: #0E0401;
+
+$red-gs: #79211F;
+$red-ge: #0F0404;
+
+$yellow-gs: #556233;
+$yellow-ge: #080905;

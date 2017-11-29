@@ -1,4 +1,29 @@
-.search input {
-  color: $white;
+.search {
   background: $black;
+}
+
+.search-bar {
+  padding: 32px 28px;
+  width: 100%;
+  background: $search-bar;
+}
+
+.search-bar h2 {
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  margin-bottom: 7px;
+}
+
+.search-bar input {
+  font-family: $sans-serif;
+  color: $white;
+  background: none;
+  border: none;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 700;
+}
+
+.search-bar input::placeholder {
+  color: $dark-gray;
 }
