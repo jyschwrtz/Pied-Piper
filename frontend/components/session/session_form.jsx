@@ -21,12 +21,14 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/browse/featured');
     }
+
+    if (nextProps.location.state && nextProps.location.state.demoLogin) {
+      this.demoLogin();
+    }
   }
 
   componentDidMount() {
-    if (this.props.location.state && this.props.location.state.demoLogin) {
-      this.demoLogin();
-    }
+
   }
 
   componentWillMount() {
@@ -54,7 +56,7 @@ class SessionForm extends React.Component {
         let speed = Math.random() * (400, 50) + 50;
         setTimeout((() => typeLetter()), speed);
       } else {
-        setTimeout(() => cb(), 500);
+        setTimeout(() => cb(), 1000);
       }
     };
     typeLetter();
