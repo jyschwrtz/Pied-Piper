@@ -5,9 +5,9 @@ import {
   PREVIOUS_SONG,
   NEXT_SONG,
   UP_NEXT,
+  PAST_SONGS_IN_PLAYLIST,
   SHUFFLE,
   LOOP,
-  // VOLUME,
 } from '../actions/player_actions';
 
 import {
@@ -21,7 +21,6 @@ const initialState = {
   currentSong: null,
   looping: false,
   shuffling: false,
-  // volumeLevel: 1,
 };
 
 const UiReducer = (state = initialState, action) => {
@@ -63,10 +62,10 @@ const UiReducer = (state = initialState, action) => {
       }
       newState.currentSong = newState.songQueue.shift();
       return newState;
-    // case VOLUME:
-    //   newState = merge({}, state);
-    //   newState.volumeLevel = action.level;
-    //   return newState;
+    case PAST_SONGS_IN_PLAYLIST:
+      newState = merge({}, state);
+      newState.songHistory = newState.songHistory.concat(action.songs);
+      return newState;
     case RECEIVE_CURRENT_SONG:
       newState = merge({}, state);
       newState.currentSong = action.currentSong;

@@ -1,4 +1,3 @@
-
 .song-index-item {
   height: 56px;
   display: flex;
@@ -7,7 +6,7 @@
   position: relative;
 }
 
-.song-index-item:hover {
+.song-index-item:hover, .selected-song {
   background-color: $black_30;
 }
 
@@ -44,6 +43,10 @@
   font-family: $numerals;
 }
 
+.selected-song .song-title, .selected-song .song-length {
+  color: $green;
+}
+
 // APPEARS WHEN HOVERING
 
 .show-song-menu, .song-play-btn {
@@ -52,7 +55,7 @@
   border: none;
 }
 
-.song-index-item:hover .show-song-menu {
+.song-index-item:hover .show-song-menu, .selected-song .show-song-menu {
   display: block;
   color: $gray;
   padding-right: 14px;
@@ -61,14 +64,35 @@
   transform: translateY(-5px);
 }
 
-.song-index-item:hover .song-play-btn {
+.song-index-item:hover .song-play-btn, .selected-song .song-play-btn {
   display: block;
   color: $light-gray;
   position: absolute;
   left: 8px;
   font-size: 20px;
+  transform: translateY(-5%);
+  font-weight: 400;
 }
 
-.song-index-item:hover .song-number span {
+.song-index-item .song-play-btn:hover {
+  transform: scale(1.1);
+  color: $white;
+}
+
+
+.selected-song:hover .song-play-btn, .selected-song:hover .show-song-menu {
+  color: $green
+}
+
+.selected-song .song-play-btn:hover {
+  transform: scale(1.1);
+  color: $light-green;
+}
+
+.song-index-item:hover .song-number span, .selected-song .song-number span {
   display: none;
+}
+
+.selected-song .song-play-btn, .selected-song .show-song-menu {
+  color: $green;
 }

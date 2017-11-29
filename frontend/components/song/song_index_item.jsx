@@ -8,18 +8,23 @@ class SongIndexItem extends React.Component {
       songMenuDisplay: false
     };
     // this.song = this.props.song;
-    this.playSong = this.playSong.bind(this);
+    // this.playSong = this.playSong.bind(this);
     this.toggleSongMenu = this.toggleSongMenu.bind(this);
   }
 
-  playSong(e) {
+  // playSong(e) {
+  //   e.preventDefault();
+  //   this.props.upNext([this.props.song]);
+  //   if (!this.props.playing) {
+  //     this.props.play();
+  //   }
+  //   console.log('HERE-------SONG-INDEX-ITEM');
+  // }
+
+  playPauseSong(e) {
     e.preventDefault();
-    this.props.upNext([this.props.song]);
-    // this.props.receiveCurrentSong(this.props.song);
-    if (!this.props.playing) {
-      this.props.play();
-    }
-    console.log('HERE-------SONG-INDEX-ITEM');
+    e.stopPropagation();
+    this.props.play();
   }
 
   formatTime(length) {
@@ -39,22 +44,37 @@ class SongIndexItem extends React.Component {
   }
 
   render() {
-    const { song, idx } = this.props;
+    const {
+      song, idx, playlistSongIds, currentSong, playing, play
+    } = this.props;
     const time = this.formatTime(song.length);
     const songMenuClass =
       this.state.songMenuDisplay ? "song-menu" : "song-menu hidden";
+
+    let playPauseIcon = <i className="fa fa-play" aria-hidden="true"></i>;
+    let action = this.props.playSong;
+    let songClass = "song-index-item";
+    if (currentSong && playlistSongIds && playlistSongIds[idx] === currentSong.id) {
+      songClass += " selected-song";
+      action = this.playPauseSong.bind(this);
+      if (playing) {
+        playPauseIcon = <i className="fa fa-pause" aria-hidden="true"></i>;
+      }
+    }
+
     return(
       <li
-        className="song-index-item"
-        onClick={this.playSong}
+        className={songClass}
+        onClick={this.props.playSong}
         >
         <div className="song-number">
           <span>{idx + 1}.</span>
         </div>
         <div className="song-play">
           <button
+            onClick={action}
             className="song-play-btn">
-            <i className="fa fa-play" aria-hidden="true"></i>
+            {playPauseIcon}
           </button>
         </div>
         <div className="song-title">

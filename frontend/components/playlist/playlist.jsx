@@ -16,6 +16,23 @@ class Playlist extends React.Component {
     this.props.requestPlaylist(this.props.match.params.playlistId);
   }
 
+  playPlaylist(e) {
+    e.preventDefault();
+    this.props.upNext(this.props.songs);
+    if (!this.props.playing) {
+      this.props.play();
+    }
+  }
+
+  playSong(e, idx) {
+    e.preventDefault();
+    this.props.upNext(this.props.songs.slice(idx));
+    this.props.pastSongsInPlaylists(this.props.songs.slice(0, idx));
+    if (!this.props.playing) {
+      this.props.play();
+    }
+  }
+
   render() {
     const { playlist, songs, owner, deletePlaylist } = this.props;
     let content;
@@ -23,10 +40,14 @@ class Playlist extends React.Component {
       content =
         <div className="playlist">
           <PlaylistDisplay
+            playPlaylist={this.playPlaylist.bind(this)}
             playlist={playlist}
             owner={owner}
             deletePlaylist={deletePlaylist}/>
-          <SongIndex songs={songs} />
+          <SongIndex
+            playSong={this.playSong.bind(this)}
+            playlistSongIds={playlist.song_ids}
+            songs={songs} />
         </div>;
     }
     return(

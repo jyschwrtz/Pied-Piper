@@ -16,9 +16,6 @@ class ControlBar extends React.Component {
     this.setSeek = this.setSeek.bind(this);
   }
 
-  componentDidMount() {
-  }
-
   componentWillUnmount() {
     clearInterval(this.progressTracker);
   }
@@ -26,7 +23,6 @@ class ControlBar extends React.Component {
   setSeek(e) {
     this.player.seek(e.target.value);
   }
-
 
   handleChange(e) {
     this.setState({ volumeLevel: parseInt(e.target.value * 100) / 100 });
@@ -113,64 +109,3 @@ class ControlBar extends React.Component {
 }
 
 export default ControlBar;
-
-//
-// render() {
-//   const {
-//     playing,
-//     currentSong,
-//     nextSong,
-//     loop,
-//     shuffle,
-//     shuffling,
-//     looping,
-//     artist,
-//     volumeLevel
-//   } = this.props;
-//   const { progress } = this.state;
-//   let howler;
-//   let length = null;
-//   if (currentSong) {
-//     length = currentSong.length;
-//     howler = (
-//       <ReactHowler
-//         ref={(ref) => (this.player = ref)}
-//         src={[currentSong.filename]}
-//         playing={playing}
-//         volume={volumeLevel}
-//         html5={true}
-//         loop={looping}
-//         onEnd={nextSong}
-//       />
-//     );
-//     if (!this.progressTracker) {
-//       this.progressTracker = setInterval(() => {
-//         this.setState({
-//           progress: this.player.seek()
-//         });
-//       }, 1000);
-//     }
-//   }
-//
-//   return(
-//     <div>
-//       <div className="control-bar">
-//         <CurrentSong
-//           song={currentSong}
-//           artist={artist}/>
-//         <div className="control-bar-center">
-//           <PlayerControlsContainer />
-//           <SongProgress
-//             length={length}
-//             setSeek={this.setSeek}
-//             progress={progress}/>
-//         </div>
-//         <VolumeControlsContainer
-//           volumeLevel={volumeLevel}
-//           />
-//       </div>
-//       { howler }
-//     </div>
-//   );
-// }
-// }

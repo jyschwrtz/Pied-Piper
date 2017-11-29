@@ -3,7 +3,6 @@ import BrowseIndexItem from '../browse/browse_index_item';
 
 export default (props) => {
   const { playlists, currentUser } = props;
-  console.log( playlists);
   let content;
   if (playlists && playlists.length > 0) {
     content =

@@ -3,14 +3,14 @@ import { Link, withRouter } from 'react-router-dom';
 
 class PlaylistDisplay extends React.Component {
 
-  handleClick(e) {
+  handleClickDelete(e) {
     e.preventDefault();
     this.props.deletePlaylist(this.props.playlist.id);
     this.props.history.push('/collection/playlists');
   }
 
   render() {
-    const { playlist, owner } = this.props;
+    const { playlist, owner, playPlaylist } = this.props;
     let playlistOwnerName;
     let deleteButton;
     if (owner) {
@@ -19,7 +19,7 @@ class PlaylistDisplay extends React.Component {
         deleteButton = (
           <button
             className="typ-btn black-btn"
-            onClick={this.handleClick.bind(this)}>
+            onClick={this.handleClickDelete.bind(this)}>
             DELETE
           </button>
         );
@@ -32,7 +32,10 @@ class PlaylistDisplay extends React.Component {
             src={playlist.image_url}
             />
           <div className="playlist-cover-select">
-            <i className="fa fa-play-circle-o" aria-hidden="true"></i>
+            <i
+              onClick={playPlaylist}
+              className="fa fa-play-circle-o"
+              aria-hidden="true"></i>
           </div>
         </div>
         <div className="playlist-info">
@@ -47,7 +50,9 @@ class PlaylistDisplay extends React.Component {
             </h2>
           </div>
           <div className="buttons">
-            <button className="typ-btn green-btn">
+            <button
+              onClick={playPlaylist}
+              className="typ-btn green-btn">
               PLAY
             </button>
             {deleteButton}

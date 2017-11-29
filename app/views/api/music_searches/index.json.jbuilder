@@ -9,7 +9,7 @@ end
     json.partial! 'api/playlists/playlist', playlist: playlist
   end
 end
-#
+
 @users.each do |user|
   json.set! 'user' do
     json.set! user.id do

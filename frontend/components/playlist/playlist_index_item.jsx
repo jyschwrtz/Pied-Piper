@@ -9,7 +9,12 @@ class PlaylistIndexItem extends React.Component {
 
   selectPlaylist(e) {
     e.preventDefault();
-    const { playlist, song, createPlaylistSong, toggleAddToPlaylist } = this.props;
+    const {
+      playlist,
+      song,
+      createPlaylistSong,
+      toggleAddToPlaylist
+    } = this.props;
     createPlaylistSong(song.id, playlist.id);
     toggleAddToPlaylist(e);
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import SongSearchResults from './song_search_results';
+import SongSearchResultsContainer from './song_search_results_container';
 import PlaylistSearchResults from './playlist_search_results';
 import UserSearchResults from './user_search_results';
 
@@ -20,9 +20,9 @@ class Search extends React.Component {
   }
 
   render() {
-    const { songSearch, userSearch, playlistSearch, currentUser } = this.props;
+    const { songSearch, userSearch, playlistSearch, currentUser,
+            play, upNext, pastSongsInPlaylists } = this.props;
     const { searchInput } = this.state;
-
     return(
       <div className="search">
         <div className="search-bar">
@@ -34,8 +34,9 @@ class Search extends React.Component {
             placeholder="Start typing..."
             />
         </div>
-        
-        <SongSearchResults songs={songSearch} />
+
+        <SongSearchResultsContainer
+          songs={songSearch} />
         <PlaylistSearchResults
           playlists={playlistSearch}
           currentUser={currentUser} />

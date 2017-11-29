@@ -33,11 +33,6 @@ class AddToPlaylist extends React.Component {
         </button>
         <div className="add-to-playlist-top">
           <h1>{"Add to playlist"}</h1>
-          <button
-            onClick={this.toggleNewPlaylistShow}
-            className="typ-btn green-btn">
-            New Playlist
-          </button>
         </div>
         <div className="add-to-playlist-playlists">
           <PlaylistIndex
@@ -55,3 +50,9 @@ class AddToPlaylist extends React.Component {
 }
 
 export default AddToPlaylist;
+//
+// <button
+//   onClick={this.toggleNewPlaylistShow}
+//   className="typ-btn green-btn">
+//   New Playlist
+// </button>

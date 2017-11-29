@@ -22,7 +22,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  searchDatabase: (query) => dispatch(searchDatabase(query))
+  searchDatabase: (query) => dispatch(searchDatabase(query)),
 });
 
 export default connect(
