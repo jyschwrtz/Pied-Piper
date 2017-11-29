@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image_url = "default-user-image.png"
     if @user.save
       login(@user)
       render :show

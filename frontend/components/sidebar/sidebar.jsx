@@ -14,6 +14,7 @@ class Sidebar extends React.Component {
 
   render() {
     const { currentUser } = this.props;
+    let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/user_images/${currentUser.image_url}`;
     return(
       <div className="sidebar">
         <div className="sidebar-top">
@@ -31,7 +32,7 @@ class Sidebar extends React.Component {
             to="/setting/account"
             className="user-account-link">
             <div className="sidebar-bottom">
-              <img src={currentUser.image_url} />
+              <img src={src} />
               <h2>{currentUser.username}</h2>
             </div>
           </NavLink>

@@ -25,11 +25,12 @@ class PlaylistDisplay extends React.Component {
         );
       }
     }
+      let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/${playlist.image_url}`;
     return (
       <div className="playlist-display">
         <div className="album-cover">
           <img
-            src={playlist.image_url}
+            src={src}
             />
           <div className="playlist-cover-select">
             <i

@@ -8,10 +8,11 @@ class UserAccount extends React.Component {
 
   render() {
     const { logout, currentUser } = this.props;
+    let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/user_images/${currentUser.image_url}`;
     return(
       <div className="user-account">
         <div className="user-account-top">
-          <img src={currentUser.image_url} />
+          <img src={src} />
           <h1>{currentUser.username}</h1>
         </div>
         <div className="user-account-bottom">

@@ -54,7 +54,9 @@ class SongIndexItem extends React.Component {
     let playPauseIcon = <i className="fa fa-play" aria-hidden="true"></i>;
     let action = this.props.playSong;
     let songClass = "song-index-item";
-    if (currentSong && playlistSongIds && playlistSongIds[idx] === currentSong.id) {
+    if (currentSong
+        && playlistSongIds
+        && playlistSongIds[idx] === currentSong.id) {
       songClass += " selected-song";
       action = this.playPauseSong.bind(this);
       if (playing) {

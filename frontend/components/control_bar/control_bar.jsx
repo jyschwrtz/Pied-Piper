@@ -41,17 +41,16 @@ class ControlBar extends React.Component {
     } = this.props;
     const { progress, volumeLevel } = this.state;
     let howler;
-    let length = null;
     if (currentSong) {
-      length = currentSong.length;
+      let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/all_songs/${currentSong.filename}`;
       howler = (
         <ReactHowler
           ref={(ref) => (this.player = ref)}
-          src={[currentSong.filename]}
+          src={[src]}
           playing={playing}
           volume={volumeLevel}
           html5={true}
-          loop={looping}
+          loop={false}
           onEnd={nextSong}
         />
       );
@@ -62,6 +61,10 @@ class ControlBar extends React.Component {
           });
         }, 500);
       }
+    }
+    let duration = 0;
+    if (this.player) {
+      duration = Math.floor(this.player.duration());
     }
 
     let volumeIcon;
@@ -82,7 +85,7 @@ class ControlBar extends React.Component {
           <div className="control-bar-center">
             <PlayerControlsContainer />
             <SongProgress
-              length={length}
+              length={duration}
               setSeek={this.setSeek}
               progress={progress}/>
           </div>

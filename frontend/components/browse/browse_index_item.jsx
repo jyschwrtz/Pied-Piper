@@ -15,11 +15,12 @@ class BrowseIndexItem extends React.Component {
     const { playlist, currentUser } = this.props;
     let content;
     if (playlist) {
+      let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/${playlist.image_url}`;
       content = (
        <div className='browse-index-item'>
          <Link to={`/user/${currentUser.id}/playlist/${playlist.id}`} >
            <div className="album-cover">
-             <img src={playlist.image_url}/>
+             <img src={src}/>
              <div className="playlist-cover-select">
                <i className="fa fa-play-circle-o" aria-hidden="true"></i>
              </div>

@@ -13,7 +13,7 @@ ApplicationRecord.transaction do
   Playlist.destroy_all
 
   # USERS
-  default_user_image = "default-user-image.png"
+  default_user_image =  "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/default-user-image.png"
 
   User.create!( # Demo User
     username: "demo_user",
@@ -48,14 +48,14 @@ ApplicationRecord.transaction do
     username: "Melanie Ungar",
     email: "melanie.ungar@mail.com",
     password: "password",
-    image_url: "melanie_ungar.jpg"
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/melanie_ungar.jpg"
   )
 
   ralph_castelli = User.create!(
     username: "Ralph Castelli",
     email: "ralph.castelli@mail.com",
     password: "password",
-    image_url: "Ralph_Castello.jpg"
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/Ralph_Castello.jpg"
   )
 
   craze_24 = User.create!(
@@ -89,49 +89,49 @@ ApplicationRecord.transaction do
   # SONGS
   song1 = Song.create!(
     song_name: "The Statement",
-    filename: "Wordsmith_-_The_Statement.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Wordsmith_-_The_Statement.mp3",
     length: 171,
     artist_id: wordsmith.id
   )
 
   song2 = Song.create!(
     song_name: "Two Kids",
-    filename: "THE_DLX_-_Two_Kids.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/THE_DLX_-_Two_Kids.mp3",
     length: 211,
     artist_id: the_dlx.id
   )
 
   song3 = Song.create!(
     song_name: "Crazy Glue",
-    filename: "Melanie_Ungar_-_Crazy_Glue.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Melanie_Ungar_-_Crazy_Glue.mp3",
     length: 220,
     artist_id: melanie_ungar.id
   )
 
   song4 = Song.create!(
     song_name: "Moments",
-    filename: "Ralph_Castelli_-_good_morning.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Ralph_Castelli_-_good_morning.mp3",
     length: 262,
     artist_id: ralph_castelli.id
   )
 
   song5 = Song.create!(
     song_name: "Rolling",
-    filename: "Craze_24_-_Rolling__Original_Clean_.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Craze_24_-_Rolling__Original_Clean_.mp3",
     length: 262,
     artist_id: craze_24.id
   )
 
   song6 = Song.create!(
     song_name: "Universal Funk",
-    filename: "Duo_Teslar_-_Universal_Funk.mp3",
+    filename: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Music/Singles/Duo_Teslar_-_Universal_Funk.mp3",
     length: 252,
     artist_id: duo_teslar.id
   )
 
 
   # PLAYLISTS
-  default_album_cover = "album_cover.png"
+  default_album_cover = "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/default_images/album_cover.png"
 
   playlist1 = Playlist.create!(
     title: "Saturday Afternoon",
@@ -152,7 +152,7 @@ ApplicationRecord.transaction do
   playlist3 = Playlist.create!(
     title: "Crazy Glue - Single",
     owner_id: melanie_ungar.id,
-    image_url: "melanie_ungar.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/melanie_ungar.jpg",
     date: 2017,
     genre: "pop"
   )
@@ -160,7 +160,7 @@ ApplicationRecord.transaction do
   playlist4 = Playlist.create!(
     title: "Good Morning - Single",
     owner_id: melanie_ungar.id,
-    image_url: "Ralph_Castello.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/Ralph_Castello.jpg",
     date: 2017,
     genre: "pop"
   )
@@ -168,7 +168,7 @@ ApplicationRecord.transaction do
   playlist5 = Playlist.create!(
     title: "Rolling - Single",
     owner_id: craze_24.id,
-    image_url: "Rolling.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/Rolling.jpg",
     date: 2017,
     genre: "pop"
   )
@@ -176,7 +176,7 @@ ApplicationRecord.transaction do
   playlist6 = Playlist.create!(
     title: "Two Kids - Single",
     owner_id: the_dlx.id,
-    image_url: "Two_Kids.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/Two_Kids.jpg",
     date: 2017,
     genre: "pop"
   )
@@ -184,7 +184,7 @@ ApplicationRecord.transaction do
   playlist7 = Playlist.create!(
     title: "The Statement - Single",
     owner_id: wordsmith.id,
-    image_url: "The_Statement.jpg",
+    image_url: "https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/The_Statement.jpg",
     date: 2017,
     genre: "pop"
   )
