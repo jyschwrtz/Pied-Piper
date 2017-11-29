@@ -8,6 +8,7 @@ import {
 import BrowseContainer from '../browse/browse_container';
 import PlaylistContainer from '../playlist/playlist_container';
 import CollectionContainer from '../collection/collection_container';
+import SearchContainer from '../search/search_container';
 import UserAccountContainer from '../user/user_account_container';
 
 class MainPage extends React.Component {
@@ -24,6 +25,9 @@ class MainPage extends React.Component {
         <Route
           path="/collection"
           component={CollectionContainer}/>
+        <Route
+          path="/search"
+          component={SearchContainer}/>
         <Route
           path="/setting/account"
           component={UserAccountContainer}/>

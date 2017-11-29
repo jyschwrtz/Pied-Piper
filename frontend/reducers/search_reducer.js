@@ -1,6 +1,13 @@
 import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
 
-const SearchReducer = (state = {}, action) => {
+const initialState = {
+  song: {},
+  playlist: {},
+  user: {},
+};
+
+
+const SearchReducer = (state = initialState, action) => {
   Object.freeze(state);
   let newState;
 
