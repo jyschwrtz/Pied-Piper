@@ -25,7 +25,23 @@ class MusicPlayer extends React.Component {
         backgroundClass += "-search";
         break;
       case "/collection":
-        backgroundClass += "-collection";
+        switch (this.props.location.pathname) {
+          case "/collection/playlists":
+            backgroundClass += "-collection-playlists";
+            break;
+          case "/collection/your_daily_mix":
+            backgroundClass += "-collection-your-daily-mix";
+            break;
+          case "/collection/songs":
+            backgroundClass += "-collection-songs";
+            break;
+          case "/collection/albums":
+            backgroundClass += "-collection-albums";
+            break;
+          case "/collection/artists":
+            backgroundClass += "-collection-artists";
+            break;
+        }
         break;
       case "/user":
         backgroundClass += "-user";
@@ -45,6 +61,7 @@ class MusicPlayer extends React.Component {
             backgroundClass += "-browse-discover";
             break;
         }
+        break;
     }
     return (
       <div className={backgroundClass}>

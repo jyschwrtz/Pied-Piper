@@ -36,19 +36,30 @@ class CollectionPlaylists extends React.Component {
   render() {
     const { createPlaylist, playlists } = this.props;
     const { playlistForm, playlistIds } = this.state;
+    let playlistArray = [];
+    if (playlistIds.length > 5) {
+      const mid = Math.floor(playlistIds.length / 2);
+      playlistArray = [playlistIds.slice(0, mid), playlistIds.slice(mid)];
+    } else {
+      playlistArray = [playlistIds];
+    }
     return (
       <div className="collection-playlists">
         <button
-          onClick={this.togglePlaylistForm}
-          >
+          onClick={this.togglePlaylistForm}>
           New Playlist
         </button>
-        <BrowseIndexContainer playlistIds={playlistIds} />
+        {
+          playlistArray.map((playlistArrayIds, idx) => (
+            <BrowseIndexContainer
+              key={idx}
+              playlistIds={playlistArrayIds} />
+          ))
+        }
         <div className={playlistForm}>
           <PlaylistForm
             createPlaylist={createPlaylist}
-            togglePlaylistForm={this.togglePlaylistForm}
-          />
+            togglePlaylistForm={this.togglePlaylistForm}/>
         </div>
       </div>
     );
