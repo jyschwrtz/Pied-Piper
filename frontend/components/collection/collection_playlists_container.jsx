@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Collection from './collection';
+import CollectionPlaylists from './collection_playlists';
 import { createPlaylist, requestPlaylists } from '../../actions/playlist_actions';
 import { selectUserPlaylists } from '../../reducers/selectors';
 
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Collection);
+)(CollectionPlaylists);

@@ -8,7 +8,7 @@ import {
 
 import BrowseContainer from '../browse/browse_container';
 import PlaylistContainer from '../playlist/playlist_container';
-import CollectionContainer from '../collection/collection_container';
+import Collection from '../collection/collection';
 import SearchContainer from '../search/search_container';
 import UserAccountContainer from '../user/user_account_container';
 
@@ -25,7 +25,7 @@ class MainPage extends React.Component {
           component={PlaylistContainer}/>
         <Route
           path="/collection"
-          component={CollectionContainer}/>
+          component={Collection}/>
         <Route
           path="/search"
           component={SearchContainer}/>

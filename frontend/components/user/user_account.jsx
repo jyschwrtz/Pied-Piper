@@ -16,21 +16,27 @@ class UserAccount extends React.Component {
           <h1>{currentUser.username}</h1>
         </div>
         <div className="user-account-bottom">
-          <Link to="/setting/account" >
+          <a
+            target="_blank"
+            href="https://github.com/jyschwrtz/Pied-Piper" >
             <button>
-              VIEW ACCOUNT
+              VIEW CODE ON GITHUB
             </button>
-          </Link>
-          <Link to="/setting/account" >
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/jyschwrtz" >
             <button>
-              FULL WEBSITE
+              GITHUB PROFILE
             </button>
-          </Link>
-          <Link to="/setting/account" >
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/jay-schwartz/" >
             <button>
-              HELP
+              LINKED IN PROFILE
             </button>
-          </Link>
+          </a>
           <button
             onClick={logout}>
             LOG OUT
