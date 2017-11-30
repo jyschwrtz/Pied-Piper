@@ -20,11 +20,34 @@
   margin-right: 40px;
 }
 
-.playlist-info h1 {
+.playlist-display .playlist-title {
+  display: flex;
+}
+
+.playlist-display .edit-btn {
+  background: transparent;
+}
+
+.playlist-display .edit-btn i {
+  font-size: 15px;
+  color: $light-gray;
+  transform: translateY(-40%);
+}
+
+.playlist-info h1, .playlist-display .playlist-title input {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1.5px;
   line-height: 36px;
+  padding-right: 5px;
+}
+
+.playlist-display .playlist-title input {
+  background: transparent;
+  border: none;
+  color: $gray;
+  font-style: italic;
+
 }
 
 .playlist-info h2 {
