@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowseIndexItem from '../browse/browse_index_item';
+import BrowseIndexItemContainer from '../browse/browse_index_item_container';
 
 export default (props) => {
   const { playlists, currentUser } = props;
@@ -10,11 +10,9 @@ export default (props) => {
         <h1>Playlists:</h1>
         {
           playlists.map(playlist => (
-            <BrowseIndexItem
+            <BrowseIndexItemContainer
               key={playlist.id}
-              playlistId={playlist.id}
-              playlist={playlist}
-              currentUser={currentUser}/>
+              playlist={playlist}/>
           ))
         }
       </div>;

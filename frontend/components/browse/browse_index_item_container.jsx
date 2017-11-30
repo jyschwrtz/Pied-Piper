@@ -5,10 +5,14 @@ import { selectPlaylistSongs } from '../../reducers/selectors';
 import BrowseIndexItem from './browse_index_item';
 
 const mapStateToProps = (state, newProps) => {
+  let songs;
+  if (newProps.playlist) {
+    songs =  selectPlaylistSongs(state, newProps.playlist.id);
+  }
 
   return ({
     currentUser: state.session.currentUser,
-    songs: selectPlaylistSongs(state, newProps.playlistId),
+    songs,
     playing: state.ui.playing,
   });
 };
