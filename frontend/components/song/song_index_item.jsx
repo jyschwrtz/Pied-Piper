@@ -36,6 +36,10 @@ class SongIndexItem extends React.Component {
     const {
       song, idx, playlistSongIds, currentSong, playing, play, artist
     } = this.props;
+    let username = "";
+    if (artist) {
+      username = artist.username;
+    }
     const time = this.formatTime(song.length);
     const songMenuClass =
       this.state.songMenuDisplay ? "song-menu" : "song-menu hidden";
@@ -73,7 +77,7 @@ class SongIndexItem extends React.Component {
             {song.song_name}
           </span>
           <span className="song-artist">
-            {artist.username}
+            {username}
           </span>
         </div>
         <div className="song-menu">

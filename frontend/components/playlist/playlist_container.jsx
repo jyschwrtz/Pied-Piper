@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => ({
   requestPlaylist: playlistId => dispatch(requestPlaylist(playlistId)),
   deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
   play: () => dispatch(play()),
-  upNext: (songs) => dispatch(upNext(songs)),
-  pastSongsInPlaylists: (songs) => dispatch(pastSongsInPlaylists(songs)),
+  upNext: (songs, playlist) => dispatch(upNext(songs, playlist)),
+  pastSongsInPlaylists: (songs, playlist) => dispatch(pastSongsInPlaylists(songs, playlist)),
 });
 
 export default connect(

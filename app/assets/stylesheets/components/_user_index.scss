@@ -1,33 +1,32 @@
-.browse-index {
+.user-index {
   display: flex;
   justify-content: center;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.browse-index-item {
+.user-index-item {
   padding: 0 8px;
   margin-bottom: 35px;
   min-width: 125px;
   max-width: 205px;
   height: auto;
-  flex: 1 0 125px;
-  text-align: center;
+  // flex: 1 0 125px;
 }
 
-.browse-index-item a {
+.user-index-item a {
   display: block;
   font-size: 14px;
   letter-spacing: 1.1px;
 }
 
-.browse-index-item a:hover {
+.user-index-item a:hover {
   text-decoration: none;
 }
 
-.browse-index-item p {
-  padding: 12px 0 4px 0;
+.user-index-item img {
+  border-radius: 200px;
 }
 
-.album-cover {
-  position: relative;
+.user-index-item p {
+  padding: 12px 0 4px 0;
 }

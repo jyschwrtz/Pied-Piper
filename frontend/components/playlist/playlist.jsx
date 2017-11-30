@@ -18,7 +18,8 @@ class Playlist extends React.Component {
 
   playPlaylist(e) {
     e.preventDefault();
-    this.props.upNext(this.props.songs);
+    e.stopPropagation();
+    this.props.upNext(this.props.songs, this.props.playlist);
     if (!this.props.playing) {
       this.props.play();
     }
@@ -26,8 +27,9 @@ class Playlist extends React.Component {
 
   playSong(e, idx) {
     e.preventDefault();
-    this.props.upNext(this.props.songs.slice(idx));
-    this.props.pastSongsInPlaylists(this.props.songs.slice(0, idx));
+    e.stopPropagation();
+    this.props.upNext(this.props.songs.slice(idx), this.props.playlist);
+    this.props.pastSongsInPlaylists(this.props.songs.slice(0, idx), this.props.playlist);
     if (!this.props.playing) {
       this.props.play();
     }
@@ -36,7 +38,6 @@ class Playlist extends React.Component {
   render() {
     const { playlist, songs, owner, deletePlaylist } = this.props;
     let content;
-    console.log(songs);
     if (this.props.songs) {
       content =
         <div className="playlist">

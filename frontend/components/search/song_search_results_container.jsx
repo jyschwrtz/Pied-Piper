@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   play: () => dispatch(play()),
-  upNext: (songs) => dispatch(upNext(songs)),
-  pastSongsInPlaylists: (songs) => dispatch(pastSongsInPlaylists(songs)),
+  upNext: (songs, playlist) => dispatch(upNext(songs, playlist)),
+  pastSongsInPlaylists: (songs, playlist) => dispatch(pastSongsInPlaylists(songs, playlist)),
 });
 
 export default connect(

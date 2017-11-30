@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
   receiveCurrentSong: currentSong => dispatch(receiveCurrentSong(currentSong)),
   play: () => dispatch(play()),
   nextSong: () => dispatch(nextSong()),
-  upNext: (songs) => dispatch(upNext(songs)),
+  upNext: (songs, playlist) => dispatch(upNext(songs, playlist)),
 });
 
 export default connect(

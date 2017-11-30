@@ -1,8 +1,8 @@
 class Api::MusicSearchesController < ApplicationController
   def index
     @songs = Song.top_five_results(search_params[:query])
-    @playlists = Playlist.top_five_results(search_params[:query])
-    @users = User.top_five_results(search_params[:query])
+    @playlists = Playlist.top_six_results(search_params[:query])
+    @users = User.top_six_results(search_params[:query])
   end
 
   # def random_playlist

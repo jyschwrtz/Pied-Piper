@@ -39,13 +39,16 @@ class SongMenu extends React.Component {
     // e.preventDefault();
     let addToPlaylistDisplay = this.state.addToPlaylistDisplay ? false : true;
     this.setState({ addToPlaylistDisplay });
-    // if (this.props.songMenuClass === "song-menu") {
-    //   this.props.toggleSongMenu(e);
-    // }
+    console.log(this.props.songMenuClass);
+    if (this.props.songMenuClass === "song-menu" && this.state.addToPlaylistDisplay) {
+      this.props.toggleSongMenu(e);
+    }
   }
 
   removeFromPlaylist(song) {
-    return () => {
+    return (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const playlistId = this.props.match.params.playlistId;
       this.props.deletePlaylistSong(song.id, playlistId);
     };

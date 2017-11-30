@@ -19,6 +19,7 @@ const initialState = {
   songHistory: [],
   songQueue: [],
   currentSong: null,
+  currentPlaylist: null,
   looping: false,
   shuffling: false,
 };
@@ -61,10 +62,12 @@ const UiReducer = (state = initialState, action) => {
         newState.songHistory.push(newState.currentSong);
       }
       newState.currentSong = newState.songQueue.shift();
+      newState.currentPlaylist = action.playlist;
       return newState;
     case PAST_SONGS_IN_PLAYLIST:
       newState = merge({}, state);
       newState.songHistory = newState.songHistory.concat(action.songs);
+      newState.currentPlaylist = action.playlist;
       return newState;
     case RECEIVE_CURRENT_SONG:
       newState = merge({}, state);

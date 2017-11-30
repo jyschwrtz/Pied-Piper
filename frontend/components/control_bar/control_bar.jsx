@@ -30,8 +30,11 @@ class ControlBar extends React.Component {
 
   render() {
     const {
+      play,
       playing,
       currentSong,
+      currentUser,
+      currentPlaylist,
       nextSong,
       loop,
       shuffle,
@@ -81,6 +84,10 @@ class ControlBar extends React.Component {
         <div className="control-bar">
           <CurrentSong
             song={currentSong}
+            currentUser={currentUser}
+            play={play}
+            playing={playing}
+            playlist={currentPlaylist}
             artist={artist}/>
           <div className="control-bar-center">
             <PlayerControlsContainer />

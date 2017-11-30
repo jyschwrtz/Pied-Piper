@@ -5,7 +5,7 @@ class BrowseIndexItem extends React.Component {
 
   playPlaylist(e) {
     e.preventDefault();
-    this.props.upNext(this.props.songs);
+    this.props.upNext(this.props.songs, this.props.playlist);
     if (!this.props.playing) {
       this.props.play();
     }

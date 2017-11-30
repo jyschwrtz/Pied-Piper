@@ -19,15 +19,17 @@ export const nextSong = () => ({
   type: NEXT_SONG
 });
 
-export const upNext = (songs) => ({
+export const upNext = (songs, playlist) => ({
   type: UP_NEXT,
   songs,
+  playlist,
 });
 
 // WILL NOT WORK EXACTLY LIKE IT SHOULD
-export const pastSongsInPlaylists = (songs) => ({
+export const pastSongsInPlaylists = (songs, playlist) => ({
   type: PAST_SONGS_IN_PLAYLIST,
   songs,
+  playlist,
 });
 
 export const shuffle = () => ({

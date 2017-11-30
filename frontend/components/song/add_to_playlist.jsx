@@ -17,6 +17,12 @@ class AddToPlaylist extends React.Component {
     this.setState({ displayNewPlaylist });
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.toggleAddToPlaylist(e);
+  }
+
   render() {
     const {
       name, song, playlists, toggleAddToPlaylist, createPlaylistSong
@@ -50,6 +56,7 @@ class AddToPlaylist extends React.Component {
 }
 
 export default AddToPlaylist;
+
 //
 // <button
 //   onClick={this.toggleNewPlaylistShow}

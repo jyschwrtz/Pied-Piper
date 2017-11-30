@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { requestSong } from '../../actions/song_actions';
 import ControlBar from './control_bar';
+import { play } from '../../actions/player_actions';
 
 const mapStateToProps = state => {
   let artist;
@@ -9,6 +10,8 @@ const mapStateToProps = state => {
   }
   return({
     currentSong: state.ui.currentSong,
+    currentUser: state.session.currentUser,
+    currentPlaylist: state.ui.currentPlaylist,
     artist,
     playing: state.ui.playing,
     shuffling: state.ui.shuffling,
@@ -18,7 +21,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestSong: songId => dispatch(requestSong(songId))
+  requestSong: songId => dispatch(requestSong(songId)),
+  play: () => dispatch(play()),
 });
 
 export default connect(

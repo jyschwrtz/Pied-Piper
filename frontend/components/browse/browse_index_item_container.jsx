@@ -18,7 +18,7 @@ const mapStateToProps = (state, newProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  upNext: (songs) => dispatch(upNext(songs)),
+  upNext: (songs, playlist) => dispatch(upNext(songs, playlist)),
   play: () => dispatch(play()),
 });
 

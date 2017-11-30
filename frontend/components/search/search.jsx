@@ -27,8 +27,10 @@ class Search extends React.Component {
     const { searchInput } = this.state;
     let navTitles = [];
     let playlist = {};
+    let topPlaylist = <div></div>;
     if (playlistSearch && playlistSearch.length > 0) {
       playlist = playlistSearch[0];
+      topPlaylist = <BrowseIndexItemContainer playlist={playlist} />;
     }
     if (songSearch && songSearch.length > 0) {
       navTitles = ["Top Results"];
@@ -42,12 +44,12 @@ class Search extends React.Component {
             onChange={this.handleChange()}
             value={searchInput}
             placeholder="Start typing..."
+            autoFocus
             />
         </div>
         <NavBar navTitles={navTitles} page="search"/>
         <div className="search-results-top">
-          <BrowseIndexItemContainer
-            playlist={playlist} />
+          { topPlaylist }
           <SongSearchResultsContainer
             songs={songSearch} />
         </div>

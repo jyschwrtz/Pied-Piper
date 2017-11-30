@@ -1,5 +1,30 @@
 .current-song {
-  width: 30%;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.current-song .playlist-image-link {
+  padding-right: 14px;
+}
+
+.current-song .playlist-image-link>div {
+  position: relative;
+}
+
+.current-song .playlist-image {
+  width: 56px;
+  height: 56px;
+}
+
+.current-song .playlist-image-link i {
+  font-size: 30px;
+}
+
+.current-song-info {
+  width: 65%;
 }
 
 .song-name {
@@ -11,7 +36,14 @@
   text-overflow: ellipsis;
 }
 
+// .song-name:hover {
+//   overflow-x: visible;
+// }
+
 .artist-name {
   font-size: 14px;
   color: $gray;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }

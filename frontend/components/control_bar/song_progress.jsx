@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 class SongProgress extends React.Component {
 
   formatTime(length) {
