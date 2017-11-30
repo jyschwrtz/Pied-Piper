@@ -1,0 +1,16 @@
+.playlist-search-results {
+  text-align: center;
+}
+
+.playlist-search-results>h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.playlist-search-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

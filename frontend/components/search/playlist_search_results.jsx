@@ -6,19 +6,21 @@ export default (props) => {
   let content;
   if (playlists && playlists.length > 0) {
     content =
-      <div>
-        <h1>Playlists:</h1>
-        {
-          playlists.map(playlist => (
-            <BrowseIndexItemContainer
-              key={playlist.id}
-              playlist={playlist}/>
-          ))
-        }
+      <div className="playlist-search-results">
+        <h1>Playlists</h1>
+        <div className="playlist-search-index">
+          {
+            playlists.map(playlist => (
+              <BrowseIndexItemContainer
+                key={playlist.id}
+                playlist={playlist}/>
+            ))
+          }
+        </div>
       </div>;
   }
   return(
-    <div className="playlist-search-results">
+    <div>
       { content }
     </div>
   );

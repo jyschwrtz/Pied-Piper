@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndexItemContainer from '../song/song_index_item_container';
+import SongIndex from '../song/song_index';
 
 class SongSearchResults extends React.Component {
   playSong(e, idx) {
@@ -17,20 +17,8 @@ class SongSearchResults extends React.Component {
     if (songs && songs.length > 0) {
       songIds = Object.values(songs).map(song => song.id);
       content =
-      <div>
-        <h1>Songs:</h1>
-        {
-          songs.map((song, idx) => (
-            <SongIndexItemContainer
-              key={song.id}
-              playSong={(e) => this.playSong(e, idx)}
-              playlistSongIds={songIds}
-              song={song}
-              idx={idx}
-              songs={songs}
-              />
-          ))
-        }
+      <div >
+        <SongIndex songs={songs} />
       </div>;
     }
     return(
