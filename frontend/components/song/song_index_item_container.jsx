@@ -3,10 +3,17 @@ import SongIndexItem from './song_index_item';
 import { receiveCurrentSong } from '../../actions/song_actions';
 import { play, nextSong, upNext } from '../../actions/player_actions';
 
-const mapStateToProps = state => ({
-  currentSong: state.ui.currentSong,
-  playing: state.ui.playing,
-});
+const mapStateToProps = (state, newProps) => {
+  let artist;
+  if (newProps.song) {
+    artist = state.entities.users[newProps.song.artist_id];
+  }
+  return({
+    currentSong: state.ui.currentSong,
+    playing: state.ui.playing,
+    artist
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   receiveCurrentSong: currentSong => dispatch(receiveCurrentSong(currentSong)),

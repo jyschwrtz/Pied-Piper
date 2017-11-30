@@ -22,7 +22,9 @@ class BrowseIndexItem extends React.Component {
            <div className="album-cover">
              <img src={src}/>
              <div className="playlist-cover-select">
-               <i className="fa fa-play-circle-o" aria-hidden="true"></i>
+               <i
+                 onClick={this.playPlaylist.bind(this)}
+                 className="fa fa-play-circle-o" aria-hidden="true"></i>
              </div>
            </div>
            <p>{playlist.title}</p>

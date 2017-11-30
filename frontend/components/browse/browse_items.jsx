@@ -25,7 +25,7 @@ class BrowseItems extends React.Component {
         this.items = [
           { title: "Workout", playlistIds: [10, 2, 1, 4] },
           { title: "Chill", playlistIds: [9, 6, 7, 8] },
-          { title: "Party'", playlistIds: [2, 5, 1, 10] },
+          { title: "Party", playlistIds: [2, 5, 1, 10] },
         ];
         break;
       case "/browse/new_releases":

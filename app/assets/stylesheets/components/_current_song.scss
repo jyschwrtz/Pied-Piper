@@ -1,3 +1,17 @@
 .current-song {
   width: 30%;
 }
+
+.song-name {
+  font-size: 15px;
+  color: $light-gray;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-name {
+  font-size: 14px;
+  color: $gray;
+}

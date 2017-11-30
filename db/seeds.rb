@@ -19,7 +19,7 @@ ApplicationRecord.transaction do
     username: "demo_user",
     email: "demo@mail.com",
     password: "password",
-    image_url: default_user_image
+    image_url: "Jay.jpg"
   )
 
   # User.create!( # Admin User
@@ -369,7 +369,7 @@ ApplicationRecord.transaction do
   playlist11 = Playlist.create!(
     title: "Beautiful Soul",
     owner_id: demo.id,
-    image_url: "woman_headphones.jpg",
+    image_url: "woman_headphones.jpeg",
     date: 2017,
     genre: "pop"
   )
@@ -377,7 +377,7 @@ ApplicationRecord.transaction do
   playlist12 = Playlist.create!(
     title: "You've Got Something Special",
     owner_id: demo.id,
-    image_url: "musician.jpg",
+    image_url: "musician.jpeg",
     date: 2017,
     genre: "pop"
   )

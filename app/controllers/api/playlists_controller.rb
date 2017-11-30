@@ -10,6 +10,7 @@ class Api::PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     @playlist.owner_id = current_user.id
+    @playlist.image_url = "album_cover.png"
     if @playlist.save
       render :show
     else

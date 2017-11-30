@@ -10,9 +10,8 @@ class PlaylistDisplay extends React.Component {
   }
 
   render() {
-    const { playlist, owner, playPlaylist } = this.props;
-    let playlistOwnerName;
-    let deleteButton;
+    const { playlist, owner, playPlaylist, songCount } = this.props;
+    let playlistOwnerName, songNumber, deleteButton;
     if (owner) {
       playlistOwnerName = owner.username;
       if (playlist.owner_id == this.props.match.params.userId) {
@@ -25,7 +24,12 @@ class PlaylistDisplay extends React.Component {
         );
       }
     }
-      let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/${playlist.image_url}`;
+    if (songCount > 1) {
+      songNumber =  <h3 className="song-count">{songCount} SONGS</h3>;
+    } else if(songCount === 1) {
+      songNumber =  <h3 className="song-count">{songCount} SONG</h3>;
+    }
+    let src = `https://s3-us-west-1.amazonaws.com/pied-piper-spotify-clone/Images/album+covers/${playlist.image_url}`;
     return (
       <div className="playlist-display">
         <div className="album-cover">
@@ -49,6 +53,7 @@ class PlaylistDisplay extends React.Component {
                 {playlistOwnerName}
               </Link>
             </h2>
+            {songNumber}
           </div>
           <div className="buttons">
             <button

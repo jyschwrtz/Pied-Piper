@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowseIndexItem from './browse_index_item';
+import BrowseIndexItemContainer from './browse_index_item_container';
 
 class BrowseIndex extends React.Component {
   constructor(props) {
@@ -11,18 +11,16 @@ class BrowseIndex extends React.Component {
   // }
 
   render() {
-    const { playlists, requestPlaylist, currentUser, playlistIds} = this.props;
-    // console.log(playlistIds);
+    const { playlists, requestPlaylist, currentUser, playlistIds, play, upNext, songs} = this.props;
     return(
       <ul className="browse-index">
         {
           playlistIds.map(playlistId => (
-            <BrowseIndexItem
+            <BrowseIndexItemContainer
               key={playlistId}
               playlistId={playlistId}
               playlist={playlists[playlistId]}
-              requestPlaylist={requestPlaylist}
-              currentUser={currentUser}/>
+              requestPlaylist={requestPlaylist}/>
           ))
         }
       </ul>

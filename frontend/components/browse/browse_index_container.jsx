@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   requestSongs: () => dispatch(requestSongs()),
   requestPlaylists: () => dispatch(requestPlaylists()),
-  requestPlaylist: (playlistId) => dispatch(requestPlaylist(playlistId))
+  requestPlaylist: (playlistId) => dispatch(requestPlaylist(playlistId)),
 });
 
 export default connect(

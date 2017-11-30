@@ -36,6 +36,7 @@ class Playlist extends React.Component {
   render() {
     const { playlist, songs, owner, deletePlaylist } = this.props;
     let content;
+    console.log(songs);
     if (this.props.songs) {
       content =
         <div className="playlist">
@@ -43,7 +44,8 @@ class Playlist extends React.Component {
             playPlaylist={this.playPlaylist.bind(this)}
             playlist={playlist}
             owner={owner}
-            deletePlaylist={deletePlaylist}/>
+            deletePlaylist={deletePlaylist}
+            songCount={songs.length}/>
           <SongIndex
             playSong={this.playSong.bind(this)}
             playlistSongIds={playlist.song_ids}

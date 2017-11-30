@@ -7,19 +7,8 @@ class SongIndexItem extends React.Component {
     this.state = {
       songMenuDisplay: false
     };
-    // this.song = this.props.song;
-    // this.playSong = this.playSong.bind(this);
     this.toggleSongMenu = this.toggleSongMenu.bind(this);
   }
-
-  // playSong(e) {
-  //   e.preventDefault();
-  //   this.props.upNext([this.props.song]);
-  //   if (!this.props.playing) {
-  //     this.props.play();
-  //   }
-  //   console.log('HERE-------SONG-INDEX-ITEM');
-  // }
 
   playPauseSong(e) {
     e.preventDefault();
@@ -45,7 +34,7 @@ class SongIndexItem extends React.Component {
 
   render() {
     const {
-      song, idx, playlistSongIds, currentSong, playing, play
+      song, idx, playlistSongIds, currentSong, playing, play, artist
     } = this.props;
     const time = this.formatTime(song.length);
     const songMenuClass =
@@ -79,8 +68,13 @@ class SongIndexItem extends React.Component {
             {playPauseIcon}
           </button>
         </div>
-        <div className="song-title">
-          <span>{song.song_name}</span>
+        <div className="song-information">
+          <span className="song-title">
+            {song.song_name}
+          </span>
+          <span className="song-artist">
+            {artist.username}
+          </span>
         </div>
         <div className="song-menu">
           <button

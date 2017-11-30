@@ -35,7 +35,7 @@ class Search extends React.Component {
             placeholder="Start typing..."
             />
         </div>
-
+        
         <SongSearchResultsContainer
           songs={songSearch} />
         <PlaylistSearchResults
