@@ -53,6 +53,46 @@ As the previous and next songs are navigated, the songs are added and removed to
 ![song-select](https://github.com/jyschwrtz/pied-piper-design-docs/raw/master/gifs/song_select.gif)
 
 ### Search
+Search was implemented by adding a reducer for search queries.  In order to keep the search quick and frontend code clean, the search controller returns a limited amount of results for each type of search (songs, users, & playlists).  The frontend search component then shows however many results are shown in the current state.
+
+Search Controller
+```javascript
+class Api::MusicSearchesController < ApplicationController
+  def index
+    @songs = Song.top_five_results(search_params[:query])
+    @playlists = Playlist.top_six_results(search_params[:query])
+    @users = User.top_six_results(search_params[:query])
+  end
+
+  private
+
+  def search_params
+    params.require(:search).permit(:query, :playlist_id, :artist_id)
+  end
+end
+```
+
+Search Reducer
+```javascript
+const initialState = {
+  song: {},
+  playlist: {},
+  user: {},
+};
+
+const SearchReducer = (state = initialState, action) => {
+  Object.freeze(state);
+  let newState;
+
+  switch (action.type) {
+    case RECEIVE_SEARCH_RESULTS:
+      newState = action.results;
+      return newState;
+    default:
+      return state;
+  }
+};
+```
 
 ![search](https://github.com/jyschwrtz/pied-piper-design-docs/raw/master/gifs/search.gif)
 
