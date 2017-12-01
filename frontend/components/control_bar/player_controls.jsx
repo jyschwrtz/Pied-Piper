@@ -4,7 +4,8 @@ import ReactHowler from 'react-howler';
 class PlayerControls extends React.Component {
 
   render() {
-    const { playing, play, currentSong, nextSong, previousSong, looping, shuffling, loop, shuffle } = this.props;
+    const { playing, play, currentSong, nextSong, previousSong,
+            looping, shuffling, loop, shuffle } = this.props;
 
     const playButton = playing ? (
       <i className="fa fa-pause-circle-o" aria-hidden="true"></i>

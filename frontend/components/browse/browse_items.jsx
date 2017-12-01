@@ -6,8 +6,8 @@ class BrowseItems extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      { title: "Cool And Collected", playlistIds: [18, 14, 20, 16] },
-      { title: "Afternoon Study", playlistIds: [8, 17, 3, 5] },
+      { title: "Cool And Collected", playlistIds: [17, 14, 26, 16] },
+      { title: "Afternoon Study", playlistIds: [8, 20, 3, 5] },
       { title: "Weekend Jammin'", playlistIds: [4, 6, 7, 1] },
     ];
   }
@@ -16,8 +16,8 @@ class BrowseItems extends React.Component {
     switch(newProps.location.pathname) {
       case "/browse/featured":
         this.items = [
-          { title: "Cool And Collected", playlistIds: [18, 14, 20, 16] },
-          { title: "Afternoon Study", playlistIds: [8, 17, 3, 5] },
+          { title: "Cool And Collected", playlistIds: [17, 14, 26, 16] },
+          { title: "Afternoon Study", playlistIds: [8, 20, 3, 5] },
           { title: "Weekend Jammin'", playlistIds: [4, 6, 7, 1] },
         ];
         break;

@@ -135,6 +135,20 @@ ApplicationRecord.transaction do
     image_url: "profile-m4.jpg"
   )
 
+  queenz = User.create!(
+    username: "Queenz The Lyricist",
+    email: "queenz@mail.com",
+    password: "password1988PP",
+    image_url: default_user_image
+  )
+
+  matt = User.create!(
+    username: "Matthew Buckner",
+    email: "matthew@mail.com",
+    password: "password1988PP",
+    image_url: default_user_image
+  )
+
   # SONGS
   song1 = Song.create!(
     song_name: "The Statement",
@@ -521,6 +535,14 @@ ApplicationRecord.transaction do
     genre: "pop"
   )
 
+  playlist26 = Playlist.create!(
+    title: "Paper Dream",
+    owner_id: matt.id,
+    image_url: "PaperDream1.png",
+    date: 2017,
+    genre: "pop"
+  )
+
 
   song7 = Song.create!( song_name: "White Cows", filename: "01-1161940-Kellee+Maize-In+Tune+_J.+Glaze+Remix_.mp3", length: 347,  artist_id: jennifer_auston.id)
   song8 = Song.create!( song_name: "the Tentative Legacy", filename: "02-1161934-Kellee+Maize-I+Insist+_J.+Glaze+Remix_.mp3", length: 304,  artist_id: jennifer_auston.id)
@@ -542,10 +564,10 @@ ApplicationRecord.transaction do
   song24 = Song.create!( song_name: "Meandering Slivers", filename: "09-1409438-Alexey+Baranov-Bubble+Gum+Machine.mp3", length: 114, artist_id: donald_brown.id)
   song25 = Song.create!( song_name: "Sign Bashing", filename: "10-1408401-Alexey+Baranov-Lullaby+For+Phil.mp3", length: 198, artist_id: donald_brown.id)
   song26 = Song.create!( song_name: "Undobuted Wonder", filename: "11-1408400-Alexey+Baranov-Sunny+Day+Again+_Simple+Version_.mp3", length: 216, artist_id: donald_brown.id)
-  song27 = Song.create!( song_name: "The Rings of Afflictions", filename: "Wordsmith_-_The_Statement.mp3", length: 171, artist_id: thomas_hill.id)
-  song28 = Song.create!( song_name: "German of Dungeon", filename: "THE_DLX_-_Two_Kids.mp3", length: 211, artist_id: thomas_hill.id)
-  song29 = Song.create!( song_name: "Reactionaries Without the Occastion", filename: "Melanie_Ungar_-_Crazy_Glue.mp3", length: 220, artist_id: thomas_hill.id)
-  song30 = Song.create!( song_name: "White Continuum", filename: "Ralph_Castelli_-_good_morning.mp3", length: 262, artist_id: tiffany_smith.id)
+  song27 = Song.create!( song_name: "The Rings of Afflictions", filename: "01-1465313-Ivan+Tregub-Yggdrasil.mp3", length: 288, artist_id: thomas_hill.id)
+  song28 = Song.create!( song_name: "German of Dungeon", filename: "02-1465401-Ivan+Tregub-Slavonic+spirit.mp3", length: 440, artist_id: thomas_hill.id)
+  song29 = Song.create!( song_name: "Reactionaries Without the Occastion", filename: "03-1465664-Ivan+Tregub-Mimir.mp3", length: 421, artist_id: thomas_hill.id)
+  song30 = Song.create!( song_name: "White Continuum", filename: "04-1465378-Ivan+Tregub-Saga.mp3", length: 369, artist_id: tiffany_smith.id)
   song31 = Song.create!( song_name: "Wait", filename: "Craze_24_-_Rolling__Original_Clean_.mp3", length: 262, artist_id: tiffany_smith.id)
   song32 = Song.create!( song_name: "Sheep", filename: "Duo_Teslar_-_Universal_Funk.mp3", length: 252, artist_id: mika_mcdoller.id)
   song33 = Song.create!( song_name: "Behind the Undoubted Snake", filename: "01-1161940-Kellee+Maize-In+Tune+_J.+Glaze+Remix_.mp3", length: 347,  artist_id: mika_mcdoller.id)
@@ -574,11 +596,24 @@ ApplicationRecord.transaction do
   # song56 = Song.create!( song_name: "Digital Wonder", filename: "Ralph_Castelli_-_good_morning.mp3", length: 262, artist_id: ralph_castelli.id)
   # song57 = Song.create!( song_name: "Soaring Winters", filename: "Craze_24_-_Rolling__Original_Clean_.mp3", length: 262, artist_id: craze_24.id)
   # song58 = Song.create!( song_name: "Bound", filename: "Duo_Teslar_-_Universal_Funk.mp3", length: 252, artist_id: duo_teslar.id)
+  song59 = Song.create!( song_name: "Optimist", filename: "01-1467383-QueenzTheLyricist-Optimistic+_I+Am+K-BeatZ_.mp3", length: 160, artist_id: queenz.id)
+  song60 = Song.create!( song_name: "Hip Hop", filename: "02-1467384-QueenzTheLyricist-Hip-Hop+Ft.Thelonious.mp3", length: 159, artist_id: queenz.id)
+  # song61 = Song.create!( song_name: "These Days", filename: "03-1467385-QueenzTheLyricist-These+Dayz+Avah+_Prod.NewDerseyBeats_.mp3", length: 182, artist_id: queenz.id)
+  song62 = Song.create!( song_name: "These Days", filename: "04-1467386-QueenzTheLyricist-Freedom+_Prod.Jee+Juh_.mp3", length: 187, artist_id: queenz.id)
+  # MATTS SONGS
+  song63 = Song.create!( song_name: "Prelude", filename: "Prelude.wav", length: 53, artist_id: matt.id)
+  song64 = Song.create!( song_name: "Garden", filename: "Garden.wav", length: 184, artist_id: matt.id)
+  song65 = Song.create!( song_name: "Daydreaming", filename: "Daydreaming.mp3", length: 214, artist_id: matt.id)
+  song66 = Song.create!( song_name: "Clocks", filename: "Clocks.mp3", length: 271, artist_id: matt.id)
+  song67 = Song.create!( song_name: "In Between", filename: "In+Between.mp3", length: 319, artist_id: matt.id)
 
   # PLAYLIST_SONGS (JOINS)
-  PlaylistSong.create!(song_id: song1.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song67.id, playlist_id: playlist1.id)
   PlaylistSong.create!(song_id: song2.id, playlist_id: playlist1.id)
   PlaylistSong.create!(song_id: song3.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song7.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song65.id, playlist_id: playlist1.id)
+  PlaylistSong.create!(song_id: song64.id, playlist_id: playlist1.id)
   PlaylistSong.create!(song_id: km_song9.id, playlist_id: playlist1.id)
   PlaylistSong.create!(song_id: song2.id, playlist_id: playlist2.id)
   PlaylistSong.create!(song_id: song3.id, playlist_id: playlist2.id)
@@ -716,6 +751,11 @@ ApplicationRecord.transaction do
   PlaylistSong.create!(song_id: song6.id, playlist_id: playlist25.id)
   PlaylistSong.create!(song_id: km_song4.id, playlist_id: playlist25.id)
   PlaylistSong.create!(song_id: km_song9.id, playlist_id: playlist25.id)
-
+  #
+  PlaylistSong.create!(song_id: song63.id, playlist_id: playlist26.id)
+  PlaylistSong.create!(song_id: song64.id, playlist_id: playlist26.id)
+  PlaylistSong.create!(song_id: song65.id, playlist_id: playlist26.id)
+  PlaylistSong.create!(song_id: song66.id, playlist_id: playlist26.id)
+  PlaylistSong.create!(song_id: song67.id, playlist_id: playlist26.id)
 
 end
