@@ -31,3 +31,69 @@
 .album-cover {
   position: relative;
 }
+
+.browse-index-item .selected-playlist {
+  background: $black_80;
+  color: $gray;
+}
+
+.browse-index-item .noise-icon {
+  display: none;
+}
+
+.selected-playlist .noise-icon {
+  display: block;
+}
+
+.selected-playlist .play-pause-icon {
+  display: none;
+}
+
+.browse-index-item .play-playlist-btn {
+  display: none;
+  background: none;
+  border: none;
+  transform: translateX(-75%) translateY(-50%);
+}
+
+.browse-index-item:hover .play-playlist-btn, .selected-playlist .play-playlist-btn {
+  display: block;
+  color: $light-gray;
+  position: absolute;
+  left: 8px;
+  font-size: 36px;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.browse-index-item .play-playlist-btn:hover {
+  transform: scale(1.15);
+  color: $white;
+  transform: translateX(-75%) translateY(-50%);
+}
+
+.selected-playlist .noise-icon, .selected-playlist .play-pause-icon {
+  color: $green
+}
+
+.selected-playlist:hover .play-pause-icon i {
+  color: $green
+}
+
+.selected-playlist:hover .noise-icon {
+  display: none;
+}
+
+.selected-playlist:hover .play-pause-icon {
+  display: block;
+}
+
+.browse-index-item .playlist-cover-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.browse-index-item .button-container {
+  position: relative;
+}

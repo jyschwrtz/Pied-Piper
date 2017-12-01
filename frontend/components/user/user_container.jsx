@@ -27,6 +27,7 @@ const mapStateToProps = (state, ownProps) => {
     user: state.entities.users[ownerId],
     playlists,
     songs,
+    playing: state.ui.playing,
   });
 };
 

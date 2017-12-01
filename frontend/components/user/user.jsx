@@ -18,7 +18,6 @@ class User extends React.Component {
   render() {
     const { user, playlists, songs } = this.props;
     const playlistIds = playlists.map(playlist => playlist.id);
-    console.log(songs);
     let userName;
     if (user) {
       userName = <h1>{user.username}</h1>;

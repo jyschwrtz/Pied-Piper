@@ -12,6 +12,7 @@ const mapStateToProps = (state, newProps) => {
 
   return ({
     currentUser: state.session.currentUser,
+    currentPlaylist: state.ui.currentPlaylist,
     songs,
     playing: state.ui.playing,
   });

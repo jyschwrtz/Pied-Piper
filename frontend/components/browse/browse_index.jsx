@@ -15,10 +15,11 @@ class BrowseIndex extends React.Component {
     return(
       <ul className="browse-index">
         {
-          playlistIds.map(playlistId => (
+          playlistIds.map((playlistId, idx) => (
             <BrowseIndexItemContainer
               key={playlistId}
               playlistId={playlistId}
+              idx={idx}
               playlist={playlists[playlistId]}
               requestPlaylist={requestPlaylist}/>
           ))
