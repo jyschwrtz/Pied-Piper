@@ -35,6 +35,23 @@ class Search extends React.Component {
     if (songSearch && songSearch.length > 0) {
       navTitles = ["Top Results"];
     }
+    let content;
+    if ( searchInput !== "") {
+      content = (
+        <div>
+          <NavBar navTitles={navTitles} page="search"/>
+          <div className="search-results-top">
+            { topPlaylist }
+            <SongSearchResultsContainer
+              songs={songSearch} />
+          </div>
+          <PlaylistSearchResults
+            playlists={playlistSearch}
+            currentUser={currentUser} />
+          <UserSearchResults users={userSearch} />
+        </div>
+      );
+    }
     return(
       <div className="search">
         <div className="search-bar">
@@ -47,16 +64,7 @@ class Search extends React.Component {
             autoFocus
             />
         </div>
-        <NavBar navTitles={navTitles} page="search"/>
-        <div className="search-results-top">
-          { topPlaylist }
-          <SongSearchResultsContainer
-            songs={songSearch} />
-        </div>
-        <PlaylistSearchResults
-          playlists={playlistSearch}
-          currentUser={currentUser} />
-        <UserSearchResults users={userSearch} />
+        { content }
       </div>
     );
   }
