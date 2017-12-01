@@ -18,10 +18,13 @@ class ControlBar extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.progressTracker);
+    this.progressTracker = null;
   }
 
   setSeek(e) {
-    this.player.seek(e.target.value);
+    if (this.props.currentSong) {
+      this.player.seek(e.target.value);
+    }
   }
 
   handleChange(e) {
@@ -64,10 +67,12 @@ class ControlBar extends React.Component {
       );
       if (!this.progressTracker) {
         this.progressTracker = setInterval(() => {
-          let newProgress = this.player.seek();
-          this.setState({
-            progress: newProgress,
-          });
+          if (this.player) {
+            let newProgress = this.player.seek();
+            this.setState({
+              progress: newProgress,
+            });
+          }
         }, 500);
       }
     }
