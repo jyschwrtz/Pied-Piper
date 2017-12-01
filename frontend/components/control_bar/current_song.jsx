@@ -48,7 +48,18 @@ class CurrentSong extends React.Component {
             <h2 className="artist-name">{artistName}</h2>
           </Link>
         </div>
-      )
+      );
+    } else if (song && artist) {
+      currentSongInfo = (
+        <div className="current-song-info">
+
+            <h1 className="song-name">{songName}</h1>
+          
+          <Link to={`/user/${userId}`}>
+            <h2 className="artist-name">{artistName}</h2>
+          </Link>
+        </div>
+      );
     }
     return(
       <div className="current-song">

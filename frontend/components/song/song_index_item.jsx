@@ -44,7 +44,7 @@ class SongIndexItem extends React.Component {
     const songMenuClass =
       this.state.songMenuDisplay ? "song-menu" : "song-menu hidden";
 
-    let noiseIcon;
+    let noiseIcon = <i className="fa fa-play" aria-hidden="true"></i>;
     let playPauseIcon = <i className="fa fa-play" aria-hidden="true"></i>;
     let action = this.props.playSong;
     let songClass = "song-index-item";

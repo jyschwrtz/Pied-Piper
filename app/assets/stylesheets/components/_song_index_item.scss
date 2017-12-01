@@ -56,6 +56,14 @@
   color: $green;
 }
 
+.song-index-item .noise-icon {
+  display: none;
+}
+
+.selected-song .noise-icon {
+  display: block;
+}
+
 .selected-song .play-pause-icon {
   display: none;
 }
