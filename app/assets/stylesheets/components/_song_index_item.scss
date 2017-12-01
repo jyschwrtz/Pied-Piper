@@ -56,6 +56,10 @@
   color: $green;
 }
 
+.show-song-menu {
+  font-family: $numerals;
+}
+
 // APPEARS WHEN HOVERING
 
 .show-song-menu, .song-play-btn {
@@ -89,7 +93,7 @@
 }
 
 
-.selected-song:hover .song-play-btn, .selected-song:hover .show-song-menu {
+.selected-song:hover .song-play-btn {
   color: $green
 }
 
@@ -102,6 +106,6 @@
   display: none;
 }
 
-.selected-song .song-play-btn, .selected-song .show-song-menu {
+.selected-song .song-play-btn {
   color: $green;
 }

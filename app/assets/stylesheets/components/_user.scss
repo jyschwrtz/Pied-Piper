@@ -1,6 +1,38 @@
 .user {
+  padding: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.user .user-index-item p {
+  font-size: 36px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.user .user-index-item {
+  width: 100%;
+}
+
+.user-title-header  {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.user-show-info {
+  border-top: 1px solid $white_10;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.user-show-info .user-songs  {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.user-show-info .song-index-item {
 }

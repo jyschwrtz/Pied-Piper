@@ -8,9 +8,23 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   const ownerId = parseInt(ownProps.match.params.userId);
+  const playlists = selectUserPlaylists(state, ownerId);
+  let allSongs = [];
+  if (playlists.length > 0) {
+    playlists.forEach(playlist => {
+      allSongs = allSongs.concat(selectPlaylistSongs(state, playlist.id));
+    });
+  }
+  let songs = [];
+  allSongs.forEach(song => {
+    if (!songs.includes(song)) {
+      songs.push(song);
+    }
+  });
   return({
     user: state.entities.users[ownerId],
-    playlists: selectUserPlaylists(state, ownerId),
+    playlists,
+    songs,
   });
 };
 

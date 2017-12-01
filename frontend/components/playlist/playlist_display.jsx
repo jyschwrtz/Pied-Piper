@@ -35,8 +35,10 @@ class PlaylistDisplay extends React.Component {
 
   render() {
     const { playlist, owner, playPlaylist, songCount } = this.props;
-    let playlistOwnerName, songNumber, playlistTitle, editButton, deleteButton, src;
+    let playlistOwnerName, songNumber, playlistTitle,
+        userId, editButton, deleteButton, src;
     if (owner) {
+      userId = owner.id;
       playlistOwnerName = owner.username;
       if (playlist.owner_id == this.props.match.params.userId) {
         deleteButton = (
@@ -103,8 +105,7 @@ class PlaylistDisplay extends React.Component {
             </div>
             <h2>
               <span>By </span>
-              <Link
-                to="/browse/featured">
+              <Link to={`/user/${userId}`}>
                 {playlistOwnerName}
               </Link>
             </h2>

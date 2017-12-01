@@ -10,12 +10,13 @@ class CurrentSong extends React.Component {
 
   render() {
     const { song, artist, playlist, currentUser, playing } = this.props;
-    let songName, artistName, playlistImage;
+    let songName, artistName, playlistImage, userId, currentSongInfo;
     if (song) {
       songName = song.song_name;
     }
     if (artist) {
       artistName = artist.username;
+      userId = artist.id;
     }
     if (playlist) {
       let playPauseIconClass = playing ? (
@@ -38,14 +39,21 @@ class CurrentSong extends React.Component {
           </div>
         </Link>
       );
+      currentSongInfo = (
+        <div className="current-song-info">
+          <Link to={`/user/${currentUser.id}/playlist/${playlist.id}`}>
+            <h1 className="song-name">{songName}</h1>
+          </Link>
+          <Link to={`/user/${userId}`}>
+            <h2 className="artist-name">{artistName}</h2>
+          </Link>
+        </div>
+      )
     }
     return(
       <div className="current-song">
-          { playlistImage }
-        <div className="current-song-info">
-          <h1 className="song-name">{songName}</h1>
-          <h2 className="artist-name">{artistName}</h2>
-        </div>
+        { playlistImage }
+        { currentSongInfo }
       </div>
     );
   }
