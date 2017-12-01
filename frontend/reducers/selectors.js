@@ -1,3 +1,25 @@
+// export const selectPlaylistSongs2 = (state, playlistId) => {
+//   let playlistSongIds;
+//   if (state.entities.playlists[playlistId]) {
+//     playlistSongIds =
+//     state.entities.playlists[playlistId].song_ids;
+//   }
+//   if (playlistSongIds) {
+//     let songIdsInPlaylist = [];
+//     const songIds = Object.keys(state.entities.songs);
+//     songIds.forEach(songId => {
+//       if (playlistSongIds.includes(parseInt(songId))) {
+//         songIdsInPlaylist.push(songId);
+//       }
+//     });
+//     let songsInPlaylist = [];
+//     songIdsInPlaylist.forEach(songId => {
+//       songsInPlaylist.push(state.entities.songs[songId]);
+//     });
+//     return songsInPlaylist;
+//   }
+// };
+
 export const selectPlaylistSongs = (state, playlistId) => {
   let playlistSongIds;
   if (state.entities.playlists[playlistId]) {
@@ -5,18 +27,9 @@ export const selectPlaylistSongs = (state, playlistId) => {
     state.entities.playlists[playlistId].song_ids;
   }
   if (playlistSongIds) {
-    let songIdsInPlaylist = [];
-    const songIds = Object.keys(state.entities.songs);
-    songIds.forEach(songId => {
-      if (playlistSongIds.includes(parseInt(songId))) {
-        songIdsInPlaylist.push(songId);
-      }
-    });
-    let songsInPlaylist = [];
-    songIdsInPlaylist.forEach(songId => {
-      songsInPlaylist.push(state.entities.songs[songId]);
-    });
-    return songsInPlaylist;
+    return playlistSongIds.map(songId => (
+      state.entities.songs[songId]
+    ));
   }
 };
 

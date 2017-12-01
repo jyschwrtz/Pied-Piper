@@ -15,3 +15,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (min-width: 1100px) {
+  .playlist-search-index {
+    flex-wrap: nowrap;
+  }
+}

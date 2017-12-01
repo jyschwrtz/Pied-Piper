@@ -5,6 +5,7 @@ import Root from './components/root';
 
 
 // import { songsByPlaylist } from './actions/search_actions';
+import { selectPlaylistSongs, selectPlaylistSongs2 } from './reducers/selectors';
 import { songsByPlaylist, songsByArtist } from './util/music_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.play = play;
   window.songsByPlaylist = songsByPlaylist;
   window.songsByArtist = songsByArtist;
+  window.selectPlaylistSongs = selectPlaylistSongs;
+  window.selectPlaylistSongs2 = selectPlaylistSongs2;
   // window.previousSong = previousSong;
   // window.upNext = upNext;
   // window.deletePlaylistSong = deletePlaylistSong;

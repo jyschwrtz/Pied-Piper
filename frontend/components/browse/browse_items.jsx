@@ -6,9 +6,9 @@ class BrowseItems extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      { title: "Cool And Collected", playlistIds: [3, 4, 5, 9] },
-      { title: "Afternoon Study", playlistIds: [8, 11, 13, 6] },
-      { title: "Weekend Jammin'", playlistIds: [12, 6, 7, 2] },
+      { title: "Cool And Collected", playlistIds: [18, 14, 20, 16] },
+      { title: "Afternoon Study", playlistIds: [8, 17, 3, 5] },
+      { title: "Weekend Jammin'", playlistIds: [4, 6, 7, 1] },
     ];
   }
 
@@ -17,13 +17,13 @@ class BrowseItems extends React.Component {
       case "/browse/featured":
         this.items = [
           { title: "Cool And Collected", playlistIds: [18, 14, 20, 16] },
-          { title: "Afternoon Study", playlistIds: [8, 19, 3, 5] },
+          { title: "Afternoon Study", playlistIds: [8, 17, 3, 5] },
           { title: "Weekend Jammin'", playlistIds: [4, 6, 7, 1] },
         ];
         break;
       case "/browse/genres_&_moods":
         this.items = [
-          { title: "Workout", playlistIds: [10, 2, 17, 4] },
+          { title: "Workout", playlistIds: [10, 2, 19, 4] },
           { title: "Chill", playlistIds: [9, 16, 7, 8] },
           { title: "Party", playlistIds: [12, 5, 11, 10] },
         ];
