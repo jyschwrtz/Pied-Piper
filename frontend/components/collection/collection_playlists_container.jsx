@@ -4,8 +4,8 @@ import CollectionPlaylists from './collection_playlists';
 import { createPlaylist, requestPlaylists } from '../../actions/playlist_actions';
 import { selectUserPlaylists } from '../../reducers/selectors';
 
-const mapStateToProps = state => {
-  const playlists = selectUserPlaylists(state);
+const mapStateToProps = (state, ownProps) => {
+    const playlists = selectUserPlaylists(state);
   return({
     playlists
   });
