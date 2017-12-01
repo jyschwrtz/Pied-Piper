@@ -5,7 +5,7 @@ class CollectionDailyMix extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      { title: "", playlistIds: [2, 1, 10, 11] },
+      { title: "", playlistIds: [21, 22, 23, 24, 25] },
     ];
   }
 

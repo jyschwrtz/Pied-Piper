@@ -9,7 +9,7 @@ class Collection extends React.Component {
 
   render() {
     const navTitles =
-      ["Playlists", "Your Daily Mix", "Songs", "Albums", "Artists"];
+      ["Playlists", "Your Daily Mix", "Songs", "Artists"];
     return (
       <div className="collection">
         <NavBar navTitles={navTitles} page="collection"/>
