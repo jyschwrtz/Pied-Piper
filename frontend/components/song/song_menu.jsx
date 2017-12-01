@@ -39,7 +39,6 @@ class SongMenu extends React.Component {
     // e.preventDefault();
     let addToPlaylistDisplay = this.state.addToPlaylistDisplay ? false : true;
     this.setState({ addToPlaylistDisplay });
-    console.log(this.props.songMenuClass);
     if (this.props.songMenuClass === "song-menu" && this.state.addToPlaylistDisplay) {
       this.props.toggleSongMenu(e);
     }
