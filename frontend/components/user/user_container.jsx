@@ -5,6 +5,8 @@ import {
   selectPlaylistSongs,
   selectUserPlaylists
 } from '../../reducers/selectors';
+import { play, nextSong, upNext, pastSongsInPlaylists } from '../../actions/player_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   const ownerId = parseInt(ownProps.match.params.userId);
@@ -29,7 +31,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-
+  play: () => dispatch(play()),
+  upNext: (songs, playlist) => dispatch(upNext(songs, playlist)),
+  pastSongsInPlaylists: (songs, playlist) => dispatch(pastSongsInPlaylists(songs, playlist)),
 });
 
 export default withRouter(connect(
