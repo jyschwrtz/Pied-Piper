@@ -62,7 +62,7 @@ ApplicationRecord.transaction do
     username: "Craze 24",
     email: "craze.24@mail.com",
     password: "password1988PP",
-    image_url: "craze24.jpg"
+    image_url: default_user_image
   )
 
   duo_teslar = User.create!(

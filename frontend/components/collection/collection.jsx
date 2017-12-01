@@ -4,6 +4,7 @@ import NavBar from '../nav_bar/nav_bar';
 import CollectionPlaylistsContainer from './collection_playlists_container';
 import CollectionSongsContainer from './collection_songs_container';
 import CollectionDailyMix from './collection_daily_mix';
+import CollectionArtistsContainer from './collection_artists_container';
 
 class Collection extends React.Component {
 
@@ -22,6 +23,9 @@ class Collection extends React.Component {
         <Route
           path="/collection/songs"
           component={CollectionSongsContainer}/>
+        <Route
+          path="/collection/artists"
+          component={CollectionArtistsContainer}/>
       </div>
     );
   }
