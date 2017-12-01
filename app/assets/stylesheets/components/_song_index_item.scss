@@ -56,6 +56,10 @@
   color: $green;
 }
 
+.selected-song .play-pause-icon {
+  display: none;
+}
+
 .show-song-menu {
   font-family: $numerals;
 }
@@ -95,6 +99,14 @@
 
 .selected-song:hover .song-play-btn {
   color: $green
+}
+
+.selected-song:hover .noise-icon {
+  display: none;
+}
+
+.selected-song:hover .play-pause-icon {
+  display: block;
 }
 
 .selected-song .song-play-btn:hover {

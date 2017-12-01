@@ -44,6 +44,7 @@ class SongIndexItem extends React.Component {
     const songMenuClass =
       this.state.songMenuDisplay ? "song-menu" : "song-menu hidden";
 
+    let noiseIcon;
     let playPauseIcon = <i className="fa fa-play" aria-hidden="true"></i>;
     let action = this.props.playSong;
     let songClass = "song-index-item";
@@ -54,6 +55,7 @@ class SongIndexItem extends React.Component {
       action = this.playPauseSong.bind(this);
       if (playing) {
         playPauseIcon = <i className="fa fa-pause" aria-hidden="true"></i>;
+        noiseIcon = <i className="fa fa-volume-up" aria-hidden="true"></i>;
       }
     }
 
@@ -69,7 +71,12 @@ class SongIndexItem extends React.Component {
           <button
             onClick={action}
             className="song-play-btn">
-            {playPauseIcon}
+            <div className="play-pause-icon">
+              {playPauseIcon}
+            </div>
+            <div className="noise-icon">
+              {noiseIcon}
+            </div>
           </button>
         </div>
         <div className="song-information">
