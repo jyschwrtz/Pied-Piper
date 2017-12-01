@@ -67,6 +67,11 @@ const UiReducer = (state = initialState, action) => {
     case PAST_SONGS_IN_PLAYLIST:
       newState = merge({}, state);
       newState.songHistory = newState.songHistory.concat(action.songs);
+      // don't allow songHistory to become longer than 30
+      const shl = newState.songHistory.length;
+      if (shl > 30) {
+        newState.songHistory = newState.songHistory.slice(shl - 30);
+      }
       newState.currentPlaylist = action.playlist;
       return newState;
     case RECEIVE_CURRENT_SONG:
