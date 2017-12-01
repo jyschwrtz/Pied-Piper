@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import NavBar from '../nav_bar/nav_bar';
 import CollectionPlaylistsContainer from './collection_playlists_container';
 import CollectionSongsContainer from './collection_songs_container';
+import CollectionDailyMix from './collection_daily_mix';
 
 class Collection extends React.Component {
 
@@ -15,6 +16,9 @@ class Collection extends React.Component {
         <Route
           path="/collection/playlists"
           component={CollectionPlaylistsContainer}/>
+        <Route
+          path="/collection/your_daily_mix"
+          component={CollectionDailyMix}/>
         <Route
           path="/collection/songs"
           component={CollectionSongsContainer}/>
