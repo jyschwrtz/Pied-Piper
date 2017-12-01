@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     resources :music_searches, only: [:index] do
       get "songs_by_playlist", on: :collection
+      get "songs_by_artist", on: :collection
       get "random_playlist", on: :collection
     end
   end

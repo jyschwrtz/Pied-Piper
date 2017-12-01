@@ -3,14 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import {
-//   play,
-//   nextSong,
-//   previousSong,
-//   upNext
-// } from './actions/player_actions';
-// import { selectPlaylistSongs } from './reducers/selectors';
-import { searchDatabase } from './actions/search_actions';
+
+// import { songsByPlaylist } from './actions/search_actions';
+import { songsByPlaylist, songsByArtist } from './util/music_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -26,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // window.play = play;
-  window.searchDatabase = searchDatabase;
+  window.songsByPlaylist = songsByPlaylist;
+  window.songsByArtist = songsByArtist;
   // window.previousSong = previousSong;
   // window.upNext = upNext;
   // window.deletePlaylistSong = deletePlaylistSong;

@@ -1,4 +1,4 @@
-export const selectPlaylistSongs = (state, playlistId) => {
+export const selectPlaylistSongs = (state, playlistId) => {  
   let playlistSongIds;
   if (state.entities.playlists[playlistId]) {
     playlistSongIds =
@@ -25,3 +25,7 @@ export const selectUserPlaylists = (state) => (
     return playlist.owner_id === state.session.currentUser.id;
   })
 );
+
+// export const selectArtistsSongs = (state) => (
+//
+// )
